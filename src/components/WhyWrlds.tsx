@@ -102,7 +102,7 @@ const WhyWrlds = () => {
               <BarChart className="w-8 h-8 text-gray-700" />
             </div>
             <h3 className="text-gray-900 text-2xl lg:text-3xl font-bold mb-3">
-              <AnimatedCounter end={50} suffix="+" /> empresas
+              <AnimatedCounter end= suffix="+"{50}  /> empresas
             </h3>
             <p className="text-gray-700">Experiencia real con PYMEs y corporativos de diferentes sectores transformadas exitosamente</p>
           </motion.div>
