@@ -40,18 +40,15 @@ const Careers = () => {
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.6 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
               >
                 {/* Red de Colaboradores */}
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 text-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
+                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
                   <div className="flex justify-center mb-6">
-                    <Users className="w-12 h-12 text-blue-600" />
+                    <Users className="w-12 h-12 text-primary" />
                   </div>
-                  <h3 className="font-bold text-2xl mb-4 text-gray-900">Red de Colaboradores</h3>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <h3 className="font-bold text-xl mb-4 text-gray-900">Red de Colaboradores</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     Únete a nuestra red de expertos freelance para participar en proyectos específicos de transformación digital e IA.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
@@ -61,22 +58,19 @@ const Careers = () => {
                     <p>• Red de profesionales</p>
                   </div>
                   <Link to="/collaborator-form">
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3">
-                      Unirme a la Red
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3">
+                      Contactar
                     </Button>
                   </Link>
-                </motion.div>
+                </div>
 
                 {/* Equipo Interno */}
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200 text-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
+                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
                   <div className="flex justify-center mb-6">
-                    <Briefcase className="w-12 h-12 text-green-600" />
+                    <Briefcase className="w-12 h-12 text-primary" />
                   </div>
-                  <h3 className="font-bold text-2xl mb-4 text-gray-900">Equipo Interno</h3>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <h3 className="font-bold text-xl mb-4 text-gray-900">Equipo Interno</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     Forma parte de nuestro equipo core con posiciones full-time y part-time en el desarrollo de soluciones innovadoras.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
@@ -86,22 +80,19 @@ const Careers = () => {
                     <p>• Beneficios corporativos</p>
                   </div>
                   <Link to="/internal-team-form">
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3">
-                      Adjuntar CV
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3">
+                      Contactar
                     </Button>
                   </Link>
-                </motion.div>
+                </div>
 
                 {/* Partnerships */}
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl border border-purple-200 text-center shadow-lg hover:shadow-xl transition-all duration-300"
-                >
+                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
                   <div className="flex justify-center mb-6">
-                    <Handshake className="w-12 h-12 text-purple-600" />
+                    <Handshake className="w-12 h-12 text-primary" />
                   </div>
-                  <h3 className="font-bold text-2xl mb-4 text-gray-900">Acuerdos de Partnership</h3>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <h3 className="font-bold text-xl mb-4 text-gray-900">Acuerdos de Partnership</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     Establece alianzas estratégicas con WRLDS para expandir servicios conjuntamente y crear valor mutuo.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
@@ -111,11 +102,11 @@ const Careers = () => {
                     <p>• Sinergias empresariales</p>
                   </div>
                   <Link to="/partnership-form">
-                    <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3">
-                      Proponer Partnership
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3">
+                      Contactar
                     </Button>
                   </Link>
-                </motion.div>
+                </div>
               </motion.div>
 
               <motion.div 
