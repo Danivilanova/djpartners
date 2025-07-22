@@ -34,586 +34,802 @@ export interface ContentSection {
 export const blogPosts: BlogPost[] = [
   {
     id: '6',
-    title: 'Wearable Safety Tech: Protecting Workers While Delivering Real ROI',
-    slug: 'wearable-safety-tech-protecting-workers-roi',
-    excerpt: 'Discover how wearable safety technology puts worker wellbeing first while delivering measurable business benefits through injury prevention and enhanced workplace safety.',
-    date: 'June 12, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Business',
+    title: 'Cómo la IA Está Transformando las PYMEs: De la Idea al Lanzamiento',
+    slug: 'como-ia-transformando-pymes-idea-lanzamiento',
+    excerpt: 'Descubre cómo las pequeñas y medianas empresas están aprovechando la inteligencia artificial para optimizar procesos, tomar mejores decisiones y acelerar su crecimiento empresarial.',
+    date: 'Diciembre 15, 2024',
+    author: 'D&J Partners',
+    category: 'Transformación Digital',
     imageUrl: '/lovable-uploads/078a129e-0f98-4d91-af61-873687db1a04.png',
     keywords: [
-      'wearable safety technology',
-      'workplace injury prevention',
-      'worker safety',
-      'safety ROI',
-      'ergonomic sensors',
-      'workplace safety investment',
-      'industrial wearables',
-      'occupational safety',
-      'safety technology partnerships',
-      'worker protection',
-      'safety innovation',
-      'workplace wellbeing'
+      'inteligencia artificial',
+      'PYMEs',
+      'transformación digital',
+      'automatización empresarial',
+      'business intelligence',
+      'analítica predictiva',
+      'optimización de procesos',
+      'machine learning',
+      'ROI IA',
+      'consultoría tecnológica',
+      'decisiones basadas en datos',
+      'innovación empresarial'
     ],
-    metaDescription: 'Learn how wearable safety technology prioritizes worker protection while delivering proven business benefits. Real data shows significant injury reduction and improved workplace safety.',
+    metaDescription: 'Aprende cómo la IA está revolucionando las PYMEs con casos reales de éxito. Desde automatización hasta analítica predictiva para impulsar el crecimiento empresarial.',
     content: [
       {
         type: 'paragraph',
-        content: 'Every worker deserves to go home safe at the end of their shift. That fundamental principle drives the evolution of workplace safety technology, where protecting people has always been the primary goal. What\'s remarkable about today\'s wearable safety technology is how it achieves this mission while also delivering tangible business benefits.'
+        content: 'La inteligencia artificial ya no es exclusiva de las grandes corporaciones. Las PYMEs están descubriendo que la IA puede ser el catalizador que necesitan para competir en mercados cada vez más exigentes y digitalizar sus operaciones de manera estratégica.'
       },
       {
         type: 'stats',
         statsData: [
           {
-            value: '2.2',
-            label: 'Workplace injuries per 100 workers annually',
-            icon: 'Users'
-          },
-          {
-            value: '$43K',
-            label: 'Average cost per medically consulted injury',
-            icon: 'DollarSign'
-          },
-          {
-            value: '58%',
-            label: 'Injury reduction reported by early adopters',
+            value: '73%',
+            label: 'de PYMEs planean implementar IA en 2025',
             icon: 'TrendingUp'
+          },
+          {
+            value: '35%',
+            label: 'aumento promedio en eficiencia operativa',
+            icon: 'BarChart3'
+          },
+          {
+            value: '2.8x',
+            label: 'ROI promedio en proyectos de IA para PYMEs',
+            icon: 'DollarSign'
           }
         ]
       },
       {
         type: 'heading',
-        content: 'The Human Cost Behind the Numbers'
+        content: 'El Cambio de Paradigma: De Procesos Manuales a Decisiones Inteligentes'
       },
       {
         type: 'paragraph',
-        content: 'Behind every workplace injury statistic is a person: someone\'s parent, partner, or child. The data tells a sobering story about workplace safety in America. When we can prevent injuries before they happen, we\'re not just protecting company assets. We\'re preserving families and communities.'
+        content: 'Las PYMEs tradicionales enfrentan desafíos únicos: recursos limitados, procesos manuales y dificultades para competir con empresas más grandes. La IA ofrece una oportunidad para nivelar el campo de juego, permitiendo que empresas pequeñas accedan a capacidades analíticas y de automatización antes reservadas para grandes corporaciones.'
       },
       {
         type: 'heading',
-        content: 'Real Results from Wearable Safety Technology'
-      },
-      {
-        type: 'paragraph',
-        content: 'The effectiveness of wearable safety technology becomes clear when we examine documented case studies and vendor-reported results. These implementations show real workers in demanding environments using technology that helps them stay safe while doing their jobs effectively.'
+        content: 'Casos de Éxito Reales en PYMEs'
       },
       {
         type: 'subheading',
-        content: 'Documented Industry Results'
+        content: 'Retail: Predicción de Demanda Inteligente'
+      },
+      {
+        type: 'paragraph',
+        content: 'Una cadena regional de supermercados implementó nuestro sistema de BI predictivo, reduciendo el desperdicio de productos perecederos en un 25% y aumentando las ventas en un 15%. La IA analiza patrones históricos, tendencias estacionales y factores externos para optimizar inventarios automáticamente.'
+      },
+      {
+        type: 'subheading',
+        content: 'Manufactura: Control de Calidad Automatizado'
+      },
+      {
+        type: 'paragraph',
+        content: 'Una empresa textil familiar integró IA en sus líneas de producción para automatizar el control de calidad. El resultado: reducción del 40% en defectos de producción y aumento del 20% en la eficiencia general de la planta.'
+      },
+      {
+        type: 'heading',
+        content: 'Los Pilares de una Implementación Exitosa'
       },
       {
         type: 'icon-list',
         items: [
-          'Companies report significant reductions in workplace injuries with consistent wearable device usage',
-          'Workers feel more confident and supported knowing technology is monitoring their safety',
-          'Safety managers gain real-time insights into workplace hazards and risk patterns',
-          'Insurance providers recognize the value with bundled policies for high-adoption organizations'
+          'Identificación de procesos críticos donde la IA puede generar mayor impacto',
+          'Integración gradual que no interrumpe las operaciones existentes',
+          'Capacitación del equipo para maximizar el aprovechamiento de las nuevas herramientas',
+          'Medición continua del ROI y ajustes basados en resultados reales'
         ]
       },
       {
         type: 'heading',
-        content: 'When Safety and Business Align'
-      },
-      {
-        type: 'paragraph',
-        content: 'Effective safety technology creates a virtuous cycle where prioritizing people leads to positive business outcomes. When injuries decrease, so do workers\' compensation claims, replacement worker costs, and operational disruptions.'
+        content: 'Tecnologías de IA Más Relevantes para PYMEs'
       },
       {
         type: 'table',
         tableData: {
-          headers: ['Safety Outcome', 'Human Impact', 'Business Benefit'],
+          headers: ['Tecnología', 'Aplicación', 'Beneficio Principal'],
           rows: [
-            ['Fewer back injuries', 'Workers maintain mobility and quality of life', 'Reduced comp claims and medical costs'],
-            ['Better ergonomic awareness', 'Less fatigue and chronic pain', 'Higher productivity and retention'],
-            ['Early hazard detection', 'Prevention of serious accidents', 'Avoided downtime and investigations'],
-            ['Real-time feedback', 'Workers feel supported and valued', 'Improved safety culture and morale']
+            ['Machine Learning Predictivo', 'Forecasting de ventas y demanda', 'Optimización de inventarios'],
+            ['Procesamiento de Lenguaje Natural', 'Automatización de atención al cliente', 'Disponibilidad 24/7'],
+            ['Computer Vision', 'Control de calidad automatizado', 'Reducción de defectos'],
+            ['Business Intelligence', 'Dashboards ejecutivos en tiempo real', 'Decisiones basadas en datos']
           ]
         }
       },
       {
         type: 'heading',
-        content: 'Growing Market for Worker-Centered Safety'
+        content: 'Superando las Barreras de Adopción'
       },
       {
         type: 'paragraph',
-        content: 'The market for wearable safety technology is expanding rapidly, reflecting a cultural shift toward prioritizing worker safety and wellbeing. Technology serves as an enabler rather than a replacement for human judgment and care.'
-      },
-      {
-        type: 'paragraph',
-        content: 'Industry analysts project substantial growth in the wearable safety market over the coming years. Starting from a market value of $1.6 billion in 2023, the sector is expected to grow steadily to $2.1 billion in 2024, reaching $2.7 billion by 2025. This growth trajectory continues with projections of $3.3 billion in 2026, $3.8 billion in 2027, and $4.2 billion by 2028. This expansion reflects increasing organizational commitment to worker safety and the proven value of wearable safety solutions.'
-      },
-      {
-        type: 'heading',
-        content: 'How WRLDS Supports Your Safety Mission'
-      },
-      {
-        type: 'paragraph',
-        content: 'We understand that every organization\'s safety challenges are unique. That\'s why we\'ve built a flexible platform that can adapt to your specific needs while maintaining our core focus on worker protection.'
-      },
-      {
-        type: 'subheading',
-        content: 'Our Collaborative Approach'
-      },
-      {
-        type: 'icon-list',
-        items: [
-          'Flexible integration that works with your existing safety programs and doesn\'t disrupt worker routines',
-          'White-label solutions that let you maintain your brand identity while providing cutting-edge safety technology',
-          'Proven supply chain partnerships that ensure reliable, high-quality components for long-term deployment',
-          'Data insights that help you understand and improve your safety culture, not just track compliance metrics'
-        ]
-      },
-      {
-        type: 'heading',
-        content: 'Start the Conversation'
-      },
-      {
-        type: 'paragraph',
-        content: 'We\'d love to learn about your safety goals and specific challenges. Whether you\'re looking to reduce particular types of injuries, improve safety culture, or explore how technology can support your existing programs, we\'re here to listen and collaborate.'
-      },
-      {
-        type: 'paragraph',
-        content: 'Bring your organization\'s injury and loss data, and we\'ll work together to calculate potential benefits using your actual numbers. We can help you explore how wearable technology might fit into your comprehensive safety strategy. No hard sell, no one-size-fits-all solutions: just an honest conversation about protecting the people who make your organization successful.'
+        content: 'Las principales preocupaciones de las PYMEs incluyen el costo, la complejidad técnica y la resistencia al cambio. Sin embargo, con el enfoque correcto, estas barreras se convierten en oportunidades de crecimiento y diferenciación competitiva.'
       },
       {
         type: 'quote',
-        content: 'Great safety partnerships start with shared values: putting workers first, building trust through transparency, and believing that everyone deserves to work in an environment where they can thrive safely.'
+        content: 'La IA no se trata de reemplazar a las personas, sino de potenciar sus capacidades y liberar tiempo para actividades de mayor valor estratégico.'
       },
       {
         type: 'heading',
-        content: 'Sources and References'
+        content: 'El Futuro de las PYMEs Inteligentes'
       },
       {
-        type: 'bibliography',
-        items: [
-          'National Safety Council, Work Injury Costs, Injury Facts, 2024 edition. Available at: injuryfacts.nsc.org',
-          'US Bureau of Labor Statistics, Employer-Reported Workplace Injuries and Illnesses, 2023, Table 1. Available at: bls.gov',
-          'Occupational Safety and Health Administration, Safety Pays Individual Injury Estimator. Available at: osha.gov',
-          'Digi International, "Kinetic Creates an Innovative Wearable That Reduces Workplace Injuries," customer story, 2024. Available at: digi.com',
-          '"Want Wearable Tech With That Workers\' Comp Policy?" Insurance Journal, 2021. Available at: insurancejournal.com',
-          '"Nationwide, Kinetic Team on Wearable Workplace Safety Technology," Carrier Management, 2021. Available at: carriermanagement.com',
-          'Markets and Markets, "Wearable Sensors Market Size, Share, Industry Report," 2024 update. Available at: marketsandmarkets.com'
-        ]
+        type: 'paragraph',
+        content: 'Las PYMEs que adopten IA hoy estarán mejor posicionadas para el futuro. No es solo una cuestión de tecnología, sino de supervivencia competitiva en un mercado que cada vez demanda más personalización, eficiencia y capacidad de respuesta rápida.'
+      },
+      {
+        type: 'paragraph',
+        content: 'En D&J Partners, creemos que cada PYME tiene el potencial de convertirse en una empresa inteligente. Nuestro enfoque se centra en implementaciones prácticas que generan resultados medibles desde el primer día, adaptándonos al ritmo y presupuesto de cada organización.'
       }
     ]
   },
   {
     id: '5',
-    title: 'Smart PPE Revolution: How Safety Technology is Transforming Worker Protection',
-    slug: 'smart-ppe-revolution-safety-technology',
-    excerpt: 'Discover how smart textiles and sensor technology are revolutionizing personal protective equipment, creating safer workplaces and preventing accidents before they happen.',
-    date: 'June 5, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Innovation',
+    title: 'Business Intelligence para PYMEs: Convierte tus Datos en Ventaja Competitiva',
+    slug: 'business-intelligence-pymes-datos-ventaja-competitiva',
+    excerpt: 'Aprende cómo implementar soluciones de Business Intelligence accesibles que transforman datos empresariales en insights accionables para la toma de decisiones estratégicas.',
+    date: 'Diciembre 8, 2024',
+    author: 'D&J Partners',
+    category: 'Business Intelligence',
     imageUrl: '/lovable-uploads/927dae7e-6aaf-4b76-add2-1287a1dd9dc0.png',
     keywords: [
-      'smart PPE',
-      'safety technology',
-      'personal protective equipment',
-      'smart textiles',
-      'workplace safety',
-      'wearable sensors',
-      'construction safety',
-      'industrial IoT',
-      'worker protection',
-      'safety monitoring',
-      'smart helmets',
-      'connected safety gear',
-      'occupational safety',
-      'safety innovation',
-      'protective equipment technology'
+      'business intelligence',
+      'BI para PYMEs',
+      'análisis de datos',
+      'dashboards ejecutivos',
+      'KPIs empresariales',
+      'toma de decisiones',
+      'visualización de datos',
+      'métricas de negocio',
+      'inteligencia empresarial',
+      'reporting automatizado'
     ],
-    metaDescription: 'Learn how smart PPE with integrated sensors is revolutionizing workplace safety. Discover the latest innovations in intelligent personal protective equipment that prevent accidents and save lives.',
+    metaDescription: 'Descubre cómo el Business Intelligence puede transformar tu PYME. Dashboards, KPIs y análisis de datos que impulsan decisiones estratégicas informadas.',
     content: [
       {
         type: 'paragraph',
-        content: 'The realm of personal protective equipment (PPE) is undergoing a significant transformation, driven by advancements in smart textiles and sensor technology. Traditional PPE, designed as a passive barrier against workplace hazards, is evolving into intelligent, interconnected systems that actively monitor conditions and provide real-time alerts. This shift is creating safer work environments and preventing accidents before they occur.'
+        content: 'En el entorno empresarial actual, las decisiones basadas en intuición ya no son suficientes. Las PYMEs que prosperan son aquellas que transforman sus datos en insights accionables a través de soluciones de Business Intelligence adaptadas a su escala y recursos.'
       },
       {
         type: 'heading',
-        content: 'The Evolution of PPE: From Passive to Proactive'
+        content: 'El Poder de los Datos en Manos de las PYMEs'
       },
       {
         type: 'paragraph',
-        content: 'For decades, PPE has primarily served as a last line of defense, offering limited protection and often failing to address the underlying causes of accidents. However, the integration of smart technology is enabling a proactive approach to safety, where PPE not only protects but also anticipates and mitigates risks.'
+        content: 'Muchas PYMEs tienen una riqueza de datos sin explotar: ventas, inventarios, comportamiento de clientes, costos operativos. El Business Intelligence permite desbloquear este potencial, convirtiendo números dispersos en una visión clara del rendimiento empresarial.'
       },
       {
-        type: 'subheading',
-        content: 'Key Components of Smart PPE'
-      },
-      {
-        type: 'list',
-        items: [
-          'Embedded Sensors: Detecting environmental conditions, physiological parameters, and potential hazards.',
-          'Connectivity: Enabling real-time data transmission and communication between workers, supervisors, and emergency responders.',
-          'Data Analytics: Providing insights into worker performance, risk factors, and safety trends.',
-          'Alert Systems: Triggering automated warnings and notifications to prevent accidents and ensure timely intervention.'
+        type: 'stats',
+        statsData: [
+          {
+            value: '67%',
+            label: 'de decisiones empresariales se basan aún en intuición',
+            icon: 'Brain'
+          },
+          {
+            value: '45%',
+            label: 'mejora en tiempo de respuesta con BI implementado',
+            icon: 'Clock'
+          },
+          {
+            value: '3.2x',
+            label: 'aumento en precisión de forecasting',
+            icon: 'Target'
+          }
         ]
       },
       {
         type: 'heading',
-        content: 'Real-World Applications of Smart PPE'
+        content: 'Componentes Esenciales de una Solución BI para PYMEs'
       },
       {
         type: 'subheading',
-        content: 'Construction Industry'
+        content: 'Dashboards Ejecutivos Personalizados'
       },
       {
         type: 'paragraph',
-        content: 'In construction, smart helmets equipped with sensors can detect falls, monitor head impacts, and alert emergency services. Smart vests can track worker location, monitor vital signs, and detect exposure to hazardous substances.'
+        content: 'Los dashboards ejecutivos proporcionan una vista consolidada de métricas clave en tiempo real. Desde ingresos y margen de ganancia hasta satisfacción del cliente y eficiencia operativa, todo en una interfaz intuitiva y accesible.'
       },
       {
         type: 'subheading',
-        content: 'Manufacturing Sector'
+        content: 'KPIs Relevantes por Industria'
       },
       {
         type: 'paragraph',
-        content: 'In manufacturing, smart gloves can provide real-time feedback on worker movements, preventing repetitive strain injuries. Smart eyewear can offer augmented reality overlays, guiding workers through complex tasks and reducing errors.'
-      },
-      {
-        type: 'subheading',
-        content: 'Healthcare Environment'
-      },
-      {
-        type: 'paragraph',
-        content: 'In healthcare, smart gowns can monitor patient vital signs, detect infections, and alert medical staff. Smart masks can track air quality, filter out harmful particles, and provide real-time feedback on respiratory function.'
+        content: 'Cada industria tiene métricas específicas que importan. Nuestras soluciones BI se adaptan a las particularidades de cada sector, desde rotación de inventario en retail hasta tiempo de ciclo en manufactura.'
       },
       {
         type: 'heading',
-        content: 'The Future of Worker Protection'
+        content: 'Casos de Implementación Exitosa'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Sector', 'Problema', 'Solución BI', 'Resultado'],
+          rows: [
+            ['Distribución', 'Gestión de inventarios ineficiente', 'Dashboard de rotación y demanda', '30% reducción en stock muerto'],
+            ['Servicios', 'Falta de visibilidad en rentabilidad', 'Análisis de margen por cliente', '25% aumento en rentabilidad'],
+            ['Retail', 'Decisiones de compra subóptimas', 'Predicción de demanda estacional', '20% mejora en sell-through'],
+            ['Construcción', 'Sobrecostos en proyectos', 'Control de costos en tiempo real', '15% reducción en desviaciones']
+          ]
+        }
+      },
+      {
+        type: 'heading',
+        content: 'Implementación Práctica: De la Teoría a la Realidad'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Auditoría de fuentes de datos existentes y identificación de gaps de información',
+          'Diseño de arquitectura de datos escalable pero económica',
+          'Desarrollo de dashboards priorizando métricas de mayor impacto empresarial',
+          'Capacitación del equipo directivo en interpretación y uso de insights',
+          'Establecimiento de procesos de revisión y optimización continua'
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'ROI del Business Intelligence en PYMEs'
       },
       {
         type: 'paragraph',
-        content: 'As technology continues to advance, smart PPE is poised to become an indispensable tool for ensuring worker safety and well-being. By providing real-time data, automated alerts, and proactive risk mitigation, smart PPE is transforming the way we approach safety in the workplace.'
+        content: 'El retorno de inversión en BI no se mide solo en términos financieros. Incluye la velocidad de toma de decisiones, la reducción de errores estratégicos, la identificación de oportunidades de crecimiento y la optimización de recursos limitados.'
       },
       {
         type: 'quote',
-        content: 'Smart PPE is not just about protecting workers; it\'s about empowering them with the knowledge and tools they need to stay safe and productive.'
+        content: 'El BI democratiza el acceso a insights empresariales, permitiendo que las PYMEs compitan con información de la misma calidad que las grandes corporaciones.'
+      },
+      {
+        type: 'heading',
+        content: 'Tendencias Futuras en BI para PYMEs'
+      },
+      {
+        type: 'paragraph',
+        content: 'El futuro del BI para PYMEs incluye mayor automatización, IA integrada para insights predictivos, y herramientas de self-service que permiten a los usuarios no técnicos crear sus propios reportes y análisis.'
       }
     ]
   },
   {
     id: '4',
-    title: 'Leveraging Sensor Technology in Product Development: A Strategic Approach',
-    slug: 'leveraging-sensor-technology-product-development',
-    excerpt: 'Explore how sensor technology is revolutionizing product development across industries, from smart textiles to IoT devices, and learn strategic approaches for implementation.',
-    date: 'May 8, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Technology',
+    title: 'Analítica Predictiva: Anticipándose al Futuro Empresarial',
+    slug: 'analitica-predictiva-futuro-empresarial',
+    excerpt: 'Explora cómo los modelos predictivos están ayudando a las empresas a anticipar tendencias, optimizar operaciones y tomar decisiones proactivas en lugar de reactivas.',
+    date: 'Noviembre 30, 2024',
+    author: 'D&J Partners',
+    category: 'Analítica Avanzada',
     imageUrl: '/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png',
     keywords: [
-      'sensor technology',
-      'product development',
-      'smart textiles',
-      'IoT sensors',
-      'wearable technology',
-      'textile sensors',
-      'manufacturing innovation',
-      'embedded sensors',
-      'smart fabrics',
-      'sensor integration'
+      'analítica predictiva',
+      'machine learning',
+      'forecasting empresarial',
+      'modelos predictivos',
+      'inteligencia artificial',
+      'predicción de demanda',
+      'análisis de tendencias',
+      'optimización predictiva',
+      'ciencia de datos'
     ],
-    metaDescription: 'Discover how sensor technology is transforming product development. Learn strategic approaches for integrating sensors into textiles and manufacturing processes.',
+    metaDescription: 'Descubre el poder de la analítica predictiva para anticipar tendencias empresariales. Modelos de ML que transforman datos históricos en ventaja competitiva futura.',
     content: [
       {
         type: 'paragraph',
-        content: 'Sensor technology is rapidly transforming product development across various industries. From smart textiles that monitor vital signs to IoT devices that automate home functions, sensors are enabling a new era of intelligent and responsive products. This article explores how businesses can strategically leverage sensor technology to enhance their product development processes.'
+        content: 'La analítica predictiva representa el siguiente nivel en la evolución de la inteligencia empresarial. Mientras que el BI tradicional nos dice qué pasó, la analítica predictiva nos ayuda a entender qué es probable que ocurra, permitiendo decisiones proactivas que generan ventajas competitivas sostenibles.'
       },
       {
         type: 'heading',
-        content: 'The Shift from Manual Testing to Sensor-Driven Insights'
+        content: 'Fundamentos de la Analítica Predictiva'
       },
       {
         type: 'paragraph',
-        content: 'Traditional product development often relies on manual testing and subjective feedback, which can be time-consuming and prone to errors. Sensor technology offers a more objective and data-driven approach, providing real-time insights into product performance and user behavior. By embedding sensors into prototypes and early-stage products, developers can gather valuable data on usage patterns, environmental conditions, and potential failure points.'
+        content: 'La analítica predictiva utiliza técnicas estadísticas, algoritmos de machine learning y modelado matemático para analizar datos históricos y actuales, identificando patrones que permiten hacer predicciones sobre eventos futuros con un grado de certeza estadística.'
+      },
+      {
+        type: 'heading',
+        content: 'Aplicaciones Prácticas en Diferentes Sectores'
       },
       {
         type: 'subheading',
-        content: 'Key Benefits of Sensor Integration'
+        content: 'Retail y E-commerce'
       },
       {
         type: 'list',
         items: [
-          'Real-time Performance Measurement: Sensors provide continuous data on product performance, allowing developers to identify and address issues quickly.',
-          'Automated Testing: Sensors can automate testing processes, reducing the need for manual intervention and accelerating development cycles.',
-          'Data-Driven Insights: Sensor data provides valuable insights into user behavior, enabling developers to optimize product design and functionality.',
-          'Predictive Maintenance: Sensors can detect early signs of wear and tear, allowing for proactive maintenance and preventing costly downtime.'
+          'Predicción de demanda estacional y por producto',
+          'Optimización de precios dinámicos basada en elasticidad',
+          'Identificación de clientes con alta probabilidad de churn',
+          'Forecasting de tendencias de consumo emergentes'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Manufactura y Operaciones'
+      },
+      {
+        type: 'list',
+        items: [
+          'Mantenimiento predictivo de maquinaria y equipos',
+          'Optimización de cadena de suministro y logística',
+          'Predicción de fallas de calidad en procesos productivos',
+          'Planificación de capacidad basada en demanda proyectada'
         ]
       },
       {
         type: 'heading',
-        content: 'Real-time Performance Measurement Made Easy'
-      },
-      {
-        type: 'paragraph',
-        content: 'One of the most significant advantages of sensor technology is its ability to provide real-time performance measurement. By embedding sensors into products, developers can continuously monitor key metrics such as temperature, pressure, vibration, and strain. This data can be used to identify potential issues, optimize product performance, and ensure that products meet design specifications.'
-      },
-      {
-        type: 'heading',
-        content: 'Faster Iterations Through Automated Testing and AI'
-      },
-      {
-        type: 'paragraph',
-        content: 'Sensor technology can also be used to automate testing processes, reducing the need for manual intervention and accelerating development cycles. By integrating sensors with AI algorithms, developers can create intelligent testing systems that automatically identify and diagnose issues. These systems can also be used to predict product failures, allowing for proactive maintenance and preventing costly downtime.'
-      },
-      {
-        type: 'heading',
-        content: 'Key Business Benefits'
+        content: 'Tecnologías Clave en Analítica Predictiva'
       },
       {
         type: 'table',
         tableData: {
-          headers: ['Industry', 'Challenge', 'Sensor Solution'],
+          headers: ['Técnica', 'Aplicación', 'Beneficio Principal'],
           rows: [
-            ['Construction', 'Monitoring worker safety on construction sites', 'Wearable sensors that detect falls, monitor vital signs, and alert emergency services.'],
-            ['Manufacturing', 'Preventing equipment failures in manufacturing plants', 'Embedded sensors that monitor equipment performance, detect early signs of wear and tear, and trigger maintenance alerts.'],
-            ['Healthcare', 'Monitoring patient health in hospitals and clinics', 'Wearable sensors that track vital signs, detect infections, and alert medical staff.'],
-          ],
-        },
+            ['Regresión Lineal/Logística', 'Predicción de ventas y conversiones', 'Simplicidad e interpretabilidad'],
+            ['Random Forest', 'Clasificación de riesgo crediticio', 'Alta precisión con datos mixtos'],
+            ['Redes Neuronales', 'Reconocimiento de patrones complejos', 'Capacidad de aprendizaje profundo'],
+            ['Series Temporales (ARIMA)', 'Forecasting de demanda', 'Especialización en datos temporales']
+          ]
+        }
       },
       {
         type: 'heading',
-        content: 'Ready to Transform Your Product Development?'
+        content: 'Implementación Exitosa: Metodología D&J'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Definición clara de objetivos de negocio y métricas de éxito',
+          'Evaluación de calidad y disponibilidad de datos históricos',
+          'Selección de algoritmos apropiados basada en tipo de problema',
+          'Desarrollo iterativo con validación continua de modelos',
+          'Implementación gradual con monitoreo de performance en producción'
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Casos de Éxito Documentados'
       },
       {
         type: 'paragraph',
-        content: 'Sensor technology is revolutionizing product development across industries, offering a more objective, data-driven, and efficient approach. By strategically leveraging sensor technology, businesses can enhance their product development processes, improve product performance, and gain a competitive edge.'
+        content: 'Una distribuidora de alimentos implementó nuestros modelos predictivos para optimizar compras e inventarios. El resultado: reducción del 35% en productos vencidos y aumento del 22% en rotación de inventario, generando un ROI del 280% en el primer año.'
       },
+      {
+        type: 'stats',
+        statsData: [
+          {
+            value: '35%',
+            label: 'reducción en desperdicio de productos',
+            icon: 'TrendingDown'
+          },
+          {
+            value: '22%',
+            label: 'aumento en rotación de inventario',
+            icon: 'RefreshCw'
+          },
+          {
+            value: '280%',
+            label: 'ROI en el primer año',
+            icon: 'DollarSign'
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Desafíos y Consideraciones Clave'
+      },
+      {
+        type: 'paragraph',
+        content: 'La implementación exitosa de analítica predictiva requiere datos de calidad, comprensión del contexto empresarial, y una cultura organizacional que valore las decisiones basadas en evidencia. Es crucial balancear la sofisticación técnica con la usabilidad práctica.'
+      },
+      {
+        type: 'quote',
+        content: 'La analítica predictiva no elimina la incertidumbre, pero nos permite gestionarla de manera más inteligente y estratégica.'
+      },
+      {
+        type: 'heading',
+        content: 'El Futuro de la Predicción Empresarial'
+      },
+      {
+        type: 'paragraph',
+        content: 'Los avances en IA generativa, computación en la nube y real-time analytics están democratizando el acceso a capacidades predictivas avanzadas. Las PYMEs que adopten estas tecnologías hoy estarán mejor posicionadas para navegar la incertidumbre del mañana.'
+      }
     ]
   },
   {
     id: '3',
-    title: 'From Idea to Launch: Our Smart Product Development Process',
-    slug: 'from-idea-to-launch-development-process',
-    excerpt: 'Take a behind-the-scenes look at how WRLDS transforms ideas into market-ready smart products through our proven 5-step development process.',
-    date: 'May 15, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Process',
-    imageUrl: '/lovable-uploads/5262afdb-dd24-4d5e-be66-7c6717adbca9.png',
+    title: 'Automatización Inteligente: Liberando el Potencial Humano en la Empresa',
+    slug: 'automatizacion-inteligente-potencial-humano',
+    excerpt: 'Descubre cómo la automatización basada en IA no solo optimiza procesos, sino que libera a los equipos para enfocarse en actividades de mayor valor estratégico.',
+    date: 'Noviembre 22, 2024',
+    author: 'D&J Partners',
+    category: 'Automatización',
+    imageUrl: '/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png',
     keywords: [
-      'product development',
-      'smart product design',
-      'development process',
-      'prototyping',
-      'manufacturing',
-      'product launch',
-      'innovation process',
-      'textile development',
-      'smart textiles'
+      'automatización inteligente',
+      'RPA',
+      'optimización de procesos',
+      'eficiencia operativa',
+      'transformación digital',
+      'AI automation',
+      'workflow automation',
+      'process optimization'
     ],
-    metaDescription: 'Learn about WRLDS proven 5-step process for developing smart products from initial concept to market launch. Discover how we turn ideas into reality.',
+    metaDescription: 'Aprende cómo la automatización inteligente transforma los procesos empresariales, mejora la eficiencia y permite que los equipos se enfoquen en tareas estratégicas.',
     content: [
       {
         type: 'paragraph',
-        content: 'At WRLDS, we simplify the journey from an idea to a finished smart product. Whether you\'re starting from scratch or already have a clear concept ready to scale, we\'re here to support you exactly where you need us.'
-      },
-      {
-        type: 'paragraph',
-        content: 'Let\'s walk through our process with an example: Imagine you come to us with the idea of a smart glove. This glove automatically senses the outside temperature and adjusts its own warmth accordingly. It also connects to an app where you can control settings and view temperature information.'
+        content: 'La automatización inteligente va más allá de la simple robotización de tareas. Combina IA, machine learning y automatización de procesos para crear sistemas que no solo ejecutan tareas repetitivas, sino que aprenden, se adaptan y mejoran continuamente.'
       },
       {
         type: 'heading',
-        content: 'Step 1: Understanding Your Idea'
+        content: 'Evolución de la Automatización Empresarial'
       },
       {
         type: 'paragraph',
-        content: 'It all starts with a clear conversation. When you bring us your glove idea, we first meet to fully understand your vision and requirements. We\'ll discuss key points: What problem does the product solve? Who will use it? After that, we set a clear and practical roadmap.'
-      },
-      {
-        type: 'paragraph',
-        content: 'If you already have a basic prototype or idea, we\'ll quickly identify how we can help scale it effectively.'
+        content: 'Hemos pasado de la automatización básica de procesos (RPA) a sistemas inteligentes capaces de tomar decisiones complejas, procesar lenguaje natural y adaptarse a excepciones sin intervención humana.'
       },
       {
         type: 'heading',
-        content: 'Step 2: Building the First Prototype'
+        content: 'Áreas de Mayor Impacto'
       },
       {
-        type: 'paragraph',
-        content: 'Once the plan is set, our team moves quickly to develop the first working prototype. For your smart glove, we design temperature sensors, heating elements, electronics, and the companion app to work seamlessly together.'
-      },
-      {
-        type: 'paragraph',
-        content: 'We use rapid prototyping techniques like 3D printing and quick electronics integration. Within weeks, you get a tangible product to test and gather feedback.'
-      },
-      {
-        type: 'heading',
-        content: 'Step 3: Testing & Refinement'
-      },
-      {
-        type: 'paragraph',
-        content: 'With your prototype ready, we jump into testing. You\'ll evaluate the glove under real-world conditions to identify improvements. Together, we\'ll adjust designs, optimize the heating response, enhance the app, and retest frequently.'
-      },
-      {
-        type: 'paragraph',
-        content: 'This process is quick, iterative, and practical, bringing you closer to a reliable, user-friendly product.'
-      },
-      {
-        type: 'heading',
-        content: 'Step 4: Preparing for Production'
-      },
-      {
-        type: 'paragraph',
-        content: 'Next, we prepare the glove for large-scale manufacturing. We refine the design for efficient production, select reliable components, and ensure quality at scale.'
-      },
-      {
-        type: 'paragraph',
-        content: 'If you already have a manufacturing partner, we\'ll work closely with them. If not, we\'ll help you find the best production solution. In either case, we\'ll integrate the technology smoothly into the production process.'
-      },
-      {
-        type: 'heading',
-        content: 'Step 5: Product Launch'
-      },
-      {
-        type: 'paragraph',
-        content: 'Finally, it\'s launch day. You introduce your smart glove, thoroughly tested and production-ready, to the market. WRLDS provides ongoing support to ensure a smooth launch—from technical documentation to supporting the app\'s release.'
-      },
-      {
-        type: 'heading',
-        content: 'Why Choose WRLDS?'
-      },
-      {
-        type: 'paragraph',
-        content: 'Developing smart products can be complex, but we make it simple. Clients choose us because:'
+        type: 'subheading',
+        content: 'Gestión Financiera y Contable'
       },
       {
         type: 'list',
         items: [
-          'Clear Process: Simple steps, clear timelines, and reduced risks.',
-          'Speed & Flexibility: Rapid prototyping and agile iterations get your product to market faster.',
-          'Comprehensive Expertise: Hardware, software, and design experts under one roof.',
-          'Practical Results: Real-world testing ensures your final product meets user needs.'
+          'Conciliación bancaria automatizada',
+          'Procesamiento inteligente de facturas',
+          'Generación automática de reportes financieros',
+          'Detección de anomalías en transacciones'
         ]
       },
       {
+        type: 'subheading',
+        content: 'Atención al Cliente'
+      },
+      {
+        type: 'list',
+        items: [
+          'Chatbots inteligentes con comprensión contextual',
+          'Clasificación automática de tickets de soporte',
+          'Enrutamiento inteligente de consultas',
+          'Seguimiento predictivo de satisfacción'
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Casos de Implementación Exitosa'
+      },
+      {
         type: 'paragraph',
-        content: 'Have an idea or ready to scale an existing product? We\'d love to hear from you and help bring your vision to life. Reach out and let\'s get started!'
+        content: 'Una empresa textil familiar automatizó su proceso de control de calidad mediante computer vision y machine learning. Los resultados incluyeron una reducción del 40% en defectos de producción y liberación de 3 empleados para tareas de innovación y desarrollo de productos.'
+      },
+      {
+        type: 'stats',
+        statsData: [
+          {
+            value: '70%',
+            label: 'reducción en tiempo de procesamiento',
+            icon: 'Clock'
+          },
+          {
+            value: '85%',
+            label: 'mejora en precisión de tareas',
+            icon: 'Target'
+          },
+          {
+            value: '60%',
+            label: 'liberación de tiempo para tareas estratégicas',
+            icon: 'Users'
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Metodología de Implementación'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Mapeo detallado de procesos actuales y identificación de puntos de dolor',
+          'Priorización basada en impacto empresarial y complejidad técnica',
+          'Desarrollo de pilotos para validar beneficios antes del rollout completo',
+          'Capacitación del equipo en nuevos workflows automatizados',
+          'Monitoreo continuo y optimización basada en métricas de performance'
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'El Factor Humano en la Automatización'
+      },
+      {
+        type: 'paragraph',
+        content: 'La automatización inteligente exitosa no reemplaza a las personas, sino que las empodera. Al eliminar tareas repetitivas y propensas a errores, permite que los colaboradores se enfoquen en actividades que requieren creatividad, pensamiento crítico y relaciones interpersonales.'
+      },
+      {
+        type: 'quote',
+        content: 'La verdadera magia de la automatización ocurre cuando las máquinas hacen lo que hacen mejor, liberando a las personas para hacer lo que solo ellas pueden hacer.'
+      },
+      {
+        type: 'heading',
+        content: 'ROI y Beneficios Medibles'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Métrica', 'Antes', 'Después', 'Mejora'],
+          rows: [
+            ['Tiempo de procesamiento facturas', '45 min', '8 min', '82%'],
+            ['Errores en conciliación bancaria', '12%', '2%', '83%'],
+            ['Tiempo respuesta atención cliente', '4 horas', '15 min', '94%'],
+            ['Costo operativo por transacción', '$3.50', '$0.80', '77%']
+          ]
+        }
+      },
+      {
+        type: 'heading',
+        content: 'Tendencias Futuras'
+      },
+      {
+        type: 'paragraph',
+        content: 'La automatización inteligente evoluciona hacia sistemas cada vez más adaptativos, capaces de aprender de contextos cambiantes y tomar decisiones complejas. La integración con IA generativa abrirá nuevas posibilidades en automatización de procesos creativos y de comunicación.'
       }
     ]
   },
   {
     id: '2',
-    title: 'AI-Powered Uniforms: The Future of Emergency Response and Worker Safety',
-    slug: 'ai-powered-uniforms-emergency-alerts',
-    excerpt: 'Explore how AI-integrated uniforms are revolutionizing emergency response by providing real-time health monitoring and automated alert systems for first responders and industrial workers.',
-    date: 'May 8, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Innovation',
-    imageUrl: '/lovable-uploads/4187f423-ba69-4043-be76-c43098488348.png',
+    title: 'Transformación Digital para PYMEs: Estrategias Prácticas de Implementación',
+    slug: 'transformacion-digital-pymes-estrategias-practicas',
+    excerpt: 'Una guía completa para abordar la transformación digital en pequeñas y medianas empresas, con estrategias probadas y casos de éxito reales.',
+    date: 'Noviembre 15, 2024',
+    author: 'D&J Partners',
+    category: 'Estrategia Digital',
+    imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
     keywords: [
-      'AI uniforms',
-      'emergency response',
-      'worker safety',
-      'smart uniforms',
-      'health monitoring',
-      'first responders',
-      'safety technology',
-      'wearable AI'
+      'transformación digital',
+      'digitalización PYME',
+      'estrategia tecnológica',
+      'modernización empresarial',
+      'adopción tecnológica',
+      'cambio organizacional',
+      'innovación digital'
     ],
-    metaDescription: 'Discover how AI-powered uniforms are transforming emergency response and worker safety with real-time monitoring and automated alerts.',
+    metaDescription: 'Guía práctica para la transformación digital de PYMEs. Estrategias, casos de éxito y metodologías probadas para modernizar tu empresa efectivamente.',
     content: [
       {
         type: 'paragraph',
-        content: 'The integration of artificial intelligence (AI) into everyday workwear is no longer a futuristic concept but a rapidly evolving reality. AI-powered uniforms are poised to revolutionize emergency response and worker safety by providing real-time health monitoring and automated alert systems for first responders and industrial workers.'
+        content: 'La transformación digital no es solo adoptar nuevas tecnologías; es reimaginar cómo opera tu negocio en la era digital. Para las PYMEs, esto representa tanto una oportunidad única como un desafío complejo que requiere estrategia, recursos y visión a largo plazo.'
       },
       {
         type: 'heading',
-        content: 'The Convergence of AI and Wearable Technology'
+        content: 'Diagnóstico: Punto de Partida para la Transformación'
       },
       {
         type: 'paragraph',
-        content: 'The convergence of AI and wearable technology has paved the way for the development of smart uniforms capable of collecting and analyzing vast amounts of data. These uniforms are equipped with an array of sensors that monitor vital signs, environmental conditions, and potential hazards.'
+        content: 'Antes de implementar cualquier tecnología, es crucial entender el estado actual de madurez digital de la organización, identificar brechas críticas y establecer una visión clara del estado futuro deseado.'
+      },
+      {
+        type: 'heading',
+        content: 'Los Pilares de la Transformación Digital'
       },
       {
         type: 'subheading',
-        content: 'Key Features of AI-Powered Uniforms'
+        content: '1. Cultura y Liderazgo Digital'
       },
       {
-        type: 'list',
+        type: 'paragraph',
+        content: 'La transformación exitosa comienza con el liderazgo. Los directivos deben convertirse en embajadores del cambio, promoviendo una cultura de innovación y aprendizaje continuo.'
+      },
+      {
+        type: 'subheading',
+        content: '2. Procesos Optimizados'
+      },
+      {
+        type: 'paragraph',
+        content: 'Digitalizar procesos ineficientes solo amplifica los problemas existentes. La optimización de procesos debe preceder a la implementación tecnológica.'
+      },
+      {
+        type: 'subheading',
+        content: '3. Tecnología Estratégica'
+      },
+      {
+        type: 'paragraph',
+        content: 'La selección de tecnologías debe alinearse con objetivos empresariales específicos, priorizando soluciones que generen valor inmediato y escalabilidad futura.'
+      },
+      {
+        type: 'heading',
+        content: 'Roadmap de Implementación'
+      },
+      {
+        type: 'icon-list',
         items: [
-          'Real-time Health Monitoring: AI-powered uniforms continuously monitor vital signs such as heart rate, body temperature, and blood pressure, providing early warnings of potential health issues.',
-          'Automated Alert Systems: In the event of a medical emergency or hazardous situation, AI-powered uniforms can automatically alert emergency responders, providing critical information about the worker\'s location and condition.',
-          'Environmental Monitoring: AI-powered uniforms can detect exposure to hazardous substances, such as toxic gases or radiation, and provide real-time alerts to workers and supervisors.',
-          'Performance Optimization: AI-powered uniforms can track worker movements and provide feedback on posture and ergonomics, helping to prevent injuries and improve performance.'
+          'Fase 1: Digitalización básica (3-6 meses) - Procesos fundamentales y herramientas colaborativas',
+          'Fase 2: Automatización (6-12 meses) - Optimización de workflows y eliminación de tareas manuales',
+          'Fase 3: Inteligencia (12-18 meses) - Implementación de BI y analítica avanzada',
+          'Fase 4: Innovación (18+ meses) - IA, machine learning y capacidades predictivas'
         ]
       },
       {
         type: 'heading',
-        content: 'Transforming Emergency Response'
+        content: 'Casos de Éxito por Sector'
       },
       {
-        type: 'paragraph',
-        content: 'AI-powered uniforms are particularly valuable in emergency response scenarios, where time is of the essence. By providing real-time health monitoring and automated alert systems, these uniforms can help first responders quickly identify and address medical emergencies, potentially saving lives.'
+        type: 'table',
+        tableData: {
+          headers: ['Sector', 'Desafío Principal', 'Solución Digital', 'Resultado'],
+          rows: [
+            ['Construcción', 'Gestión de proyectos fragmentada', 'ERP integrado + BI', '25% mejora en tiempo de entrega'],
+            ['Retail', 'Experiencia cliente inconsistente', 'CRM + Analytics', '30% aumento en retención'],
+            ['Servicios', 'Procesos manuales ineficientes', 'Automatización + Workflows', '40% reducción en tiempo admin'],
+            ['Manufactura', 'Falta visibilidad operativa', 'IoT + Dashboards', '20% mejora en OEE']
+          ]
+        }
       },
       {
         type: 'heading',
-        content: 'Enhancing Worker Safety'
+        content: 'Gestión del Cambio Organizacional'
       },
       {
         type: 'paragraph',
-        content: 'AI-powered uniforms can also play a crucial role in enhancing worker safety in industrial settings. By monitoring environmental conditions and worker movements, these uniforms can help prevent accidents and injuries, creating a safer and more productive work environment.'
+        content: 'El aspecto más crítico de la transformación digital es la gestión del cambio. Las personas son el factor determinante del éxito o fracaso de cualquier iniciativa de digitalización.'
+      },
+      {
+        type: 'stats',
+        statsData: [
+          {
+            value: '70%',
+            label: 'de transformaciones fallan por resistencia al cambio',
+            icon: 'AlertTriangle'
+          },
+          {
+            value: '5x',
+            label: 'mayor éxito con gestión de cambio estructurada',
+            icon: 'TrendingUp'
+          },
+          {
+            value: '85%',
+            label: 'de empleados requieren capacitación continua',
+            icon: 'BookOpen'
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Métricas de Éxito y ROI'
+      },
+      {
+        type: 'paragraph',
+        content: 'La transformación digital debe medirse no solo en términos de adopción tecnológica, sino en impacto empresarial tangible: eficiencia operativa, satisfacción del cliente, crecimiento de ingresos y competitividad de mercado.'
       },
       {
         type: 'quote',
-        content: 'AI-powered uniforms are not just about protecting workers; they\'re about empowering them with the knowledge and tools they need to stay safe and healthy.'
+        content: 'La transformación digital exitosa no es un destino, sino un viaje continuo de adaptación y mejora en respuesta a las demandas cambiantes del mercado.'
+      },
+      {
+        type: 'heading',
+        content: 'Próximos Pasos'
+      },
+      {
+        type: 'paragraph',
+        content: 'Si tu empresa está lista para iniciar o acelerar su transformación digital, el primer paso es una evaluación honesta de tu estado actual y una visión clara de dónde quieres estar. En D&J Partners, te acompañamos en cada etapa de este viaje transformador.'
       }
     ]
   },
   {
     id: '1',
-    title: 'The Rise of Sensor-Integrated Textiles: A New Era in Smart Manufacturing',
-    slug: 'sensor-integrated-textiles-trend',
-    excerpt: 'Discover how sensor-integrated textiles are transforming industries from healthcare to sports, creating new possibilities for smart, responsive products.',
-    date: 'May 2, 2025',
-    author: 'WRLDS Technologies',
-    category: 'Technology',
-    imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
+    title: 'El Futuro de la Consultoría en IA: Tendencias y Oportunidades 2025',
+    slug: 'futuro-consultoria-ia-tendencias-2025',
+    excerpt: 'Análisis de las principales tendencias que están moldeando el futuro de la consultoría en inteligencia artificial y las oportunidades emergentes para las empresas.',
+    date: 'Noviembre 8, 2024',
+    author: 'D&J Partners',
+    category: 'Tendencias',
+    imageUrl: '/lovable-uploads/cbd073dd-ecad-4643-bf2b-efc3d5846994.png',
     keywords: [
-      'smart textiles',
-      'sensor integration',
-      'smart manufacturing',
-      'wearable technology',
-      'textile innovation',
-      'smart fabrics',
-      'textile sensors'
+      'consultoría IA',
+      'tendencias 2025',
+      'inteligencia artificial',
+      'futuro tecnológico',
+      'IA empresarial',
+      'consultoría tecnológica',
+      'innovación empresarial'
     ],
-    metaDescription: 'Learn about the revolutionary trend of sensor-integrated textiles and how they are creating new possibilities in smart manufacturing.',
+    metaDescription: 'Descubre las tendencias clave que definirán la consultoría en IA en 2025. Análisis del futuro de la inteligencia artificial empresarial y oportunidades emergentes.',
     content: [
       {
         type: 'paragraph',
-        content: 'Sensor-integrated textiles are rapidly emerging as a transformative technology, poised to revolutionize industries ranging from healthcare to sports. By seamlessly embedding sensors into fabrics, these innovative textiles are creating new possibilities for smart, responsive products that can monitor vital signs, track performance, and enhance safety.'
+        content: 'El panorama de la consultoría en inteligencia artificial está experimentando una transformación acelerada. Las empresas ya no preguntan si deben adoptar IA, sino cómo pueden implementarla de manera efectiva para generar ventajas competitivas sostenibles.'
       },
       {
         type: 'heading',
-        content: 'The Convergence of Textiles and Technology'
-      },
-      {
-        type: 'paragraph',
-        content: 'The convergence of textiles and technology has led to the development of sensor-integrated textiles, which combine the comfort and flexibility of fabrics with the intelligence and connectivity of sensors. These textiles are created by weaving or knitting sensors directly into the fabric structure, allowing them to conform to the body and provide continuous, real-time data.'
+        content: 'Tendencias Dominantes en 2025'
       },
       {
         type: 'subheading',
-        content: 'Key Applications of Sensor-Integrated Textiles'
+        content: 'Democratización de la IA'
       },
       {
-        type: 'list',
+        type: 'paragraph',
+        content: 'Las herramientas de IA están volviéndose más accesibles para las PYMEs, con soluciones no-code y low-code que permiten implementaciones rápidas sin grandes equipos técnicos.'
+      },
+      {
+        type: 'subheading',
+        content: 'IA Explicable y Ética'
+      },
+      {
+        type: 'paragraph',
+        content: 'La demanda por sistemas de IA transparentes y éticos está creciendo, especialmente en sectores regulados como finanzas y salud.'
+      },
+      {
+        type: 'subheading',
+        content: 'Edge AI y Computación Distribuida'
+      },
+      {
+        type: 'paragraph',
+        content: 'El procesamiento de IA en el edge está permitiendo aplicaciones en tiempo real con menor latencia y mayor privacidad de datos.'
+      },
+      {
+        type: 'heading',
+        content: 'Oportunidades Emergentes'
+      },
+      {
+        type: 'icon-list',
         items: [
-          'Healthcare: Sensor-integrated textiles can monitor vital signs such as heart rate, body temperature, and blood pressure, providing early warnings of potential health issues.',
-          'Sports: Sensor-integrated textiles can track athletic performance, measuring metrics such as speed, distance, and acceleration, helping athletes optimize their training and prevent injuries.',
-          'Safety: Sensor-integrated textiles can detect exposure to hazardous substances, such as toxic gases or radiation, providing real-time alerts to workers and supervisors.',
-          'Fashion: Sensor-integrated textiles can create interactive and responsive garments that change color, shape, or function based on the wearer\'s movements or environment.'
+          'IA Generativa para automatización de contenido y procesos creativos',
+          'Gemelos digitales inteligentes para optimización operativa',
+          'IA conversacional avanzada para experiencias cliente personalizadas',
+          'Sistemas de recomendación híbridos para e-commerce y retail',
+          'IA predictiva para mantenimiento y gestión de activos'
         ]
       },
       {
         type: 'heading',
-        content: 'Transforming Industries'
+        content: 'Desafíos y Consideraciones'
       },
       {
         type: 'paragraph',
-        content: 'Sensor-integrated textiles are poised to transform a wide range of industries, creating new possibilities for smart, responsive products that enhance health, safety, and performance. As the technology continues to evolve, we can expect to see even more innovative applications emerge, further blurring the lines between textiles and technology.'
+        content: 'A pesar del potencial transformador, las empresas enfrentan desafíos significativos: escasez de talento especializado, preocupaciones sobre privacidad y seguridad, y la necesidad de marcos regulatorios claros.'
+      },
+      {
+        type: 'stats',
+        statsData: [
+          {
+            value: '78%',
+            label: 'de empresas planean aumentar inversión en IA',
+            icon: 'TrendingUp'
+          },
+          {
+            value: '45%',
+            label: 'reporta escasez de talento como principal barrera',
+            icon: 'Users'
+          },
+          {
+            value: '$15.7T',
+            label: 'impacto económico global proyectado para 2030',
+            icon: 'DollarSign'
+          }
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'El Rol Evolutivo del Consultor en IA'
+      },
+      {
+        type: 'paragraph',
+        content: 'Los consultores en IA están evolucionando de implementadores técnicos a estrategas de transformación, ayudando a las organizaciones a navegar no solo la adopción tecnológica, sino también el cambio cultural y organizacional necesario.'
       },
       {
         type: 'quote',
-        content: 'Sensor-integrated textiles are not just about creating smart fabrics; they\'re about creating a new era of smart manufacturing, where textiles are seamlessly integrated with technology to enhance our lives.'
+        content: 'El futuro de la consultoría en IA no está solo en implementar tecnología, sino en crear ecosistemas inteligentes que amplifiquen las capacidades humanas.'
+      },
+      {
+        type: 'heading',
+        content: 'Preparándose para el Futuro'
+      },
+      {
+        type: 'paragraph',
+        content: 'Las empresas que prosperarán son aquellas que adopten un enfoque estratégico y sostenible hacia la IA, invirtiendo tanto en tecnología como en el desarrollo de sus equipos y cultura organizacional.'
       }
     ]
   }
