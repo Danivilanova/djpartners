@@ -284,6 +284,14 @@
   animation: pulse-slow 4s ease-in-out infinite;
 }
 
+/* Utility class for line clamping */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 /* Hero video específico para asegurar que tenga color */
 .hero-video {
   filter: none !important;
