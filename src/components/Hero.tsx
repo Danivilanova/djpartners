@@ -52,7 +52,7 @@ const Hero = () => {
             muted 
             playsInline 
             preload="metadata"
-            className={`w-full h-full object-cover opacity-80 ${isMobile ? 'object-right' : 'object-center'}`}
+            className={`w-full h-full object-cover opacity-90 hero-video ${isMobile ? 'object-right' : 'object-center'}`}
             poster="/src/assets/hero-consulting.jpg"
           >
             <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />

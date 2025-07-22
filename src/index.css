@@ -277,3 +277,11 @@
 .animate-pulse-slow {
   animation: pulse-slow 4s ease-in-out infinite;
 }
+
+/* Hero video específico para asegurar que tenga color */
+.hero-video {
+  filter: none !important;
+  -webkit-filter: none !important;
+  grayscale: 0 !important;
+  saturate: 1.1 !important;
+}
