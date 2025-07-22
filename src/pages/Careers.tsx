@@ -93,7 +93,7 @@ const Careers = () => {
                   </div>
                   <h3 className="font-bold text-xl mb-4 text-gray-900">Acuerdos de Partnership</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    Establece alianzas estratégicas con WRLDS para expandir servicios conjuntamente y crear valor mutuo.
+                    Establece alianzas estratégicas con D&J Partners para expandir servicios conjuntamente y crear valor mutuo.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
                     <p>• Alianzas estratégicas</p>
