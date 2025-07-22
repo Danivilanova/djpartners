@@ -38,7 +38,7 @@ const Features = () => {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Consultoría de Analítica Predictiva",
       description: "Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados.",
-      image: "/lovable-uploads/cf8966e3-de0d-445f-9fbd-ee6c48daa7ff.png"
+      image: "/src/assets/consulting-meeting.jpg"
     },
     {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
