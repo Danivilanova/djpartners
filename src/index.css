@@ -16,32 +16,32 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 27% 18%;
 
-    --primary: 220 45% 18%;
+    --primary: 214 42% 19%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 13% 95%;
-    --secondary-foreground: 220 27% 18%;
+    --secondary: 214 25% 95%;
+    --secondary-foreground: 214 42% 19%;
 
-    --muted: 220 13% 95%;
-    --muted-foreground: 220 9% 45%;
+    --muted: 214 25% 95%;
+    --muted-foreground: 214 20% 45%;
 
-    --accent: 220 13% 95%;
-    --accent-foreground: 220 27% 18%;
+    --accent: 214 25% 95%;
+    --accent-foreground: 214 42% 19%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 220 45% 60%;
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 214 42% 60%;
 
     --radius: 0.5rem;
     
     /* Colores corporativos específicos */
-    --corporate-blue: 220 45% 18%;
-    --corporate-blue-light: 220 45% 28%;
-    --corporate-gray: 220 13% 25%;
-    --corporate-gray-light: 220 13% 85%;
+    --corporate-blue: 214 42% 19%;
+    --corporate-blue-light: 214 42% 29%;
+    --corporate-gray: 214 25% 25%;
+    --corporate-gray-light: 214 25% 85%;
   }
 }
 
