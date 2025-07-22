@@ -153,8 +153,8 @@ const WhyWrlds = () => {
                   <BarChart className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Nuevas Fuentes de Ingresos</h4>
-                  <p className="text-gray-700">Creamos productos y servicios potenciados por IA que generan ingresos adicionales de alto margen.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Reducción de Costes Operativos</h4>
+                  <p className="text-gray-700">Optimizamos tus procesos clave mediante automatización inteligente para reducir tiempos, errores y costes innecesarios en tu operación diaria.</p>
                 </div>
               </div>
             </motion.div>
@@ -162,11 +162,23 @@ const WhyWrlds = () => {
             <motion.div variants={itemVariants} className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all">
               <div className="flex items-start">
                 <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <Sparkles className="w-6 h-6 text-gray-700" />
+                  <ChartBar className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Innovación que Atrae</h4>
-                  <p className="text-gray-700">Rompemos barreras para llegar a clientes ideales con tecnología que hace destacar tu marca.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Control Total del Negocio</h4>
+                  <p className="text-gray-700">Implementamos sistemas de Business Intelligence que te permiten visualizar, analizar y tomar decisiones basadas en datos en tiempo real.</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div variants={itemVariants} className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all">
+              <div className="flex items-start">
+                <div className="bg-gray-200 rounded-full p-3 mr-4">
+                  <Target className="w-6 h-6 text-gray-700" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Procesos que Mejoran Contigo</h4>
+                  <p className="text-gray-700">Evaluamos y rediseñamos tus procesos actuales con metodologías de benchmarking, asegurando mejoras continuas y comparativas con los mejores del sector.</p>
                 </div>
               </div>
             </motion.div>
@@ -177,20 +189,8 @@ const WhyWrlds = () => {
                   <Zap className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Desarrollo en Zona de Confort</h4>
-                  <p className="text-gray-700">Desarrollamos tecnología de vanguardia mientras tú te concentras en lo que mejor sabes hacer.</p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div variants={itemVariants} className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all">
-              <div className="flex items-start">
-                <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <Rocket className="w-6 h-6 text-gray-700" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Saltos de Marca</h4>
-                  <p className="text-gray-700">Habilitamos avances tecnológicos que definen el futuro de tu marca y posicionamiento.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Tecnología al Servicio de tu Estrategia</h4>
+                  <p className="text-gray-700">Desplegamos herramientas inteligentes adaptadas a tu modelo de negocio para escalar lo que ya haces bien y anticiparte a los cambios del mercado.</p>
                 </div>
               </div>
             </motion.div>
