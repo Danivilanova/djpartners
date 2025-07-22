@@ -1,82 +1,158 @@
 
-import React from 'react';
-import { Mail, Linkedin, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Send } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactInfo = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const serviceId = 'service_ht3opm9';
+      const templateId = 'template_5l8m6nc';
+      const publicKey = 'MDI5u0mTNM8yjgEjR';
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'D&J Partners',
+        },
+        publicKey
+      );
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <section id="contact-info" className="bg-gradient-to-b from-white to-black text-white relative py-[15px] md:py-[25px]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-16">
-          <div className="inline-block mb-3 px-3 py-1 bg-white text-black rounded-full text-sm font-medium">
-            Get In Touch
+    <section id="contact-info" className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-block mb-3 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+            Contactanos
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-            Contact Us Today
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            Hablemos Hoy
           </h2>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Have questions about our AI-powered sensor solutions? Reach out to our team and let's discuss how we can help bring your ideas to life.
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            ¿Tienes preguntas sobre nuestros servicios de consultoría en IA? Contacta con nuestro equipo y hablemos sobre cómo podemos ayudarte a transformar tu negocio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Felix's Contact Info */}
-          <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
-            <div className="flex flex-col items-center text-center">
-              <img 
-                src="/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png"
-                alt="Felix von Heland"
-                className="w-32 h-32 rounded-full mb-4 object-cover filter grayscale"
-              />
-              <h3 className="text-xl font-bold text-gray-900">Felix von Heland</h3>
-              <p className="text-gray-600 mb-4">CEO and Founder</p>
-              <div className="flex flex-col space-y-3">
-                <a href="mailto:felix@wrlds.com" className="flex items-center text-gray-700 hover:text-blue-600">
-                  <Mail className="w-5 h-5 mr-2" />
-                  felix@wrlds.com
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/felixvonheland/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-700 hover:text-blue-600"
-                >
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn Profile
-                </a>
+        <div className="max-w-2xl mx-auto">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Nombre *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  placeholder="tu@email.com"
+                />
               </div>
             </div>
-          </div>
+            
+            <div className="mb-6">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                Mensaje *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                rows={5}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+                placeholder="Cuéntanos sobre tu proyecto o consulta..."
+              />
+            </div>
 
-          {/* Love's Contact Info */}
-          <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
-            <div className="flex flex-col items-center text-center">
-              <img 
-                src="/lovable-uploads/a9bb9110-964a-43b0-a5ab-7162140cd133.png"
-                alt="Love Anderberg"
-                className="w-32 h-32 rounded-full mb-4 object-cover filter grayscale"
-              />
-              <h3 className="text-xl font-bold text-gray-900">Love Anderberg</h3>
-              <p className="text-gray-600 mb-4">COO</p>
-              <div className="flex flex-col space-y-3">
-                <a href="mailto:love@wrlds.com" className="flex items-center text-gray-700 hover:text-blue-600">
-                  <Mail className="w-5 h-5 mr-2" />
-                  love@wrlds.com
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/love-anderberg-67549a174/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-700 hover:text-blue-600"
-                >
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn Profile
-                </a>
-                <a href="tel:+46760149508" className="flex items-center text-gray-700 hover:text-blue-600">
-                  <Phone className="w-5 h-5 mr-2" />
-                  076-014 95 08
-                </a>
-              </div>
-            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Enviar Mensaje
+                </>
+              )}
+            </button>
+          </form>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600 mb-4">O escríbenos directamente a:</p>
+            <a 
+              href="mailto:info@djpartners.es" 
+              className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              info@djpartners.es
+            </a>
           </div>
         </div>
       </div>
