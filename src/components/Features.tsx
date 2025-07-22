@@ -165,7 +165,7 @@ const Features = () => {
             ref={hijackSectionRef}
             className={cn(
               "relative transition-all duration-500",
-              isHijacked ? "fixed inset-0 z-50 bg-black" : "grid grid-cols-1 md:grid-cols-2 gap-5"
+              isHijacked ? "fixed inset-0 z-50 bg-slate-800" : "grid grid-cols-1 md:grid-cols-2 gap-5"
             )}
             style={{ height: isHijacked ? '100vh' : 'auto' }}
           >
@@ -209,10 +209,10 @@ const Features = () => {
                   <div className={cn(
                     "absolute inset-0 transition-opacity duration-300",
                     isHijacked 
-                      ? "bg-black/30" 
+                      ? "bg-slate-800/30" 
                       : hoveredFeature === index 
-                        ? "bg-black/40" 
-                        : "bg-black/50"
+                        ? "bg-slate-800/40" 
+                        : "bg-slate-800/50"
                   )}></div>
                 </div>
                 
@@ -317,7 +317,7 @@ const Features = () => {
           </div>
         </div>
         <div className="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
+          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
             ¿Necesitas una Solución Personalizada?
             <MessageSquare className="ml-2 w-4 h-4 group-hover:animate-pulse" />
           </Button>
@@ -474,7 +474,7 @@ const Features = () => {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
+              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
                 Consulta con Nuestros Expertos
                 <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
               </Button>

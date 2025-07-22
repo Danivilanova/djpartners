@@ -44,8 +44,8 @@ const Hero = () => {
   };
   
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container bg-black relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
-        <div className="absolute inset-0 bg-black w-full">
+      <div className="banner-container bg-slate-800 relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
+        <div className="absolute inset-0 bg-slate-800 w-full">
           <video 
             autoPlay 
             loop 
@@ -63,7 +63,7 @@ const Hero = () => {
               className={`w-full h-full object-cover opacity-80 ${isMobile ? 'object-right' : 'object-center'}`} 
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/70 to-white"></div>
         </div>
         
         <div className="banner-overlay bg-transparent pt-20 sm:pt-24 md:pt-32 w-full">
@@ -94,7 +94,7 @@ const Hero = () => {
                 {/* Modal de consultoría gratuita */}
                 <ConsultationModal>
                   <button 
-                    className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                    className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:shadow-slate-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
                   >
                     Solicita una Consultoría Gratuita
                     <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />

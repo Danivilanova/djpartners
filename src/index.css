@@ -8,34 +8,40 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    --foreground: 220 27% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 220 27% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 220 27% 18%;
 
-    --primary: 0 0% 10%;
+    --primary: 220 45% 18%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 27% 18%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 45%;
 
-    --accent: 0 0% 95%;
-    --accent-foreground: 0 0% 15%;
+    --accent: 220 13% 95%;
+    --accent-foreground: 220 27% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 50%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 220 45% 60%;
 
     --radius: 0.5rem;
+    
+    /* Colores corporativos específicos */
+    --corporate-blue: 220 45% 18%;
+    --corporate-blue-light: 220 45% 28%;
+    --corporate-gray: 220 13% 25%;
+    --corporate-gray-light: 220 13% 85%;
   }
 }
 
