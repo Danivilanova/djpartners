@@ -32,7 +32,7 @@ const Careers = () => {
                   Únete a Nuestro Equipo
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Explora las diferentes formas de colaborar con WRLDS Technologies. Desde nuestra red de colaboradores freelance hasta posiciones internas y partnerships estratégicos.
+                  Explora las diferentes formas de colaborar con D&J Partners. Desde nuestra red de colaboradores freelance hasta posiciones internas y partnerships estratégicos.
                 </p>
               </motion.div>
 
@@ -115,7 +115,7 @@ const Careers = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center mt-12 p-8 bg-gray-50 rounded-xl"
               >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">¿Por qué elegir WRLDS Technologies?</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">¿Por qué elegir D&J Partners?</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
