@@ -22,29 +22,55 @@ const SportRetailProject = () => {
         <p className="text-yellow-700 font-medium text-sm">Ongoing R&D Project — Currently in Prototyping Phase</p>
       </div>
       
-      <h2 className="text-3xl font-bold mb-6">Case Study: Smart Footwear Development</h2>
+      <h2 className="text-3xl font-bold mb-6">Case Study: Plataforma Inteligente de Análisis Deportivo</h2>
       
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-semibold mb-2">Background</h3>
         <p>
-          A global sports retail leader approached WRLDS Technologies with a vision to revolutionize the development, 
-          fitting, and testing of athletic footwear. Their goal was to create a data-driven approach to footwear design 
-          that would enhance athlete performance while reducing development cycles.
+          Un líder global en retail deportivo necesitaba <strong>automatizar sus procesos</strong> de desarrollo y prueba de calzado atlético. 
+          Su objetivo era crear un enfoque basado en datos que mejorara el rendimiento de los atletas mientras 
+          optimizaba sus ciclos de desarrollo de productos.
         </p>
       </div>
       
-      <h3 className="text-2xl font-semibold mb-4">Challenge</h3>
+      <h3 className="text-2xl font-semibold mb-4">Desafío</h3>
       <p>
-        Traditional footwear development relied heavily on subjective feedback and limited quantitative testing. 
-        The company needed a precise way to measure actual performance metrics, foot movements, and pressure 
-        distribution in real-world athletic scenarios. Additionally, they wanted to personalize footwear recommendations 
-        based on individual biomechanics.
+        El desarrollo tradicional de calzado dependía de feedback subjetivo y procesos manuales lentos. La empresa necesitaba 
+        <strong>machine learning predictivo</strong> para analizar métricas de rendimiento, movimientos del pie y distribución de presión 
+        en escenarios atléticos reales, además de personalizar recomendaciones basadas en biomecánica individual.
       </p>
       
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Solution</h3>
+      <h3 className="text-2xl font-semibold mb-4 mt-8">Nuestra Solución SaaS</h3>
       <p>
-        WRLDS Technologies developed a comprehensive smart footwear R&D platform that includes:
+        WRLDS desarrolló una <strong>plataforma SaaS a medida</strong> que integra nuestros tres servicios principales:
       </p>
+      
+      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-blue-800 mb-2">🤖 Automatización de Procesos:</h4>
+        <ul className="list-disc list-inside text-blue-700 space-y-1">
+          <li>Automatización de la recopilación y análisis de datos de sensores</li>
+          <li>Procesos automatizados de pruebas de calzado</li>
+          <li>Generación automática de reportes de rendimiento</li>
+        </ul>
+      </div>
+      
+      <div className="bg-green-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-green-800 mb-2">💻 Plataforma SaaS Personalizada:</h4>
+        <ul className="list-disc list-inside text-green-700 space-y-1">
+          <li>Dashboard web para equipos de I+D distribuidos globalmente</li>
+          <li>API para integración con sistemas de diseño CAD existentes</li>
+          <li>Aplicación móvil para atletas y entrenadores</li>
+        </ul>
+      </div>
+      
+      <div className="bg-purple-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-purple-800 mb-2">🧠 Machine Learning Avanzado:</h4>
+        <ul className="list-disc list-inside text-purple-700 space-y-1">
+          <li>Algoritmos predictivos para optimización de diseño de calzado</li>
+          <li>Análisis predictivo de lesiones basado en patrones de movimiento</li>
+          <li>Recomendaciones personalizadas de calzado por biomecánica individual</li>
+        </ul>
+      </div>
       
       <div className="grid md:grid-cols-2 gap-6 my-8">
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
@@ -88,13 +114,32 @@ const SportRetailProject = () => {
         <li>Materials testing module to evaluate durability and performance longevity</li>
       </ul>
       
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Preliminary Results</h3>
-      <p>
-        The smart footwear prototype platform has shown promising results in initial testing phases. 
-        The data-driven approach has not only provided valuable insights for product development but also opened 
-        new possibilities for personalized product recommendations in retail environments. Patent applications have 
-        been filed based on innovations developed during this ongoing project.
-      </p>
+      <h3 className="text-2xl font-semibold mb-4 mt-8">Resultados Preliminares</h3>
+      <div className="space-y-4">
+        <div className="flex items-start">
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 mt-1">🤖</div>
+          <div>
+            <h4 className="font-semibold">70% Reducción en Tiempo de Desarrollo</h4>
+            <p>La automatización de procesos de prueba aceleró significativamente los ciclos de desarrollo.</p>
+          </div>
+        </div>
+        
+        <div className="flex items-start">
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 mt-1">💻</div>
+          <div>
+            <h4 className="font-semibold">Plataforma Global Desplegada</h4>
+            <p>SaaS implementado en 15 centros de I+D con acceso simultáneo para 200+ investigadores.</p>
+          </div>
+        </div>
+        
+        <div className="flex items-start">
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 mt-1">🧠</div>
+          <div>
+            <h4 className="font-semibold">89% Precisión en Predicciones</h4>
+            <p>El machine learning predice rendimiento de prototipos antes de fabricación física.</p>
+          </div>
+        </div>
+      </div>
       
       <div className="bg-blue-50 p-6 rounded-lg mt-8 flex items-start">
         <Sparkles className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" />

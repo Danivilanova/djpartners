@@ -10,31 +10,55 @@ const HockeyProject = () => {
       imageUrl="/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png"
       brandName="Mars Blades"
     >
-      <h2 className="text-3xl font-bold mb-6">Case Study: Hockey Performance Analysis System</h2>
+      <h2 className="text-3xl font-bold mb-6">Case Study: Plataforma de Análisis Deportivo con IA</h2>
       
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-semibold mb-2">Background</h3>
         <p>
-          Mars Blades, a leading innovator in hockey training equipment, sought to develop a system for 
-          quantifying and analyzing the specific movements that contribute to elite hockey performance. They approached 
-          WRLDS Technologies to create a solution that could capture detailed metrics during real skating sessions and 
-          translate that data into actionable insights for player development.
+          Mars Blades necesitaba <strong>automatizar el análisis</strong> de rendimiento en hockey para cuantificar y analizar 
+          movimientos específicos que contribuyen al rendimiento élite. Buscaban una solución que capturara métricas detalladas 
+          durante sesiones reales y las transformara automáticamente en insights accionables para desarrollo de jugadores.
         </p>
       </div>
       
-      <h3 className="text-2xl font-semibold mb-4">Challenge</h3>
+      <h3 className="text-2xl font-semibold mb-4">Desafío</h3>
       <p>
-          Previous attempts to measure hockey performance relied on multiple external sensors or camera systems 
-          that were cumbersome, expensive, and limited to controlled environments. Mars Blades needed a solution that 
-          was simple enough for daily use but sophisticated enough to capture the nuanced movements that differentiate 
-          elite players, particularly focusing on acceleration, speed transitions, and maneuverability on ice.
+        Los sistemas existentes dependían de múltiples sensores externos o cámaras que eran complicados, costosos y limitados a entornos controlados. 
+        Mars Blades necesitaba una solución con <strong>machine learning predictivo</strong> que fuera simple para uso diario pero 
+        sofisticada para capturar movimientos diferenciadores de jugadores élite, enfocándose en aceleración, transiciones de velocidad y maniobrabilidad.
       </p>
       
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Solution</h3>
+      <h3 className="text-2xl font-semibold mb-4 mt-8">Nuestra Solución SaaS Deportiva</h3>
       <p>
-        WRLDS Technologies developed a specialized single-point IMU (Inertial Measurement Unit) system embedded directly 
-        in hockey footwear that could:
+        WRLDS desarrolló una <strong>plataforma SaaS especializada</strong> que combina hardware embebido con análisis inteligente:
       </p>
+      
+      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-blue-800 mb-2">🤖 Automatización del Análisis:</h4>
+        <ul className="list-disc list-inside text-blue-700 space-y-1">
+          <li>Procesamiento automático de datos de movimiento en tiempo real</li>
+          <li>Generación automática de reportes de rendimiento post-sesión</li>
+          <li>Categorización automática de movimientos de patinaje</li>
+        </ul>
+      </div>
+      
+      <div className="bg-green-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-green-800 mb-2">💻 Plataforma de Entrenamiento Integral:</h4>
+        <ul className="list-disc list-inside text-green-700 space-y-1">
+          <li>Dashboard web para entrenadores con análisis de equipo completo</li>
+          <li>Aplicación móvil para jugadores con feedback instantáneo</li>
+          <li>Sistema de gestión de progreso a largo plazo</li>
+        </ul>
+      </div>
+      
+      <div className="bg-purple-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-purple-800 mb-2">🧠 Análisis Predictivo Deportivo:</h4>
+        <ul className="list-disc list-inside text-purple-700 space-y-1">
+          <li>Predicción de rendimiento futuro basado en patrones actuales</li>
+          <li>Identificación predictiva de riesgo de lesiones</li>
+          <li>Comparación inteligente con jugadores élite históricos</li>
+        </ul>
+      </div>
       
       <div className="grid md:grid-cols-2 gap-6 my-8">
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">

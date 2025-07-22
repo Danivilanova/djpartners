@@ -15,29 +15,55 @@ const PetProject = () => {
         <p className="text-green-700 font-medium text-sm">Completed Prototype Project</p>
       </div>
       
-      <h2 className="text-3xl font-bold mb-6">Case Study: Smart Pet Monitoring System</h2>
+      <h2 className="text-3xl font-bold mb-6">Case Study: Plataforma InsurTech con IA Predictiva</h2>
       
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-semibold mb-2">Background</h3>
         <p>
-          A leading UK insurance provider identified an opportunity to transform their pet insurance offerings by 
-          incorporating real-time health monitoring. They sought to develop a smart collar system that could track 
-          activity levels and vital signs, providing data for both preventative care and more accurate policy pricing.
+          Una aseguradora líder del Reino Unido necesitaba <strong>automatizar sus procesos</strong> de evaluación de riesgos 
+          en seguros de mascotas mediante monitoreo de salud en tiempo real. Su objetivo era desarrollar un sistema inteligente 
+          que proporcionara datos para cuidado preventivo y pricing de pólizas más preciso.
         </p>
       </div>
       
-      <h3 className="text-2xl font-semibold mb-4">Challenge</h3>
+      <h3 className="text-2xl font-semibold mb-4">Desafío</h3>
       <p>
-        Existing pet activity trackers suffered from short battery life, inaccurate data, and poor durability. 
-        Additionally, most lacked the comprehensive health monitoring capabilities needed to generate truly useful 
-        veterinary insights. The client needed a robust solution that pet owners would consistently use while providing 
-        reliable data for insurance assessments.
+        Los rastreadores existentes tenían vida útil corta, datos imprecisos y poca durabilidad. La mayoría carecía de capacidades 
+        de monitoreo de salud integral. El cliente necesitaba una solución robusta con <strong>machine learning predictivo</strong> 
+        que los dueños usaran consistentemente mientras proporcionaba datos confiables para evaluaciones de seguros.
       </p>
       
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Solution</h3>
+      <h3 className="text-2xl font-semibold mb-4 mt-8">Nuestra Solución InsurTech</h3>
       <p>
-        WRLDS Technologies developed a specialized smart collar system that incorporates:
+        WRLDS desarrolló una <strong>plataforma SaaS especializada</strong> para la industria de seguros:
       </p>
+      
+      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-blue-800 mb-2">🤖 Automatización de Evaluación de Riesgos:</h4>
+        <ul className="list-disc list-inside text-blue-700 space-y-1">
+          <li>Procesamiento automático de datos vitales y actividad</li>
+          <li>Automatización de alertas de salud preventivas</li>
+          <li>Cálculo automático de pricing de pólizas basado en datos reales</li>
+        </ul>
+      </div>
+      
+      <div className="bg-green-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-green-800 mb-2">💻 Ecosistema SaaS Completo:</h4>
+        <ul className="list-disc list-inside text-green-700 space-y-1">
+          <li>Dashboard para ajustadores y actuarios con análisis en tiempo real</li>
+          <li>Portal web para dueños de mascotas con insights de salud</li>
+          <li>API para veterinarios con historial longitudinal de salud</li>
+        </ul>
+      </div>
+      
+      <div className="bg-purple-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-purple-800 mb-2">🧠 Predicción de Salud y Riesgos:</h4>
+        <ul className="list-disc list-inside text-purple-700 space-y-1">
+          <li>Algoritmos predictivos para detección temprana de enfermedades</li>
+          <li>Modelos de riesgo personalizados por raza, edad y actividad</li>
+          <li>Predicción de costos de tratamiento para optimización de pólizas</li>
+        </ul>
+      </div>
       
       <div className="grid md:grid-cols-2 gap-6 my-8">
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">

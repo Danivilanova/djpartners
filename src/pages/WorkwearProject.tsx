@@ -14,28 +14,55 @@ const WorkwearProject = () => {
         <p className="text-yellow-700 font-medium text-sm">Ongoing R&D Project — Currently in Prototyping Phase</p>
       </div>
       
-      <h2 className="text-3xl font-bold mb-6">Case Study: Advanced Climate Control Workwear</h2>
+      <h2 className="text-3xl font-bold mb-6">Case Study: Sistema IoT de Control Climático Inteligente</h2>
       
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-semibold mb-2">Background</h3>
         <p>
-          A leading European textile manufacturer sought to create next-generation workwear for professionals operating in 
-          extreme temperature environments. From arctic construction workers to foundry operators, they needed a solution 
-          that could actively regulate body temperature without compromising mobility or safety compliance.
+          Un fabricante textil europeo líder necesitaba <strong>automatizar el control climático</strong> en ropa de trabajo para 
+          profesionales en entornos de temperatura extrema. Su objetivo era desarrollar una solución que regulara 
+          automáticamente la temperatura corporal sin comprometer la movilidad o el cumplimiento de seguridad.
         </p>
       </div>
       
-      <h3 className="text-2xl font-semibold mb-4">Challenge</h3>
+      <h3 className="text-2xl font-semibold mb-4">Desafío</h3>
       <p>
-        Traditional approaches to temperature regulation in workwear were either passive (insulation) or bulky active systems 
-        with external power sources and limited zoning capabilities. The client needed a fully integrated solution that could adapt 
-        to changing conditions, worker activity levels, and provide targeted temperature control while maintaining all safety certifications.
+        Los enfoques tradicionales para regulación de temperatura eran pasivos o sistemas voluminosos con fuentes de energía externas. 
+        El cliente necesitaba una solución con <strong>machine learning predictivo</strong> que pudiera adaptarse automáticamente 
+        a condiciones cambiantes, niveles de actividad del trabajador, y proporcionar control de temperatura dirigido.
       </p>
       
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Solution</h3>
+      <h3 className="text-2xl font-semibold mb-4 mt-8">Nuestra Solución Integral</h3>
       <p>
-        WRLDS Technologies developed a comprehensive climate control workwear platform featuring:
+        WRLDS desarrolló un <strong>SaaS a medida</strong> que combina hardware inteligente con software predictivo:
       </p>
+      
+      <div className="bg-blue-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-blue-800 mb-2">🤖 Automatización Inteligente:</h4>
+        <ul className="list-disc list-inside text-blue-700 space-y-1">
+          <li>Control automático de temperatura basado en condiciones ambientales</li>
+          <li>Ajustes automáticos según actividad física detectada</li>
+          <li>Gestión energética automatizada para maximizar duración de batería</li>
+        </ul>
+      </div>
+      
+      <div className="bg-green-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-green-800 mb-2">💻 Plataforma de Gestión Centralizada:</h4>
+        <ul className="list-disc list-inside text-green-700 space-y-1">
+          <li>Dashboard web para supervisores de obra y gerentes de seguridad</li>
+          <li>Aplicación móvil para trabajadores con control manual</li>
+          <li>Sistema de alertas en tiempo real por condiciones peligrosas</li>
+        </ul>
+      </div>
+      
+      <div className="bg-purple-50 p-4 rounded-lg mb-6">
+        <h4 className="font-semibold text-purple-800 mb-2">🧠 Predicción Climática Avanzada:</h4>
+        <ul className="list-disc list-inside text-purple-700 space-y-1">
+          <li>Algoritmos que predicen necesidades térmicas individuales</li>
+          <li>Análisis predictivo de fatiga relacionada con temperatura</li>
+          <li>Optimización predictiva del consumo energético</li>
+        </ul>
+      </div>
       
       <div className="grid md:grid-cols-2 gap-6 my-8">
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
