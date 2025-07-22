@@ -26,13 +26,13 @@ const Features = () => {
       icon: <Brain className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Implementación de IA",
       description: "Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.",
-      image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
+      image: "/src/assets/ai-implementation.jpg"
     },
     {
       icon: <BarChart3 className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "BI y Dashboards Personalizados",
       description: "Transformamos datos complejos en insights visuales y accionables para líderes de negocio.",
-      image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png"
+      image: "/src/assets/bi-dashboard.jpg"
     },
     {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,

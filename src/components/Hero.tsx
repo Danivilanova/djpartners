@@ -52,7 +52,7 @@ const Hero = () => {
             playsInline 
             preload="metadata"
             className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`}
-            poster="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png"
+            poster="/src/assets/hero-consulting.jpg"
           >
             <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
             {/* Fallback image if video fails to load */}
