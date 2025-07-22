@@ -2,6 +2,7 @@ import { ArrowRight, Code, Cpu, Layers, MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ConsultationModal } from "@/components/ConsultationModal";
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -90,14 +91,15 @@ const Hero = () => {
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 
-                {/* Using the Button component from shadcn but with custom styling to match the explore button */}
-                <button 
-                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                  onClick={scrollToContact}
-                >
-                  Solicita una Consultoría Gratuita
-                  <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                </button>
+                {/* Modal de consultoría gratuita */}
+                <ConsultationModal>
+                  <button 
+                    className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                  >
+                    Solicita una Consultoría Gratuita
+                    <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                  </button>
+                </ConsultationModal>
               </motion.div>
             </motion.div>
           </div>
