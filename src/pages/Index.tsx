@@ -23,7 +23,7 @@ const Index = () => {
       <SEO 
         title="D&J Partners - Consultoría en Inteligencia Artificial para Empresas" 
         description="D&J Partners: Transformamos PYMEs con Inteligencia Artificial aplicada al negocio. BI personalizado, analítica predictiva y automatización inteligente."
-        imageUrl="/lovable-uploads/051ebda6-5d88-45e1-a233-5db94541da02.png"
+        imageUrl="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png"
         keywords={['inteligencia artificial', 'consultoría IA', 'business intelligence', 'analítica predictiva', 'automatización empresarial', 'transformación digital', 'PYME']}
       />
       <Hero />

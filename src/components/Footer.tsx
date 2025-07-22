@@ -73,7 +73,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/051ebda6-5d88-45e1-a233-5db94541da02.png" 
               alt="D&J Partners Logo" 
-              className="h-10 w-auto mb-6 brightness-0 invert" 
+              className="h-16 w-auto mb-6 brightness-0 invert" 
             />
             <p className="text-gray-300 mb-6">
               Consultora especializada en transformación digital mediante IA, Business Intelligence y análisis predictivo para organizaciones que buscan ventaja competitiva sostenible.
