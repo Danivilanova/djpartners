@@ -71,7 +71,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 pb-10 border-b border-gray-700">
           <div className="lg:col-span-2">
             <img 
-              src="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png" 
+              src="/lovable-uploads/051ebda6-5d88-45e1-a233-5db94541da02.png" 
               alt="D&J Partners Logo" 
               className="h-10 w-auto mb-6 brightness-0 invert" 
             />
