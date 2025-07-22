@@ -69,6 +69,10 @@ export default {
 					light: '#F6F6F7',
 					accent: '#C8C8C9',
 					muted: '#F1F1F1'
+				},
+				navbar: {
+					graphite: 'hsl(var(--navbar-graphite))',
+					'graphite-hover': 'hsl(var(--navbar-graphite-hover))'
 				}
 			},
 			borderRadius: {
