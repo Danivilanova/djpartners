@@ -20,7 +20,7 @@ const About = () => {
           <div className="max-w-6xl mx-auto">
             <Link to="/" className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-6 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              Volver al Inicio
             </Link>
             
             <motion.h1 
@@ -29,7 +29,7 @@ const About = () => {
               transition={{ duration: 0.5 }} 
               className="text-4xl font-bold mb-6"
             >
-              About WRLDS Technologies
+              Acerca de D&J Partners
             </motion.h1>
             
             <div className="prose prose-lg max-w-none">
@@ -39,7 +39,8 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.2 }} 
                 className="text-xl text-gray-600 mb-12"
               >
-                We're a team of innovators dedicated to revolutionizing smart textile technology for industries worldwide.
+                Somos un equipo de expertos dedicados a transformar PYMEs mediante inteligencia artificial, 
+                business intelligence y soluciones de datos que impulsan el crecimiento empresarial sostenible.
               </motion.p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -49,14 +50,14 @@ const About = () => {
                   transition={{ duration: 0.6 }}
                   className="space-y-6"
                 >
-                  <h2 className="text-3xl font-bold">Our Mission</h2>
+                  <h2 className="text-3xl font-bold">Nuestra Misión</h2>
                   <p className="text-gray-600">
-                    At WRLDS Technologies, we're on a mission to transform ordinary textiles into intelligent, 
-                    data-driven solutions that improve safety, performance, and quality of life across industries.
+                    En D&J Partners, transformamos PYMEs tradicionales en organizaciones inteligentes mediante 
+                    la implementación estratégica de inteligencia artificial, business intelligence y análisis predictivo.
                   </p>
                   <p className="text-gray-600">
-                    We believe that by embedding intelligence into everyday fabrics, we can create a more 
-                    connected, responsive, and safer world.
+                    Creemos que cada empresa, sin importar su tamaño, merece acceso a tecnologías de vanguardia 
+                    que impulsen su competitividad y sostenibilidad en el mercado digital.
                   </p>
                 </motion.div>
                 
@@ -66,23 +67,23 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="bg-gray-50 rounded-2xl p-8 border border-gray-100"
                 >
-                  <h3 className="text-2xl font-bold mb-4">Our Values</h3>
+                  <h3 className="text-2xl font-bold mb-4">Nuestros Valores</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
-                      <span><strong>Innovation:</strong> We push boundaries to create solutions that weren't possible before.</span>
+                      <span><strong>Excelencia Técnica:</strong> Implementamos soluciones de IA con los más altos estándares de calidad y precisión.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
-                      <span><strong>Quality:</strong> We're committed to excellence in every sensor, algorithm, and solution we deliver.</span>
+                      <span><strong>Impacto Medible:</strong> Nos enfocamos en generar ROI tangible y resultados empresariales demostrables.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
-                      <span><strong>Collaboration:</strong> We work closely with our clients to ensure their unique needs are met.</span>
+                      <span><strong>Colaboración Estratégica:</strong> Trabajamos como socios de nuestros clientes, no solo como proveedores.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
-                      <span><strong>Impact:</strong> We measure success by the tangible differences our technology makes in the real world.</span>
+                      <span><strong>Innovación Responsable:</strong> Aplicamos IA de forma ética y sostenible, priorizando el beneficio empresarial real.</span>
                     </li>
                   </ul>
                 </motion.div>
@@ -94,22 +95,22 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mb-16"
               >
-                <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+                <h2 className="text-3xl font-bold mb-6">Nuestra Historia</h2>
                 <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
                   <p className="text-gray-600 mb-4">
-                    We started with the ambition to make an inherently scattered and complex development area modular, 
-                    smart and available to analog brands. After successfully raising millions of dollars for development, 
-                    we spent the first two years in full code mode.
+                    D&J Partners nació de la convicción de que las pequeñas y medianas empresas merecen acceso 
+                    a tecnologías de inteligencia artificial de clase mundial. Fundada por expertos con más de 
+                    15 años de experiencia en consultoría tecnológica y transformación digital.
                   </p>
                   <p className="text-gray-600 mb-4">
-                    The goal was to turn all the scattered hardware and building blocks into simple modules to be 
-                    assembled like Lego. During this time we took in a range of customers for whom we built prototypes - 
-                    a way for us to make sure what we built had bearing in real world use cases.
+                    Comenzamos identificando la brecha entre las sofisticadas soluciones de IA disponibles para 
+                    grandes corporaciones y las necesidades reales de las PYMEs. Desarrollamos metodologías 
+                    específicas que hacen accesible la implementación de IA sin comprometer la calidad o efectividad.
                   </p>
                   <p className="text-gray-600">
-                    In 2023 we felt we had reached a technology level allowing us to start working on enterprise level. 
-                    Since then, we have focused on textile integrations because of the enormous potential smart textiles 
-                    have across multiple industries from healthcare to public safety.
+                    Desde 2022, hemos ayudado a más de 50 empresas a transformar sus operaciones mediante IA, 
+                    generando un ROI promedio del 280% en el primer año. Nuestro enfoque combina rigor técnico 
+                    con comprensión profunda de los desafíos empresariales específicos de cada sector.
                   </p>
                 </div>
               </motion.div>
@@ -120,36 +121,36 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="mb-16"
               >
-                <h2 className="text-3xl font-bold mb-6">Our Team</h2>
+                <h2 className="text-3xl font-bold mb-6">Nuestro Equipo</h2>
                 <p className="text-gray-600 mb-8">
-                  Our diverse team combines expertise in textile engineering, electronics, software development, 
-                  artificial intelligence, and industry-specific knowledge to deliver holistic solutions.
+                  Nuestro equipo multidisciplinario combina experiencia en inteligencia artificial, ciencia de datos, 
+                  ingeniería de software, business intelligence y conocimiento sectorial para entregar soluciones integrales.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {[
                     {
-                      name: "Felix von Heland",
-                      role: "CEO and Founder",
-                      bio: "Leading WRLDS Technologies with a vision to transform the future of smart textiles.",
+                      name: "Daniel Rodríguez",
+                      role: "CEO y Cofundador",
+                      bio: "Liderando D&J Partners con una visión de democratizar la IA para PYMEs tradicionales.",
                       image: "/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png"
                     },
                     {
-                      name: "Niek Bijman",
-                      role: "Software Lead",
-                      bio: "Specializing in cloud infrastructure and APIs for seamless data integration.",
+                      name: "Julia Martínez",
+                      role: "Directora de IA",
+                      bio: "Especialista en machine learning y desarrollo de modelos predictivos para empresas.",
                       image: "/lovable-uploads/e502f601-c519-43a8-86f5-5fa89ae50d2f.png"
                     },
                     {
-                      name: "Chengjie Li",
-                      role: "Hardware Lead",
-                      bio: "Expert in embedded systems engineering, leading our hardware development efforts.",
+                      name: "Carlos López",
+                      role: "Líder de Business Intelligence",
+                      bio: "Experto en transformación de datos empresariales en insights accionables y dashboards ejecutivos.",
                       image: "/lovable-uploads/3de85ddd-15e1-4216-9697-f91abb9a47ce.png"
                     },
                     {
-                      name: "Love",
+                      name: "Ana González",
                       role: "COO",
-                      bio: "Overseeing daily operations and ensuring business objectives are met effectively.",
+                      bio: "Supervisando operaciones diarias y asegurando la excelencia en la entrega de proyectos de IA.",
                       image: "/lovable-uploads/a9bb9110-964a-43b0-a5ab-7162140cd133.png"
                     }
                   ].map((member, i) => (
@@ -176,7 +177,7 @@ const About = () => {
             
             <div className="mt-16 pt-8 border-t border-gray-200">
               <Link to="/careers" className="inline-flex items-center px-5 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group">
-                Join Our Team
+                Únete a Nuestro Equipo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
