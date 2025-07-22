@@ -119,19 +119,34 @@ const Navbar = () => {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
-                        <Link to="/tech-details" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Technology Details</div>
-                          <p className="text-sm text-gray-500">How our smart textile platform works</p>
-                        </Link>
+                        <button onClick={() => scrollToSection('features')} className="block p-3 space-y-1 rounded-md hover:bg-gray-100 w-full text-left">
+                          <div className="font-medium">Implementación de IA</div>
+                          <p className="text-sm text-gray-500">Desarrollo e integración estratégica de soluciones IA empresariales</p>
+                        </button>
                       </li>
                       <li>
-                        <Link to="/development-process" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Development Process</div>
-                          <p className="text-sm text-gray-500">Our approach to creating custom solutions</p>
-                        </Link>
+                        <button onClick={() => scrollToSection('features')} className="block p-3 space-y-1 rounded-md hover:bg-gray-100 w-full text-left">
+                          <div className="font-medium">BI y Dashboards Personalizados</div>
+                          <p className="text-sm text-gray-500">Transformamos datos complejos en insights accionables</p>
+                        </button>
                       </li>
                       <li>
-                        
+                        <button onClick={() => scrollToSection('features')} className="block p-3 space-y-1 rounded-md hover:bg-gray-100 w-full text-left">
+                          <div className="font-medium">Consultoría de Analítica Predictiva</div>
+                          <p className="text-sm text-gray-500">Modelos predictivos avanzados para PYMEs</p>
+                        </button>
+                      </li>
+                      <li>
+                        <button onClick={() => scrollToSection('features')} className="block p-3 space-y-1 rounded-md hover:bg-gray-100 w-full text-left">
+                          <div className="font-medium">Automatización de Procesos</div>
+                          <p className="text-sm text-gray-500">Automatización inteligente para maximizar eficiencia operativa</p>
+                        </button>
+                      </li>
+                      <li>
+                        <button onClick={() => scrollToSection('features')} className="block p-3 space-y-1 rounded-md hover:bg-gray-100 w-full text-left">
+                          <div className="font-medium">Desarrollo de SaaS a Medida</div>
+                          <p className="text-sm text-gray-500">Plataformas empresariales con IA integrada</p>
+                        </button>
                       </li>
                     </ul>
                   </NavigationMenuContent>
