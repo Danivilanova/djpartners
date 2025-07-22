@@ -16,29 +16,29 @@ const DevelopmentProcess = () => {
   // Process component logic
   const processes = [{
     id: 1,
-    title: "Textile Sensor Design",
-    description: "We begin by designing custom textile sensors specifically for your industry and use case, selecting appropriate conductive materials and sensor types.",
-    steps: ["Industry-specific requirement analysis", "Sensor type and material selection", "Prototype sensor development", "Initial testing and calibration"]
+    title: "Análisis y Diagnóstico",
+    description: "Comenzamos analizando tus procesos actuales y necesidades específicas para identificar oportunidades de optimización y reducción de costes.",
+    steps: ["Auditoría de procesos operativos", "Análisis de costes y eficiencia", "Identificación de automatizaciones", "Evaluación de recursos tecnológicos"]
   }, {
     id: 2,
-    title: "Garment Integration",
-    description: "Our engineering team seamlessly integrates sensors into clothing and footwear while maintaining comfort, durability, and washability.",
-    steps: ["Ergonomic placement optimization", "Non-intrusive integration techniques", "Durability and washability testing", "Comfort and user experience validation"]
+    title: "Estrategia y Planificación",
+    description: "Diseñamos una hoja de ruta personalizada que alinea la tecnología con tus objetivos de negocio y estrategia competitiva.",
+    steps: ["Definición de objetivos estratégicos", "Planificación de implementación", "Análisis de ROI y beneficios", "Cronograma de ejecución detallado"]
   }, {
     id: 3,
-    title: "AI & Data Analytics",
-    description: "We develop specialized algorithms that transform textile sensor data into actionable insights unique to your industry requirements.",
-    steps: ["Industry-specific algorithm development", "ML model training with domain data", "Real-time analytics implementation", "Insight delivery optimization"]
+    title: "Implementación de BI y Automatización",
+    description: "Desplegamos sistemas de Business Intelligence y automatizamos procesos clave para maximizar la eficiencia operativa.",
+    steps: ["Implementación de dashboards ejecutivos", "Automatización de procesos repetitivos", "Integración de sistemas existentes", "Configuración de alertas y KPIs"]
   }, {
     id: 4,
-    title: "Production & Certification",
-    description: "We handle manufacturing, quality control, and ensure all textile sensor products meet relevant industry standards and certifications.",
-    steps: ["Textile manufacturing partner selection", "Quality assurance processes", "Industry-specific certification procurement", "Initial production supervision"]
+    title: "Optimización y Benchmarking",
+    description: "Evaluamos y rediseñamos procesos utilizando metodologías de benchmarking para asegurar mejores prácticas del sector.",
+    steps: ["Comparativa con líderes del sector", "Rediseño de procesos optimizados", "Implementación de mejores prácticas", "Certificación de calidad y estándares"]
   }, {
     id: 5,
-    title: "Deployment & Support",
-    description: "We provide comprehensive training, implementation assistance, and ongoing support to ensure successful adoption and continuous improvement.",
-    steps: ["User training and onboarding", "Data interpretation guidance", "Performance monitoring", "Continuous improvement iterations"]
+    title: "Monitoreo y Mejora Continua",
+    description: "Proporcionamos seguimiento continuo y ajustes estratégicos para mantener la ventaja competitiva y adaptarse a cambios del mercado.",
+    steps: ["Monitoreo de KPIs en tiempo real", "Análisis de tendencias y predicciones", "Ajustes estratégicos periódicos", "Formación continua del equipo"]
   }];
   useEffect(() => {
     processSectionsRef.current = processes.map((_, i) => processSectionsRef.current[i] || null);
@@ -86,32 +86,32 @@ const DevelopmentProcess = () => {
   }, []);
   const developmentSteps = [{
     icon: <FileSearch className="h-6 w-6" />,
-    title: "1. Discovery & Requirements",
-    description: "We begin by understanding your needs, market opportunities, and technical requirements to establish clear project parameters and goals."
+    title: "1. Análisis y Diagnóstico",
+    description: "Comenzamos comprendiendo tus necesidades, oportunidades de mejora y requisitos operativos para establecer parámetros claros del proyecto."
   }, {
     icon: <Settings className="h-6 w-6" />,
-    title: "2. Concept & Design",
-    description: "Our experts craft initial designs and technical specifications, ensuring alignment with your brand identity and user experience goals."
+    title: "2. Diseño de Estrategia",
+    description: "Nuestros expertos crean estrategias iniciales y especificaciones técnicas, asegurando alineación con tu identidad empresarial y objetivos."
   }, {
     icon: <Cpu className="h-6 w-6" />,
-    title: "3. Hardware Development",
-    description: "We select, design, and integrate sensor components, creating optimized hardware solutions that balance performance and efficiency."
+    title: "3. Implementación de BI",
+    description: "Seleccionamos, diseñamos e integramos sistemas de Business Intelligence, creando soluciones optimizadas que equilibran rendimiento y eficiencia."
   }, {
     icon: <Code className="h-6 w-6" />,
-    title: "4. Software Development",
-    description: "Our development team builds robust firmware, apps, and cloud platforms tailored to your product's unique requirements and user needs."
+    title: "4. Automatización de Procesos",
+    description: "Nuestro equipo construye sistemas robustos de automatización y plataformas adaptadas a los requisitos únicos de tu negocio."
   }, {
     icon: <CheckCircle className="h-6 w-6" />,
-    title: "5. Testing & Iteration",
-    description: "Rigorous testing protocols ensure reliability, durability, and optimal performance across all conditions and use cases."
+    title: "5. Pruebas y Optimización",
+    description: "Protocolos rigurosos de testing aseguran confiabilidad, durabilidad y rendimiento óptimo en todas las condiciones y casos de uso."
   }, {
     icon: <Truck className="h-6 w-6" />,
-    title: "6. Production & Deployment",
-    description: "We support the transition from prototype to manufacturing, ensuring quality standards and seamless deployment."
+    title: "6. Despliegue y Formación",
+    description: "Apoyamos la transición del diseño a la implementación, asegurando estándares de calidad y despliegue sin interrupciones."
   }, {
     icon: <BarChart className="h-6 w-6" />,
-    title: "7. Continuous Improvement",
-    description: "Post-launch analytics and feedback loops drive ongoing improvements, updates, and potential new features."
+    title: "7. Mejora Continua",
+    description: "Analytics post-implementación y bucles de retroalimentación impulsan mejoras continuas, actualizaciones y nuevas funcionalidades potenciales."
   }];
   return <PageLayout>
       <section className="pt-24 pb-16">
@@ -119,15 +119,15 @@ const DevelopmentProcess = () => {
           <div className="max-w-4xl mx-auto">
             <Link to="/" className="flex items-center text-gray-500 hover:text-gray-700 mb-8">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              Volver al Inicio
             </Link>
             
-            <h1 className="text-4xl font-bold mb-8">Our Structured Development Process</h1>
+            <h1 className="text-4xl font-bold mb-8">Nuestro Proceso Estructurado de Consultoría</h1>
             
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-600 mb-12">
-                We've refined our development methodology to minimize risk and maximize innovation, 
-                ensuring your textile sensor project moves efficiently from concept to reality.
+                Hemos perfeccionado nuestra metodología de consultoría para minimizar riesgos y maximizar la innovación, 
+                asegurando que tu proyecto de transformación empresarial avance eficientemente desde el concepto hasta la realidad.
               </p>
               
               {/* From Textile to Intelligence Process Section */}
@@ -147,12 +147,12 @@ const DevelopmentProcess = () => {
                         <p className="text-gray-600 mb-3 text-sm">{process.description}</p>
                         
                         <button onClick={() => setActiveProcess(process.id)} className={cn("text-sm font-medium transition-colors", activeProcess === process.id ? "text-gray-700" : "text-gray-500 hover:text-gray-700")}>
-                          {activeProcess === process.id ? "Currently Viewing" : "View Details"}
+                          {activeProcess === process.id ? "Viendo Actualmente" : "Ver Detalles"}
                         </button>
                       </div>
                       
                       <div className={cn("md:w-1/2 bg-white rounded-xl p-5 shadow-sm border border-gray-100 transition-all duration-300", activeProcess === process.id ? "opacity-100 translate-y-0 shadow-md border-gray-200" : "opacity-50 md:opacity-30 hover:opacity-70 cursor-pointer")} onClick={() => setActiveProcess(process.id)}>
-                        <h4 className="font-semibold mb-3 text-gray-700">Key Activities:</h4>
+                        <h4 className="font-semibold mb-3 text-gray-700">Actividades Clave:</h4>
                         <ul className="space-y-2">
                           {process.steps.map((step, stepIndex) => <li key={stepIndex} className="flex items-start">
                               <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center mt-0.5 mr-2">
@@ -167,27 +167,27 @@ const DevelopmentProcess = () => {
               </div>
               
               <div className="bg-gray-50 p-8 rounded-lg my-12 border border-gray-100">
-                <h3 className="text-xl font-semibold mb-4">Our Development Principles</h3>
+                <h3 className="text-xl font-semibold mb-4">Nuestros Principios de Consultoría</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span>Rapid iteration cycles for continuous improvement</span>
+                    <span>Ciclos de iteración rápida para mejora continua</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span>Transparent communication throughout the development process</span>
+                    <span>Comunicación transparente durante todo el proceso de consultoría</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span>Modular architecture allowing for flexible and scalable solutions</span>
+                    <span>Arquitectura modular que permite soluciones flexibles y escalables</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span>Risk mitigation strategies built into every phase</span>
+                    <span>Estrategias de mitigación de riesgo integradas en cada fase</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span>Focus on user experience and practical functionality</span>
+                    <span>Enfoque en experiencia del usuario y funcionalidad práctica</span>
                   </li>
                 </ul>
               </div>
@@ -197,7 +197,7 @@ const DevelopmentProcess = () => {
             
             <div className="mt-12 pt-8 border-t border-gray-200">
               <Link to="/tech-details" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group">
-                Explore Our Technology
+                Explora Nuestro Enfoque
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
