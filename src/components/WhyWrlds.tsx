@@ -89,7 +89,7 @@ const WhyWrlds = () => {
             ¿Por qué D&J Partners?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-lg max-w-3xl mx-auto">
-            En un mercado donde la complejidad tecnológica puede paralizar a las empresas, ofrecemos claridad y experiencia para garantizar el éxito de tu transformación digital
+            En un entorno donde la tecnología puede generar más confusión que resultados, D&J Partners aporta visión, estructura y ejecución para transformar empresas con inteligencia artificial.
           </motion.p>
         </motion.div>
         
@@ -102,9 +102,9 @@ const WhyWrlds = () => {
               <BarChart className="w-8 h-8 text-gray-700" />
             </div>
             <h3 className="text-gray-900 text-2xl lg:text-3xl font-bold mb-3">
-              <AnimatedCounter end={175} suffix=" Billion" /> USD
+              <AnimatedCounter end={50} suffix="+" /> empresas
             </h3>
-            <p className="text-gray-700">Mercado global de IA empresarial estimado para 2030, con un crecimiento masivo para soluciones de negocio inteligentes</p>
+            <p className="text-gray-700">Experiencia real con PYMEs y corporativos de diferentes sectores transformadas exitosamente</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="bg-gray-100 p-6 rounded-xl border border-gray-200 text-center hover:bg-gray-200 transition-all">
@@ -115,7 +115,7 @@ const WhyWrlds = () => {
               <AnimatedCounter end={70} suffix="%" /> 
             </h3>
             <p className="text-gray-700">
-              de proyectos de IA en empresas tradicionales fracasan por falta de expertise estratégico y coordinación deficiente
+              de los proyectos fallan. Nosotros evitamos eso con estrategia, foco y acompañamiento experto
             </p>
           </motion.div>
           
@@ -127,7 +127,7 @@ const WhyWrlds = () => {
               <AnimatedCounter end={5} suffix="x" />
             </h3>
             <p className="text-gray-700">
-              Mayor retorno de inversión promedio en empresas que implementan IA estratégicamente vs. adopción reactiva
+              mayor ROI estratégico. Las empresas que adoptan IA con visión multiplican su retorno
             </p>
           </motion.div>
         </motion.div>
