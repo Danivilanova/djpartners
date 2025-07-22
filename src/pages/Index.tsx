@@ -21,10 +21,10 @@ const Index = () => {
   return (
     <PageLayout>
       <SEO 
-        title="WRLDS - Smart Textile Technology" 
-        description="WRLDS Technologies: Pioneering smart engineering solutions with textile sensors for sports, safety, and performance monitoring."
-        imageUrl="/lovable-uploads/526dc38a-25fa-40d4-b520-425b23ae0464.png"
-        keywords={['smart textiles', 'wearable technology', 'textile sensors', 'sports tech', 'safety monitoring', 'performance analytics', 'manufacturing']}
+        title="D&J Partners - Consultoría en Inteligencia Artificial para Empresas" 
+        description="D&J Partners: Transformamos PYMEs con Inteligencia Artificial aplicada al negocio. BI personalizado, analítica predictiva y automatización inteligente."
+        imageUrl="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png"
+        keywords={['inteligencia artificial', 'consultoría IA', 'business intelligence', 'analítica predictiva', 'automatización empresarial', 'transformación digital', 'PYME']}
       />
       <Hero />
       <Features />
