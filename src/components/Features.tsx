@@ -123,28 +123,28 @@ const Features = () => {
   }];
   const stepFlowItems = [{
     icon: <Database className="h-10 w-10 text-gray-700" />,
-    title: "Análisis de Datos Empresariales",
-    description: "Evaluamos y estructuramos los datos existentes para maximizar su potencial"
+    title: "Diagnóstico y Análisis de Datos",
+    description: "Evaluamos la infraestructura actual, calidad de datos y identificamos oportunidades de IA"
   }, {
     icon: <Brain className="h-10 w-10 text-gray-700" />,
-    title: "Modelos de IA Personalizados",
-    description: "Desarrollamos algoritmos específicos para las necesidades de cada cliente"
+    title: "Diseño de Solución Personalizada",
+    description: "Desarrollamos estrategias de IA específicas alineadas con objetivos empresariales"
   }, {
     icon: <Rocket className="h-10 w-10 text-gray-700" />,
-    title: "Implementación y Capacitación",
-    description: "Desplegamos soluciones y formamos equipos para uso autónomo"
+    title: "Implementación y Adopción",
+    description: "Desplegamos la solución con capacitación completa y soporte continuo"
   }];
   const sprintPhases = [{
-    name: "Planning",
+    name: "Diagnóstico",
     icon: <CheckCircle className="h-4 w-4" />
   }, {
-    name: "Development",
+    name: "Prototipo",
     icon: <Code className="h-4 w-4" />
   }, {
-    name: "Testing",
+    name: "Validación",
     icon: <Box className="h-4 w-4" />
   }, {
-    name: "Review",
+    name: "Optimización",
     icon: <RefreshCcw className="h-4 w-4" />
   }];
 
@@ -360,9 +360,9 @@ const Features = () => {
                     <div className="space-y-2">
                       <h4 className="text-sm font-semibold">{item.title}</h4>
                       <p className="text-sm">{item.description}</p>
-                      {index === 0 && <p className="text-xs text-gray-500">Our proprietary technology provides the core foundation of every solution we build.</p>}
-                      {index === 1 && <p className="text-xs text-gray-500">We carefully select the best off-the-shelf components to complement our proprietary technology.</p>}
-                      {index === 2 && <p className="text-xs text-gray-500">Our network of production partners ensures quality manufacturing at scale.</p>}
+                      {index === 0 && <p className="text-xs text-gray-500">Analizamos tu situación actual, identificamos oportunidades y definimos una hoja de ruta estratégica para la implementación de IA.</p>}
+                      {index === 1 && <p className="text-xs text-gray-500">Creamos soluciones de IA personalizadas que se alinean perfectamente con tus objetivos de negocio y restricciones operativas.</p>}
+                      {index === 2 && <p className="text-xs text-gray-500">Garantizamos una adopción exitosa con capacitación completa de equipos y soporte técnico continuo post-implementación.</p>}
                     </div>
                   </HoverCardContent>
                 </HoverCard>)}
@@ -389,15 +389,15 @@ const Features = () => {
               <div className="max-w-3xl mx-auto">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
                   <div className="flex items-center">
-                    <h3 className="text-xl font-bold">Adaptation Project</h3>
+                    <h3 className="text-xl font-bold">Proyecto de Implementación IA</h3>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-sm text-gray-500 mr-2">Iterative Development</span>
+                    <span className="text-sm text-gray-500 mr-2">Desarrollo Iterativo</span>
                     <RefreshCcw className="h-5 w-5 text-gray-600 animate-rotate-slow" />
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-4">Working iteratively with customers to tailor solutions to their needs</p>
+                <p className="text-gray-600 mb-4">Trabajamos de forma iterativa con nuestros clientes para adaptar las soluciones a sus necesidades específicas</p>
                 
                 <div className="relative mb-2">
                   <Progress value={progressValue} className="h-3 bg-gray-200" />
@@ -419,10 +419,10 @@ const Features = () => {
                     <div className="bg-green-100 rounded-full p-1 mr-2 shrink-0">
                       <CheckCircle className="h-4 w-4 text-green-600" />
                     </div>
-                    <span className="text-sm text-gray-600">Customer feedback integrated at every stage</span>
+                    <span className="text-sm text-gray-600">Feedback del cliente integrado en cada etapa</span>
                   </div>
                   <div className="text-sm text-gray-500 flex items-center mt-2 sm:mt-0">
-                    <span className="mr-2">Continuous improvement</span>
+                    <span className="mr-2">Mejora continua</span>
                     <div className="flex space-x-1">
                       <span className="inline-block w-2 h-2 bg-gray-300 rounded-full animate-pulse"></span>
                       <span className="inline-block w-2 h-2 bg-gray-400 rounded-full animate-pulse animation-delay-200"></span>
@@ -457,8 +457,8 @@ const Features = () => {
                   <Rocket className="h-10 w-10 text-gray-700" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Hitting the Market</h3>
-              <p className="text-gray-700">Ready to scale, produce, and launch</p>
+              <h3 className="text-xl font-bold mb-2">Solución Implementada</h3>
+              <p className="text-gray-700">Lista para escalar, optimizar y generar valor</p>
               <div className="flex justify-center mt-4 space-x-2">
                 <span className="inline-block w-3 h-3 rounded-full bg-gray-300 animate-pulse"></span>
                 <span className="inline-block w-3 h-3 rounded-full bg-gray-500 animate-pulse animation-delay-200"></span>
@@ -470,12 +470,12 @@ const Features = () => {
           <div className="text-center">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link to="/tech-details" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all group py-3 w-full sm:w-auto justify-center">
-                Learn More About Our Technology
+                Conoce Nuestro Proceso Detallado
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
               <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
-                Contact Our Experts
+                Consulta con Nuestros Expertos
                 <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
