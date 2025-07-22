@@ -42,8 +42,8 @@
     --corporate-blue-light: 0 0% 28%;
     --corporate-gray: 0 0% 25%;
     --corporate-gray-light: 0 0% 85%;
-    --navbar-graphite: 0 61% 21%;  /* #003d6b - McKinsey inspired navy blue */
-    --navbar-graphite-hover: 213 61% 25%;  /* Slightly lighter for hover */
+    --navbar-graphite: 0 0% 29%;  /* #4a4a4a - Gris suave profesional */
+    --navbar-graphite-hover: 0 0% 35%;  /* Slightly lighter for hover */
   }
 }
 
