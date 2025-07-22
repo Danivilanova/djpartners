@@ -110,15 +110,15 @@ const Features = () => {
   }, []);
 
   const aiCaseStudies = [{
-    image: "/lovable-uploads/843446fe-638e-4efb-b885-ed3cd505325a.png",
+    image: "/lovable-uploads/4187f423-ba69-4043-be76-c43098488348.png",
     title: "Automatización de Procesos",
     description: "Automatización inteligente para maximizar eficiencia operativa y reducir errores humanos en procesos críticos."
   }, {
-    image: "/lovable-uploads/5463c9c5-0946-4280-a14b-17636ff69a98.png",
+    image: "/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png",
     title: "Desarrollo de SaaS a Medida",
     description: "Plataformas empresariales con IA integrada, diseñadas a la medida de cada sector y modelo de negocio."
   }, {
-    image: "/lovable-uploads/c5f8ee24-9815-4ebe-b65d-6f3d449feb8b.png",
+    image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
     title: "Machine Learning Predictivo",
     description: "Modelos de aprendizaje automático que identifican patrones y predicen tendencias para optimizar decisiones empresariales."
   }];
@@ -290,40 +290,41 @@ const Features = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {aiCaseStudies.map((study, index) => (
-                <div 
-                  key={index} 
-                  className="group relative bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={study.image} 
-                      alt={study.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                      <div className="text-xs font-medium bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 w-fit">
-                        Ver detalles
+                <ConsultationModal key={index}>
+                  <div 
+                    className="group relative bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={study.image} 
+                        alt={study.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                        <div className="text-xs font-medium bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 w-fit">
+                          Ver detalles
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="font-semibold text-lg text-gray-900 group-hover:text-primary transition-colors duration-300">
-                      {study.title}
-                    </h4>
-                    <p className="text-sm text-gray-600 mt-2 line-clamp-3">
-                      {study.description}
-                    </p>
-                    <div className="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
-                      <span className="text-sm font-medium">Más información</span>
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                    <div className="p-5">
+                      <h4 className="font-semibold text-lg text-gray-900 group-hover:text-primary transition-colors duration-300">
+                        {study.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 mt-2 line-clamp-3">
+                        {study.description}
+                      </p>
+                      <div className="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
+                        <span className="text-sm font-medium">Más información</span>
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </div>
                     </div>
+                    
+                    {/* Animated border effect */}
+                    <div className="absolute inset-0 border-2 border-primary rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-105 group-hover:scale-100" />
                   </div>
-                  
-                  {/* Animated border effect */}
-                  <div className="absolute inset-0 border-2 border-primary rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-105 group-hover:scale-100" />
-                </div>
+                </ConsultationModal>
               ))}
             </div>
             
