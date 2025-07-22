@@ -11,6 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from "@/components/ui/button";
 import { useScrollHijack } from '@/hooks/useScrollHijack';
+import { ConsultationModal } from '@/components/ConsultationModal';
 
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -334,15 +335,19 @@ const Features = () => {
           </div>
         </div>
         <div className="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
-            ¿Necesitas una Solución Personalizada?
-            <MessageSquare className="ml-2 w-4 h-4 group-hover:animate-pulse" />
-          </Button>
+          <ConsultationModal>
+            <Button className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
+              ¿Necesitas una Solución Personalizada?
+              <MessageSquare className="ml-2 w-4 h-4 group-hover:animate-pulse" />
+            </Button>
+          </ConsultationModal>
           
-          <Button onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 py-3 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all group w-full sm:w-auto">
-            Conoce Más Sobre Nuestros Servicios
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <ConsultationModal>
+            <Button className="inline-flex items-center px-4 sm:px-6 py-3 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all group w-full sm:w-auto">
+              Conoce Más Sobre Nuestros Servicios
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </ConsultationModal>
         </div>
       </section>
       
@@ -491,10 +496,12 @@ const Features = () => {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
-                Consulta con Nuestros Expertos
-                <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-              </Button>
+              <ConsultationModal>
+                <Button className="inline-flex items-center px-4 sm:px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
+                  Consulta con Nuestros Expertos
+                  <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                </Button>
+              </ConsultationModal>
             </div>
           </div>
         </div>

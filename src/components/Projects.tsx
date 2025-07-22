@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ConsultationModal } from '@/components/ConsultationModal';
 
 const projects = [
   {
@@ -205,19 +206,13 @@ const Projects = () => {
                         ))}
                       </div>
                       
-                      <Link 
-                        to={project.link} 
-                        className="text-gray-500 flex items-center hover:underline relative overflow-hidden group"
-                        onClick={() => {
-                          if (project.link.startsWith('/')) {
-                            window.scrollTo(0, 0);
-                          }
-                        }}
-                      >
-                        <span className="relative z-10">Ver más detalles</span>
-                        <ArrowRight className="ml-2 w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
-                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                      </Link>
+                      <ConsultationModal>
+                        <button className="text-gray-500 flex items-center hover:underline relative overflow-hidden group">
+                          <span className="relative z-10">Ver más detalles</span>
+                          <ArrowRight className="ml-2 w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
+                          <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                        </button>
+                      </ConsultationModal>
                     </div>
                   </CardContent>
                 </Card>

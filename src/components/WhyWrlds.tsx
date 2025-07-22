@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Layers, BarChart, AlertTriangle, Clock4, Rocket, Zap, Sparkles, ArrowRight, Award, Target, Shield, ChartBar } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
+import { ConsultationModal } from '@/components/ConsultationModal';
 
 const AnimatedCounter = ({
   end,
@@ -196,14 +197,12 @@ const WhyWrlds = () => {
           </motion.div>
           
           <motion.div variants={itemVariants} className="text-center mt-10">
-            <Link 
-              to="/development-process" 
-              onClick={() => window.scrollTo(0, 0)}
-              className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group"
-            >
-              Conoce más sobre nuestro proceso estructurado de desarrollo
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <ConsultationModal>
+              <button className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group">
+                Conoce más sobre nuestro proceso estructurado de desarrollo
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </ConsultationModal>
           </motion.div>
         </motion.div>
       </div>
