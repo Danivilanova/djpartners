@@ -203,16 +203,16 @@ const Features = () => {
                     alt={feature.title} 
                     className={cn(
                       "w-full h-full object-cover transition-all duration-300",
-                      isHijacked ? "grayscale-0" : "grayscale"
+                      isHijacked ? "grayscale-0" : "grayscale-0"
                     )} 
                   />
                   <div className={cn(
                     "absolute inset-0 transition-opacity duration-300",
                     isHijacked 
-                      ? "bg-black/40" 
+                      ? "bg-black/30" 
                       : hoveredFeature === index 
-                        ? "bg-black/50" 
-                        : "bg-black/70"
+                        ? "bg-black/40" 
+                        : "bg-black/50"
                   )}></div>
                 </div>
                 
