@@ -80,32 +80,32 @@ const Navbar = () => {
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
                         <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">FireCat 6th SENSE</div>
-                          <p className="text-sm text-gray-500">Smart textiles for firefighter safety</p>
+                          <div className="font-medium">BI Predictivo para Retail</div>
+                          <p className="text-sm text-gray-500">Sistema de predicción de demanda e inventarios inteligentes</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/sport-retail" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Sports Performance</div>
-                          <p className="text-sm text-gray-500">Advanced tracking for athletes</p>
+                          <div className="font-medium">Automatización Manufacturera</div>
+                          <p className="text-sm text-gray-500">SaaS personalizado para control de calidad con IA</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/workwear" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Workwear Climate Control</div>
-                          <p className="text-sm text-gray-500">Temperature regulation for extreme environments</p>
+                          <div className="font-medium">Analítica para Salud</div>
+                          <p className="text-sm text-gray-500">Predicción de riesgos y optimización de turnos médicos</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/hockey" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Ice Hockey Elite Tracker</div>
-                          <p className="text-sm text-gray-500">Performance tracking for ice hockey</p>
+                          <div className="font-medium">IA Financiera PYME</div>
+                          <p className="text-sm text-gray-500">Modelos ML para predicción de flujo de caja</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/pet-tracker" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Pet Activity Counter</div>
-                          <p className="text-sm text-gray-500">Smart collars for pet activity monitoring</p>
+                          <div className="font-medium">Dashboard Ejecutivo Construcción</div>
+                          <p className="text-sm text-gray-500">BI personalizado para gestión de proyectos inmobiliarios</p>
                         </Link>
                       </li>
                     </ul>
