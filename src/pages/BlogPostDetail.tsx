@@ -16,12 +16,12 @@ const BlogPostDetail = () => {
     return (
       <PageLayout>
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold mb-4">Artículo No Encontrado</h1>
+          <p className="text-gray-600 mb-8">El artículo del blog que buscas no existe.</p>
           <Link to="/blog">
             <Button variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
+              Volver al Blog
             </Button>
           </Link>
         </div>
@@ -32,7 +32,7 @@ const BlogPostDetail = () => {
   return (
     <PageLayout>
       <SEO 
-        title={`${post.title} - WRLDS`}
+        title={`${post.title} - D&J Partners`}
         description={post.metaDescription || post.excerpt}
         imageUrl={post.imageUrl}
         keywords={post.keywords}
@@ -60,7 +60,7 @@ const BlogPostDetail = () => {
               <div className="w-full max-w-4xl mx-auto text-left md:text-center">
                 <Link to="/blog" className="inline-flex items-center text-gray-300 hover:text-white mb-4 transition-colors text-sm">
                   <ArrowLeft className="mr-2 h-3 w-3" />
-                  Back to Blog
+                  Volver al Blog
                 </Link>
                 
                 {/* Mobile-optimized title */}
