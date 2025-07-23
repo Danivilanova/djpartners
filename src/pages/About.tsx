@@ -99,16 +99,17 @@ const About = () => {
                 <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
                   <p className="text-gray-600 mb-4">
                     D&J Partners nació de la convicción de que las pequeñas y medianas empresas merecen acceso 
-                    a tecnologías de inteligencia artificial de clase mundial. Fundada por expertos con más de 
-                    15 años de experiencia en consultoría tecnológica y transformación digital.
+                    a tecnologías de inteligencia artificial de clase mundial. Observamos que existía una brecha 
+                    significativa entre las capacidades tecnológicas disponibles y su accesibilidad para PYMEs.
                   </p>
                   <p className="text-gray-600 mb-4">
-                    Comenzamos identificando la brecha entre las sofisticadas soluciones de IA disponibles para 
-                    grandes corporaciones y las necesidades reales de las PYMEs. Desarrollamos metodologías 
-                    específicas que hacen accesible la implementación de IA sin comprometer la calidad o efectividad.
+                    Identificamos que las sofisticadas soluciones de IA estaban diseñadas principalmente para 
+                    grandes corporaciones, dejando a las empresas medianas y pequeñas con opciones limitadas. 
+                    Desarrollamos metodologías específicas que hacen accesible la implementación de IA sin 
+                    comprometer la calidad o efectividad.
                   </p>
                   <p className="text-gray-600">
-                    Desde 2022, hemos ayudado a más de 50 empresas a transformar sus operaciones mediante IA, 
+                    Hemos ayudado a más de 50 empresas a transformar sus operaciones mediante IA, 
                     generando un ROI promedio del 280% en el primer año. Nuestro enfoque combina rigor técnico 
                     con comprensión profunda de los desafíos empresariales específicos de cada sector.
                   </p>
