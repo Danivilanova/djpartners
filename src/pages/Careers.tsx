@@ -109,53 +109,6 @@ const Careers = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-center mt-12 p-8 bg-gray-50 rounded-xl"
-              >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">¿Por qué elegir D&J Partners?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">💰</span>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Reducción de Costes Operativos</h4>
-                    <p className="text-gray-600 text-sm">Optimizamos tus procesos clave mediante automatización inteligente para reducir tiempos, errores y costes innecesarios en tu operación diaria.</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">📊</span>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Control Total del Negocio</h4>
-                    <p className="text-gray-600 text-sm">Implementamos sistemas de Business Intelligence que te permiten visualizar, analizar y tomar decisiones basadas en datos en tiempo real.</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">🔄</span>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Procesos que Mejoran Contigo</h4>
-                    <p className="text-gray-600 text-sm">Evaluamos y rediseñamos tus procesos actuales con metodologías de benchmarking, asegurando mejoras continuas y comparativas con los mejores del sector.</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">⚡</span>
-                    </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Tecnología al Servicio de tu Estrategia</h4>
-                    <p className="text-gray-600 text-sm">Desplegamos herramientas inteligentes adaptadas a tu modelo de negocio para escalar lo que ya haces bien y anticiparte a los cambios del mercado.</p>
-                  </div>
-                </div>
-                
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <p className="text-gray-600">
-                    <strong>¿Tienes preguntas?</strong> Contáctanos en{' '}
-                    <a href="mailto:careers@djpartners.com" className="text-primary hover:underline">
-                      careers@djpartners.com
-                    </a>
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
