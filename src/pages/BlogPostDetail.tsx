@@ -50,7 +50,7 @@ const BlogPostDetail = () => {
             <img 
               src={post.imageUrl} 
               alt={post.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover filter grayscale"
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
