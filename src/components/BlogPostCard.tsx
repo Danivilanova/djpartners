@@ -40,7 +40,7 @@ const BlogPostCard = ({
             <h3 className="text-xl font-bold mb-2 line-clamp-2">{title}</h3>
             <p className="text-gray-700 mb-4 line-clamp-3">{excerpt}</p>
             <Button variant="outline" className="group mt-auto">
-              Read more 
+              Leer más 
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </CardContent>
