@@ -37,7 +37,7 @@ const BlogPostDetail = () => {
         imageUrl={post.imageUrl}
         keywords={post.keywords}
         isBlogPost={true}
-        publishDate={new Date(post.date).toISOString()}
+        publishDate={post.date ? new Date().toISOString() : undefined}
         author={post.author}
         category={post.category}
         type="article"
