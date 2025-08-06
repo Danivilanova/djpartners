@@ -9,6 +9,7 @@ const ContactInfo = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const { toast } = useToast();
@@ -36,6 +37,7 @@ const ContactInfo = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
+          phone: formData.phone,
           message: formData.message,
           to_name: 'D&J Partners',
         },
@@ -47,7 +49,7 @@ const ContactInfo = () => {
         description: "Nos pondremos en contacto contigo pronto.",
       });
 
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       toast({
         title: "Error",
@@ -105,6 +107,20 @@ const ContactInfo = () => {
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                   placeholder="tu@email.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  placeholder="+34 600 123 456"
                 />
               </div>
             </div>
