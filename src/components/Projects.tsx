@@ -22,10 +22,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Automatización de Procesos Manufactureros",
-    brand: "Empresa Textil Familiar",
-    description: "Desarrollo de SaaS personalizado con IA integrada para automatizar control de calidad y optimizar líneas de producción.",
-    tags: ["Manufactura", "Automatización", "SaaS", "Control de Calidad"],
+    title: "Optimización de Alquiler de Equipos para Eventos",
+    brand: "Operador nacional de alquiler (multi-sede)",
+    description: "Inspección automática con visión por IA al devolver equipos, modelo predictivo de merma/vida útil y tablero de KPIs (rotación, ROI por ítem, tasa de daños).",
+    tags: ["Eventos", "Visión por IA", "BI", "Mantenimiento Predictivo"],
     imageUrl: "/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png",
     link: "/projects/sport-retail"
   },

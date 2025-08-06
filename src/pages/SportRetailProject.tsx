@@ -6,10 +6,10 @@ import { Footprints, Zap, LineChart, Award, Sparkles, FlaskConical } from 'lucid
 const SportRetailProject = () => {
   return (
     <ProjectPageLayout
-      title="Performance Athletic Footwear"
-      subtitle="Revolutionary R&D for next-generation athletic footwear"
+      title="Optimización de Alquiler de Equipos para Eventos"
+      subtitle="Visión por IA en devoluciones, modelo predictivo de merma/vida útil y BI de operación"
       imageUrl="/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png"
-      brandName="Global Sports Retail Leader"
+      brandName="Operador de alquiler de material para eventos"
     >
       <SEO 
         title="WRLDS - Performance Athletic Footwear Project" 
@@ -22,53 +22,42 @@ const SportRetailProject = () => {
         <p className="text-yellow-700 font-medium text-sm">Ongoing R&D Project — Currently in Prototyping Phase</p>
       </div>
       
-      <h2 className="text-3xl font-bold mb-6">Case Study: Plataforma Inteligente de Análisis Deportivo</h2>
+      <h2 className="text-3xl font-bold mb-6">Caso de Éxito: Operador de Alquiler de Material para Eventos</h2>
       
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
-        <h3 className="text-xl font-semibold mb-2">Background</h3>
+        <h3 className="text-xl font-semibold mb-2">Sector y Situación Inicial</h3>
         <p>
-          Un líder global en retail deportivo necesitaba <strong>automatizar sus procesos</strong> de desarrollo y prueba de calzado atlético. 
-          Su objetivo era crear un enfoque basado en datos que mejorara el rendimiento de los atletas mientras 
-          optimizaba sus ciclos de desarrollo de productos.
+          Empresa de alquiler con múltiples sedes enfrentaba <strong>pérdidas por roturas</strong>, <strong>devoluciones tardías</strong> y
+          <strong> poca visibilidad del inventario</strong>. Los procesos de inspección manual eran lentos e inconsistentes, lo que afectaba
+          la <strong>rotación</strong> y la <strong>rentabilidad por ítem</strong>.
         </p>
       </div>
       
-      <h3 className="text-2xl font-semibold mb-4">Desafío</h3>
-      <p>
-        El desarrollo tradicional de calzado dependía de feedback subjetivo y procesos manuales lentos. La empresa necesitaba 
-        <strong>machine learning predictivo</strong> para analizar métricas de rendimiento, movimientos del pie y distribución de presión 
-        en escenarios atléticos reales, además de personalizar recomendaciones basadas en biomecánica individual.
-      </p>
-      
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Nuestra Solución SaaS</h3>
-      <p>
-        WRLDS desarrolló una <strong>plataforma SaaS a medida</strong> que integra nuestros tres servicios principales:
-      </p>
-      
+      <h3 className="text-2xl font-semibold mb-4">Solución Implementada</h3>
       <div className="bg-blue-50 p-4 rounded-lg mb-6">
-        <h4 className="font-semibold text-blue-800 mb-2">🤖 Automatización de Procesos:</h4>
+        <h4 className="font-semibold text-blue-800 mb-2">🤖 Visión por IA en Devoluciones</h4>
         <ul className="list-disc list-inside text-blue-700 space-y-1">
-          <li>Automatización de la recopilación y análisis de datos de sensores</li>
-          <li>Procesos automatizados de pruebas de calzado</li>
-          <li>Generación automática de reportes de rendimiento</li>
+          <li>Inspección automática con cámaras y modelos de visión para detectar daños y clasificar severidad</li>
+          <li>Registro fotográfico y generación de parte de daños con evidencia</li>
+          <li>Integración con contratos para aplicar cargos por daño o retraso</li>
         </ul>
       </div>
       
       <div className="bg-green-50 p-4 rounded-lg mb-6">
-        <h4 className="font-semibold text-green-800 mb-2">💻 Plataforma SaaS Personalizada:</h4>
+        <h4 className="font-semibold text-green-800 mb-2">📈 Modelo Predictivo de Merma y Vida Útil</h4>
         <ul className="list-disc list-inside text-green-700 space-y-1">
-          <li>Dashboard web para equipos de I+D distribuidos globalmente</li>
-          <li>API para integración con sistemas de diseño CAD existentes</li>
-          <li>Aplicación móvil para atletas y entrenadores</li>
+          <li>Estimación de vida útil por tipo de material y condiciones de uso</li>
+          <li>Plan de mantenimiento preventivo y baja/reposición optimizada</li>
+          <li>Priorización de inversión según ROI por ítem</li>
         </ul>
       </div>
       
-      <div className="bg-purple-50 p-4 rounded-lg mb-6">
-        <h4 className="font-semibold text-purple-800 mb-2">🧠 Machine Learning Avanzado:</h4>
+      <div className="bg-purple-50 p-4 rounded-lg mb-8">
+        <h4 className="font-semibold text-purple-800 mb-2">📊 Tablero de KPIs Operativos</h4>
         <ul className="list-disc list-inside text-purple-700 space-y-1">
-          <li>Algoritmos predictivos para optimización de diseño de calzado</li>
-          <li>Análisis predictivo de lesiones basado en patrones de movimiento</li>
-          <li>Recomendaciones personalizadas de calzado por biomecánica individual</li>
+          <li>Rotación de inventario, tasa de daños, ROI por ítem y puntualidad de devoluciones</li>
+          <li>Alertas por ítems críticos y anomalías de uso</li>
+          <li>Vista por sede, categoría y temporada</li>
         </ul>
       </div>
       
@@ -76,67 +65,59 @@ const SportRetailProject = () => {
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
           <Footprints className="h-6 w-6 text-black mr-3 flex-shrink-0 mt-1" />
           <div>
-            <h4 className="text-lg font-semibold mb-2 text-gray-700">Embedded Sensors</h4>
-            <p>Textile-based pressure and motion sensors integrated directly into prototype footwear.</p>
+            <h4 className="text-lg font-semibold mb-2 text-gray-700">Estaciones de Devolución</h4>
+            <p>Cámaras y luz controlada para inspecciones consistentes con IA.</p>
           </div>
         </div>
         
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
           <Zap className="h-6 w-6 text-black mr-3 flex-shrink-0 mt-1" />
           <div>
-            <h4 className="text-lg font-semibold mb-2 text-gray-700">Real-time Analysis</h4>
-            <p>Instant feedback on gait, pressure points, and energy transfer during athletic movements.</p>
+            <h4 className="text-lg font-semibold mb-2 text-gray-700">Automatización de Cargos</h4>
+            <p>Aplicación automática de cargos por daño/retraso con evidencia adjunta.</p>
           </div>
         </div>
         
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
           <LineChart className="h-6 w-6 text-black mr-3 flex-shrink-0 mt-1" />
           <div>
-            <h4 className="text-lg font-semibold mb-2 text-gray-700">Performance Metrics</h4>
-            <p>Comprehensive data collection on acceleration, stability, and energy return across different sports movements.</p>
+            <h4 className="text-lg font-semibold mb-2 text-gray-700">KPIs y ROI</h4>
+            <p>Panel de rotación, tasa de daños y ROI por ítem para decisiones de compra.</p>
           </div>
         </div>
         
         <div className="bg-white shadow-md rounded-lg p-6 border border-gray-100 flex items-start">
           <Award className="h-6 w-6 text-black mr-3 flex-shrink-0 mt-1" />
           <div>
-            <h4 className="text-lg font-semibold mb-2 text-gray-700">Athlete Cloud Platform</h4>
-            <p>AI-powered analytics comparing performance across prototype iterations and athlete profiles.</p>
+            <h4 className="text-lg font-semibold mb-2 text-gray-700">Catálogo Saludable</h4>
+            <p>Políticas de mantenimiento y renovación basadas en vida útil estimada.</p>
           </div>
         </div>
       </div>
       
-      <h4 className="text-xl font-semibold mb-4">Key Features</h4>
-      <ul className="list-disc pl-6 space-y-2 mb-8">
-        <li>Machine washable sensor technology for extended testing periods</li>
-        <li>Low-profile design that doesn't interfere with natural movement</li>
-        <li>Cross-platform mobile app for real-time coaching and feedback</li>
-        <li>Materials testing module to evaluate durability and performance longevity</li>
-      </ul>
-      
-      <h3 className="text-2xl font-semibold mb-4 mt-8">Resultados Preliminares</h3>
+      <h4 className="text-xl font-semibold mb-4">Impacto a 6–12 Meses</h4>
       <div className="space-y-4">
         <div className="flex items-start">
-          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 mt-1">🤖</div>
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 mt-1">📉</div>
           <div>
-            <h4 className="font-semibold">70% Reducción en Tiempo de Desarrollo</h4>
-            <p>La automatización de procesos de prueba aceleró significativamente los ciclos de desarrollo.</p>
+            <h4 className="font-semibold">Mermas -35%</h4>
+            <p>Descenso sostenido de pérdidas por daños gracias a inspecciones automáticas y evidencias.</p>
           </div>
         </div>
         
         <div className="flex items-start">
-          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 mt-1">💻</div>
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 mt-1">🔄</div>
           <div>
-            <h4 className="font-semibold">Plataforma Global Desplegada</h4>
-            <p>SaaS implementado en 15 centros de I+D con acceso simultáneo para 200+ investigadores.</p>
+            <h4 className="font-semibold">Rotación de inventario +22%</h4>
+            <p>Mayor disponibilidad por planificación de mantenimiento y reposición basada en datos.</p>
           </div>
         </div>
         
         <div className="flex items-start">
-          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 mt-1">🧠</div>
+          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 mt-1">💸</div>
           <div>
-            <h4 className="font-semibold">89% Precisión en Predicciones</h4>
-            <p>El machine learning predice rendimiento de prototipos antes de fabricación física.</p>
+            <h4 className="font-semibold">Coste por evento -15%</h4>
+            <p>Optimización de procesos y cargos automáticos reducen costes operativos por operación.</p>
           </div>
         </div>
       </div>
@@ -144,11 +125,10 @@ const SportRetailProject = () => {
       <div className="bg-blue-50 p-6 rounded-lg mt-8 flex items-start">
         <Sparkles className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0 mt-1" />
         <div>
-          <h4 className="text-lg font-semibold mb-2 text-gray-700">Development Roadmap</h4>
+          <h4 className="text-lg font-semibold mb-2 text-gray-700">Siguientes Pasos</h4>
           <p>
-            WRLDS Technologies continues to partner with this client on this R&D initiative to refine the prototype and 
-            develop potential consumer versions of this technology, which could enable everyday athletes to benefit 
-            from professional-grade footwear analysis and recommendations.
+            Escalado del sistema de inspección a todas las sedes, ampliación del catálogo cubierto por IA y
+            profundización en optimización de precios según vida útil y ROI.
           </p>
         </div>
       </div>
