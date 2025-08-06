@@ -82,16 +82,6 @@ const Footer = () => {
               Barcelona, España<br />
               Consultoría disponible a nivel nacional
             </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://www.linkedin.com/company/djpartners/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 transition-colors hover:bg-gray-700 hover:text-white"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
           
           <div>
