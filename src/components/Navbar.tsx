@@ -105,10 +105,6 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/projects/logistica-urbana" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Optimización Logística Urbana</div>
-                          <p className="text-sm text-gray-500">Ruteo inteligente, data lake y eco-conducción</p>
-                        </Link>
                       </li>
                     </ul>
                   </NavigationMenuContent>

@@ -47,15 +47,6 @@ const projects = [
     imageUrl: "/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png",
     link: "/projects/hockey"
   },
-  {
-    id: 5,
-    title: "Optimización Logística Urbana",
-    brand: "Operador logístico urbano",
-    description: "Algoritmo de ruteo por tráfico histórico y ventanas de entrega, data lake con telemetría/clima y panel de eco-conducción y puntualidad.",
-    tags: ["Logística", "Ruteo", "Telemetría", "BI"],
-    imageUrl: "/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png",
-    link: "/projects/logistica-urbana"
-  }
 ];
 
 const Projects = () => {

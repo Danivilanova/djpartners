@@ -13,7 +13,7 @@ import WorkwearProject from "./pages/WorkwearProject";
 import HockeyProject from "./pages/HockeyProject";
 import PetProject from "./pages/PetProject";
 import DentalClinicsProject from "./pages/DentalClinicsProject";
-import UrbanLogisticsProject from "./pages/UrbanLogisticsProject";
+
 import TechDetails from "./pages/TechDetails";
 import DevelopmentProcess from "./pages/DevelopmentProcess";
 import About from "./pages/About";
