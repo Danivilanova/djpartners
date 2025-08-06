@@ -82,8 +82,8 @@ const Navbar = () => {
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
                         <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">BI Predictivo para Retail</div>
-                          <p className="text-sm text-gray-500">Sistema de predicción de demanda e inventarios inteligentes</p>
+                          <div className="font-medium">Optimización Logística Urbana</div>
+                          <p className="text-sm text-gray-500">Ruteo inteligente, data lake y eco-conducción</p>
                         </Link>
                       </li>
                       <li>

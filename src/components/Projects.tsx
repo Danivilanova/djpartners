@@ -9,7 +9,7 @@ import { ConsultationModal } from '@/components/ConsultationModal';
 const projects = [
   {
     id: 1,
-    title: "Sistema de BI Predictivo para Retail",
+    title: "Optimización Logística Urbana",
     brand: "Cadena de Supermercados Regional",
     description: "Implementación de IA para optimización de inventarios y predicción de demanda, resultando en 25% de reducción de desperdicio y 15% de aumento en ventas.",
     tags: ["Retail", "BI", "Predicción", "Optimización"],
