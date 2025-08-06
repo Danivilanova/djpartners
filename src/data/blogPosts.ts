@@ -725,7 +725,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Febrero 8, 2025',
     author: 'D&J Partners',
     category: 'Tendencias',
-    imageUrl: '/lovable-uploads/cbd073dd-ecad-4643-bf2b-efc3d5846994.png',
+    imageUrl: '/lovable-uploads/market-trend-hero.png',
     keywords: [
       'consultoría IA',
       'tendencias 2025',
