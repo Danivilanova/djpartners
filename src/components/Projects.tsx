@@ -31,12 +31,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "Plataforma de Analítica para Salud",
-    brand: "Clínica Médica Privada",
-    description: "Sistema de análisis predictivo para optimización de turnos y detección temprana de patrones de riesgo en pacientes.",
-    tags: ["Salud", "Analítica Predictiva", "Optimización", "Medicina"],
+    title: "Optimización Clínica Dental con IA",
+    brand: "Red de Clínicas Dentales (5 sedes)",
+    description: "Overbooking dinámico, reasignación automática de higienistas y BI con predicción por franja horaria. Recordatorios y cobros automatizados.",
+    tags: ["Salud", "Clínicas Dentales", "BI", "Automatización"],
     imageUrl: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
-    link: "/projects/workwear"
+    link: "/projects/clinicas-dentales"
   },
   {
     id: 4,

@@ -93,9 +93,9 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/projects/workwear" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Analítica para Salud</div>
-                          <p className="text-sm text-gray-500">Predicción de riesgos y optimización de turnos médicos</p>
+                        <Link to="/projects/clinicas-dentales" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Optimización Clínica Dental</div>
+                          <p className="text-sm text-gray-500">Overbooking dinámico, BI con predicción y automatizaciones</p>
                         </Link>
                       </li>
                       <li>
