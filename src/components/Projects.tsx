@@ -49,12 +49,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "Dashboard Ejecutivo para Construcción",
-    brand: "Constructora Inmobiliaria",
-    description: "BI personalizado que integra datos de múltiples proyectos para gestión de recursos, cronogramas y análisis de rentabilidad.",
-    tags: ["Construcción", "BI", "Gestión", "Inmobiliario"],
+    title: "Optimización Logística Urbana",
+    brand: "Operador logístico urbano",
+    description: "Algoritmo de ruteo por tráfico histórico y ventanas de entrega, data lake con telemetría/clima y panel de eco-conducción y puntualidad.",
+    tags: ["Logística", "Ruteo", "Telemetría", "BI"],
     imageUrl: "/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png",
-    link: "/projects/pet-tracker"
+    link: "/projects/logistica-urbana"
   }
 ];
 

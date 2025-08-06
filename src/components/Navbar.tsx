@@ -105,9 +105,9 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/projects/pet-tracker" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Dashboard Ejecutivo Construcción</div>
-                          <p className="text-sm text-gray-500">BI personalizado para gestión de proyectos inmobiliarios</p>
+                        <Link to="/projects/logistica-urbana" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Optimización Logística Urbana</div>
+                          <p className="text-sm text-gray-500">Ruteo inteligente, data lake y eco-conducción</p>
                         </Link>
                       </li>
                     </ul>
