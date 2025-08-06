@@ -7,7 +7,7 @@ const FireCatProject = () => {
     <ProjectPageLayout
       title="BI Predictivo para Retail"
       subtitle="Ruteo inteligente, data lake de telemetría/clima y eco-conducción para última milla"
-      imageUrl="/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png"
+      imageUrl="/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png"
       brandName="Operador logístico urbano"
       darkMode={false}
     >
