@@ -100,8 +100,8 @@ const Navbar = () => {
                       </li>
                       <li>
                         <Link to="/projects/hockey" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">IA Financiera PYME</div>
-                          <p className="text-sm text-gray-500">Modelos ML para predicción de flujo de caja</p>
+                          <div className="font-medium">Retail Gourmet Personalizado</div>
+                          <p className="text-sm text-gray-500">RFM + WhatsApp Business y recomendador en punto de venta</p>
                         </Link>
                       </li>
                       <li>

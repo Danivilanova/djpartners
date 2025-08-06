@@ -40,10 +40,10 @@ const projects = [
   },
   {
     id: 4,
-    title: "IA para Gestión Financiera PYME",
-    brand: "Distribuidora de Alimentos",
-    description: "Implementación de modelos de ML para predicción de flujo de caja y optimización de decisiones de compra e inversión.",
-    tags: ["Finanzas", "ML", "Flujo de Caja", "PYME"],
+    title: "Marketing Personalizado para Retail Gourmet",
+    brand: "Cadena de tiendas gourmet (12 puntos de venta)",
+    description: "Segmentación RFM y campañas hiperpersonalizadas por WhatsApp Business. Dashboard de ventas por segmento y hora. Motor de recomendación en POS.",
+    tags: ["Retail", "RFM", "WhatsApp Business", "Recomendaciones"],
     imageUrl: "/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png",
     link: "/projects/hockey"
   },
