@@ -44,7 +44,7 @@ const projects = [
     brand: "Cadena de tiendas gourmet (12 puntos de venta)",
     description: "Segmentación RFM y campañas hiperpersonalizadas por WhatsApp Business. Dashboard de ventas por segmento y hora. Motor de recomendación en POS.",
     tags: ["Retail", "RFM", "WhatsApp Business", "Recomendaciones"],
-    imageUrl: "/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png",
+    imageUrl: "/lovable-uploads/c8b53a41-35aa-4600-8c1f-8cc6a37ff1e5.png",
     link: "/projects/hockey"
   },
 ];

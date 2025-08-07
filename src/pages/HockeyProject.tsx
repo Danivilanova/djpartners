@@ -6,7 +6,7 @@ const HockeyProject = () => {
     <ProjectPageLayout
       title="Marketing Personalizado para Retail Gourmet"
       subtitle="Segmentación RFM, WhatsApp Business y recomendaciones en punto de venta"
-      imageUrl="/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png"
+      imageUrl="/lovable-uploads/c8b53a41-35aa-4600-8c1f-8cc6a37ff1e5.png"
       brandName="Cadena de tiendas gourmet (12 puntos de venta)"
     >
       <h2 className="text-3xl font-bold mb-6">Caso de Éxito: Retail Gourmet Multisede</h2>
