@@ -114,7 +114,7 @@ const Features = () => {
     title: "Automatización de Procesos",
     description: "Automatización inteligente para maximizar eficiencia operativa y reducir errores humanos en procesos críticos."
   }, {
-    image: "/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png",
+    image: "/lovable-uploads/2e021987-e90b-41ee-9aa9-381906bc434f.png",
     title: "Desarrollo de SaaS a Medida",
     description: "Plataformas empresariales con IA integrada, diseñadas a la medida de cada sector y modelo de negocio."
   }, {
