@@ -39,7 +39,7 @@ const Features = () => {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Consultoría de Analítica Predictiva",
       description: "Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados.",
-      image: "/lovable-uploads/c6648e2d-67aa-44b4-b432-ccba060e91ba.png"
+      image: "/lovable-uploads/43c1c6bf-965c-4e37-b52b-692561d0424d.png"
     },
     {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
@@ -212,8 +212,8 @@ const Features = () => {
                     isHijacked 
                       ? "bg-slate-800/30" 
                       : hoveredFeature === index 
-                        ? index === 0 ? "bg-gray-600/60" : "bg-slate-800/40"
-                        : index === 0 ? "bg-gray-700/70" : "bg-slate-800/50"
+                        ? (index === 0 || index === 2) ? "bg-gray-600/60" : "bg-slate-800/40"
+                        : (index === 0 || index === 2) ? "bg-gray-700/70" : "bg-slate-800/50"
                   )}></div>
                 </div>
                 
