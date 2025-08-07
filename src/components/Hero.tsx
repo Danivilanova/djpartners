@@ -44,7 +44,7 @@ const Hero = () => {
   };
   
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container bg-slate-800 relative overflow-hidden h-[80vh] sm:h-[75vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
+      <div className="banner-container bg-slate-800 relative overflow-hidden h-[90vh] sm:h-[80vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
         <div className="absolute inset-0 bg-slate-800 w-full">
           <video 
             autoPlay 
