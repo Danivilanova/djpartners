@@ -27,25 +27,25 @@ const Features = () => {
       icon: <Brain className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Implementación de IA",
       description: "Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.",
-      image: "/src/assets/ai-implementation.jpg"
+      image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
     },
     {
       icon: <BarChart3 className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "BI y Dashboards Personalizados",
       description: "Transformamos datos complejos en insights visuales y accionables para líderes de negocio.",
-      image: "/src/assets/bi-dashboard.jpg"
+      image: "/lovable-uploads/761e2d9d-3a1c-458b-9848-dd1d7b42d1b9.png"
     },
     {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Consultoría de Analítica Predictiva",
       description: "Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados.",
-      image: "/src/assets/consulting-meeting.jpg"
+      image: "/lovable-uploads/7293c494-769c-421b-9028-d8ccb0bdd80a.png"
     },
     {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Integración con Sistemas Existentes",
       description: "IA sin fricciones: conectamos nuestros modelos con tu infraestructura actual, sin interrupciones.",
-      image: "/src/assets/system-integration.jpg"
+      image: "/lovable-uploads/5ca619e6-2139-4879-9b3c-94777ab85e2a.png"
     }
   ];
 
