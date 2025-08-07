@@ -8,7 +8,7 @@ const SportRetailProject = () => {
     <ProjectPageLayout
       title="Optimización de Alquiler de Equipos para Eventos"
       subtitle="Visión por IA en devoluciones, modelo predictivo de merma/vida útil y BI de operación"
-      imageUrl="/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png"
+      imageUrl="/lovable-uploads/e3deb949-a036-484a-87f5-3cd10156dd83.png"
       brandName="Operador de alquiler de material para eventos"
     >
       <SEO 
