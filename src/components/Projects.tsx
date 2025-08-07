@@ -10,14 +10,14 @@ const projects = [
   {
     id: 1,
     title: "Optimización Logística Urbana",
-    brand: "Cadena de Supermercados Regional",
-    description: "Implementación de IA para optimización de inventarios y predicción de demanda, resultando en 25% de reducción de desperdicio y 15% de aumento en ventas.",
-    tags: ["Retail", "BI", "Predicción", "Optimización"],
+    brand: "Operador logístico urbano",
+    description: "Ruteo inteligente con data lake de telemetría y clima, eco-conducción y optimización de última milla, logrando 30% de reducción en combustible.",
+    tags: ["Logística", "Ruteo IA", "Telemetría", "Eco-conducción"],
     imageUrl: "/lovable-uploads/20123606-2bd1-4d0d-9003-1782278345e5.png",
     isFeatured: true,
     link: "/projects/firecat",
     details: `
-      Una cadena regional de supermercados enfrentaba pérdidas significativas por desperdicio de productos perecederos. D&J Partners desarrolló un sistema de BI predictivo que analiza patrones históricos, tendencias estacionales y factores externos para optimizar inventarios. La solución incluye dashboards ejecutivos, alertas automatizadas y recomendaciones de compra inteligentes.
+      Un operador logístico urbano enfrentaba ineficiencias en rutas y alto consumo de combustible. D&J Partners desarrolló un sistema de ruteo inteligente con data lake que integra telemetría vehicular y datos climáticos para optimizar la última milla. La solución incluye eco-conducción, dashboards de rendimiento y alertas predictivas.
     `
   },
   {
