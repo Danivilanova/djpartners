@@ -50,7 +50,17 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png" alt="D&J Partners Logo" className={cn("h-16 w-auto", isScrolled ? "" : "brightness-0 invert")} />
+              <img 
+                src="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png" 
+                alt="D&J Partners Logo" 
+                className={cn(
+                  "h-16 w-auto transition-all duration-300",
+                  isScrolled ? "" : "brightness-0 invert"
+                )}
+                loading="eager"
+                decoding="sync"
+                fetchPriority="high"
+              />
             </Link>
           </div>
           
