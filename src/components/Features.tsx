@@ -110,7 +110,7 @@ const Features = () => {
   }, []);
 
   const aiCaseStudies = [{
-    image: "/lovable-uploads/4187f423-ba69-4043-be76-c43098488348.png",
+    image: "/lovable-uploads/87c0f01d-593d-4a3f-b971-da414a57ff2b.png",
     title: "Automatización de Procesos",
     description: "Automatización inteligente para maximizar eficiencia operativa y reducir errores humanos en procesos críticos."
   }, {
