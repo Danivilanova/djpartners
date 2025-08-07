@@ -44,7 +44,7 @@ const Hero = () => {
   };
   
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container bg-slate-800 relative overflow-hidden h-[60vh] sm:h-[65vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
+      <div className="banner-container bg-slate-800 relative overflow-hidden h-[70vh] sm:h-[70vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
         <div className="absolute inset-0 bg-slate-800 w-full">
           <video 
             autoPlay 
@@ -66,7 +66,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/70 to-white"></div>
         </div>
         
-        <div className="banner-overlay bg-transparent pt-20 sm:pt-24 md:pt-32 w-full">
+        <div className="banner-overlay bg-transparent pt-12 sm:pt-20 md:pt-32 pb-12 sm:pb-16 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
             <motion.div className="w-full max-w-4xl text-center" variants={itemVariants}>
               <motion.h1 className="banner-title text-white" variants={itemVariants}>Transformamos empresas con Inteligencia Artificial aplicada al negocio.</motion.h1>
