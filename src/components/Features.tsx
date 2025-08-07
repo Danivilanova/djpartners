@@ -45,7 +45,7 @@ const Features = () => {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Integración con Sistemas Existentes",
       description: "IA sin fricciones: conectamos nuestros modelos con tu infraestructura actual, sin interrupciones.",
-      image: "/lovable-uploads/c22f7405-fa12-4177-a50b-8fe831e93e8b.png"
+      image: "/lovable-uploads/87c0f01d-593d-4a3f-b971-da414a57ff2b.png"
     }
   ];
 
@@ -110,7 +110,7 @@ const Features = () => {
   }, []);
 
   const aiCaseStudies = [{
-    image: "/lovable-uploads/87c0f01d-593d-4a3f-b971-da414a57ff2b.png",
+    image: "/lovable-uploads/c22f7405-fa12-4177-a50b-8fe831e93e8b.png",
     title: "Automatización de Procesos",
     description: "Automatización inteligente para maximizar eficiencia operativa y reducir errores humanos en procesos críticos."
   }, {
