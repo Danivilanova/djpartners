@@ -13,7 +13,7 @@ const projects = [
     brand: "Cadena de Supermercados Regional",
     description: "Implementación de IA para optimización de inventarios y predicción de demanda, resultando en 25% de reducción de desperdicio y 15% de aumento en ventas.",
     tags: ["Retail", "BI", "Predicción", "Optimización"],
-    imageUrl: "/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png",
+    imageUrl: "/lovable-uploads/20123606-2bd1-4d0d-9003-1782278345e5.png",
     isFeatured: true,
     link: "/projects/firecat",
     details: `

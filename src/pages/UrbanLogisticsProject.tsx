@@ -6,7 +6,7 @@ const UrbanLogisticsProject = () => {
     <ProjectPageLayout
       title="Optimización Logística Urbana"
       subtitle="Ruteo inteligente con tráfico histórico, data lake de telemetría y eco-conducción"
-      imageUrl="/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png"
+      imageUrl="/lovable-uploads/20123606-2bd1-4d0d-9003-1782278345e5.png"
       brandName="Operador logístico urbano"
     >
       <h2 className="text-3xl font-bold mb-6">Caso de Éxito: Operador Logístico Urbano</h2>

@@ -7,7 +7,7 @@ const FireCatProject = () => {
     <ProjectPageLayout
       title="Optimización Logística Urbana"
       subtitle="Ruteo inteligente, data lake de telemetría/clima y eco-conducción para última milla"
-      imageUrl="/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png"
+      imageUrl="/lovable-uploads/20123606-2bd1-4d0d-9003-1782278345e5.png"
       brandName="Operador logístico urbano"
       darkMode={false}
     >
