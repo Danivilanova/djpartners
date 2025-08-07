@@ -2,6 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Initialize dataLayer and gtag function -->
+    <script>
+      // Initialize the dataLayer
+      window.dataLayer = window.dataLayer || [];
+
+      // Create the gtag function that pushes to the dataLayer
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Set default consent (no cookie banner, just allow all)
+      gtag('consent', 'default', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      });
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
