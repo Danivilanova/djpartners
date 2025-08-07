@@ -45,7 +45,7 @@ const Features = () => {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Integración con Sistemas Existentes",
       description: "IA sin fricciones: conectamos nuestros modelos con tu infraestructura actual, sin interrupciones.",
-      image: "/lovable-uploads/87c0f01d-593d-4a3f-b971-da414a57ff2b.png"
+      image: "/lovable-uploads/86035222-8ed6-4361-92c6-76550462d793.png"
     }
   ];
 
