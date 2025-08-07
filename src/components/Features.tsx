@@ -212,8 +212,8 @@ const Features = () => {
                     isHijacked 
                       ? "bg-slate-800/30" 
                       : hoveredFeature === index 
-                        ? (index === 0 || index === 2) ? "bg-gray-600/60" : "bg-slate-800/40"
-                        : (index === 0 || index === 2) ? "bg-gray-700/70" : "bg-slate-800/50"
+                        ? (index === 0 || index === 1 || index === 2) ? "bg-gray-600/60" : "bg-slate-800/40"
+                        : (index === 0 || index === 1 || index === 2) ? "bg-gray-700/70" : "bg-slate-800/50"
                   )}></div>
                 </div>
                 
