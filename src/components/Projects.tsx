@@ -35,7 +35,7 @@ const projects = [
     brand: "Red de Clínicas Dentales (5 sedes)",
     description: "Overbooking dinámico, reasignación automática de higienistas y BI con predicción por franja horaria. Recordatorios y cobros automatizados.",
     tags: ["Salud", "Clínicas Dentales", "BI", "Automatización"],
-    imageUrl: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
+    imageUrl: "/lovable-uploads/6d2f0374-664f-4c97-89ba-cf7d7d4fe4cd.png",
     link: "/projects/clinicas-dentales"
   },
   {

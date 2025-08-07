@@ -6,7 +6,7 @@ const DentalClinicsProject = () => {
     <ProjectPageLayout
       title="Optimización Clínica Dental con IA"
       subtitle="Overbooking dinámico, predicción de demanda y automatización de recordatorios y cobros"
-      imageUrl="/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png"
+      imageUrl="/lovable-uploads/6d2f0374-664f-4c97-89ba-cf7d7d4fe4cd.png"
       brandName="Red de Clínicas Dentales (5 sedes)"
     >
       <h2 className="text-3xl font-bold mb-6">Caso de Éxito: Red de Clínicas Dentales</h2>
