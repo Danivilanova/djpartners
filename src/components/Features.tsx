@@ -118,7 +118,7 @@ const Features = () => {
     title: "Desarrollo de SaaS a Medida",
     description: "Plataformas empresariales con IA integrada, diseñadas a la medida de cada sector y modelo de negocio."
   }, {
-    image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
+    image: "/lovable-uploads/4d58c28d-0aa9-4302-b617-6237d9d14220.png",
     title: "Machine Learning Predictivo",
     description: "Modelos de aprendizaje automático que identifican patrones y predicen tendencias para optimizar decisiones empresariales."
   }];
