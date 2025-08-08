@@ -12,6 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from "@/components/ui/button";
 import { useScrollHijack } from '@/hooks/useScrollHijack';
 import { ConsultationModal } from '@/components/ConsultationModal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -21,6 +22,7 @@ const Features = () => {
   const [currentSprint, setCurrentSprint] = useState(1);
   const totalSprints = 3;
   const isMobile = useIsMobile();
+  const { t } = useLanguage();
 
   const features = [
     {

@@ -5,12 +5,15 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isBlogPage = location.pathname === '/blog';
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,13 +68,14 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center space-x-4">
+            <LanguageSelector />
             <NavigationMenu className={cn(isScrolled ? "" : "text-white")}>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/">
                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                     Inicio
+                     {t('nav.home')}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -79,14 +83,14 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <Link to="/about">
                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                     Nosotros
+                     {t('nav.about')}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
                    <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                    Casos de Éxito
+                    {t('projects.title')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
@@ -122,7 +126,7 @@ const Navbar = () => {
                 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                    Servicios
+                    {t('footer.services')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
@@ -163,7 +167,7 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <Link to="/blog">
                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                     Blog
+                     {t('nav.blog')}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -171,14 +175,14 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <Link to="/careers">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                     Únete al Equipo
+                     {t('nav.careers')}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
                   <button onClick={() => scrollToSection('contact')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-slate-200 text-slate-700 hover:bg-slate-300" : "bg-navbar-graphite-hover text-white hover:bg-white hover:text-navbar-graphite")}>
-                    Contacto
+                    {t('nav.contact')}
                   </button>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -197,6 +201,9 @@ const Navbar = () => {
       {/* Mobile Navigation Menu - Reduced height and simplified */}
       <div className={cn("md:hidden transition-all duration-300 overflow-hidden w-full", isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0")}>
         <div className={cn("px-3 pt-2 pb-3 space-y-1 shadow-sm overflow-y-auto max-h-80", isScrolled ? "bg-white" : "bg-navbar-graphite")}>
+          <div className="mb-4">
+            <LanguageSelector onMobile />
+          </div>
           <Link to="/" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-navbar-graphite-hover")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);

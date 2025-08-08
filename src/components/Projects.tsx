@@ -5,6 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ConsultationModal } from '@/components/ConsultationModal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const projects = [
   {
@@ -58,6 +59,7 @@ const Projects = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const isMobile = useIsMobile();
+  const { t } = useLanguage();
 
   const minSwipeDistance = 50;
 
@@ -122,13 +124,13 @@ const Projects = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className={`text-center mb-10 max-w-3xl mx-auto transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
-            Casos de Éxito
+            {t('projects.title')}
           </div>
           <h2 className="text-3xl font-bold mb-3">
-            De Datos a Decisiones Inteligentes
+            {t('projects.subtitle')}
           </h2>
           <p className="text-gray-600">
-            Explora cómo nuestras soluciones de IA están transformando PYMEs tradicionales con tecnología estratégica adaptada a necesidades específicas.
+            {t('projects.description')}
           </p>
           {isMobile && (
             <div className="flex items-center justify-center mt-4 animate-pulse-slow">
@@ -199,7 +201,7 @@ const Projects = () => {
                       
                       <ConsultationModal>
                         <button className="text-gray-500 flex items-center hover:underline relative overflow-hidden group">
-                          <span className="relative z-10">Ver más detalles</span>
+                          <span className="relative z-10">{t('common.viewDetails')}</span>
                           <ArrowRight className="ml-2 w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
                           <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
                         </button>

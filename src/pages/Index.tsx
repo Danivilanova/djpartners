@@ -7,8 +7,11 @@ import WhyWrlds from '@/components/WhyWrlds';
 import BlogPreview from '@/components/BlogPreview';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   // Fix any ID conflicts when the page loads
   useEffect(() => {
     const contactElements = document.querySelectorAll('[id="contact"]');
@@ -21,8 +24,8 @@ const Index = () => {
   return (
     <PageLayout>
       <SEO 
-        title="D&J Partners - Consultoría en Inteligencia Artificial para Empresas" 
-        description="D&J Partners: Transformamos PYMEs con Inteligencia Artificial aplicada al negocio. BI personalizado, analítica predictiva y automatización inteligente."
+        title={t('seo.title')} 
+        description={t('seo.description')}
         imageUrl="/lovable-uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.png"
         keywords={['inteligencia artificial', 'consultoría IA', 'business intelligence', 'analítica predictiva', 'automatización empresarial', 'transformación digital', 'PYME']}
       />
