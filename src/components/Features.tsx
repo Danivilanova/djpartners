@@ -12,7 +12,6 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from "@/components/ui/button";
 import { useScrollHijack } from '@/hooks/useScrollHijack';
 import { ConsultationModal } from '@/components/ConsultationModal';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -22,31 +21,30 @@ const Features = () => {
   const [currentSprint, setCurrentSprint] = useState(1);
   const totalSprints = 3;
   const isMobile = useIsMobile();
-  const { t } = useLanguage();
 
   const features = [
     {
       icon: <Brain className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: t('features.ai.title'),
-      description: t('features.ai.description'),
+      title: "Implementación de IA",
+      description: "Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.",
       image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
     },
     {
       icon: <BarChart3 className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: t('features.bi.title'),
-      description: t('features.bi.description'),
+      title: "BI y Dashboards Personalizados",
+      description: "Transformamos datos complejos en insights visuales y accionables para líderes de negocio.",
       image: "/lovable-uploads/761e2d9d-3a1c-458b-9848-dd1d7b42d1b9.png"
     },
     {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: t('features.analytics.title'),
-      description: t('features.analytics.description'),
+      title: "Consultoría de Analítica Predictiva",
+      description: "Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados.",
       image: "/lovable-uploads/43c1c6bf-965c-4e37-b52b-692561d0424d.png"
     },
     {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: t('features.integration.title'),
-      description: t('features.integration.description'),
+      title: "Integración con Sistemas Existentes",
+      description: "IA sin fricciones: conectamos nuestros modelos con tu infraestructura actual, sin interrupciones.",
       image: "/lovable-uploads/86035222-8ed6-4361-92c6-76550462d793.png"
     }
   ];
@@ -126,16 +124,16 @@ const Features = () => {
   }];
   const stepFlowItems = [{
     icon: <Database className="h-10 w-10 text-gray-700" />,
-    title: t('technology.diagnosis.title'),
-    description: t('technology.diagnosis.description')
+    title: "Diagnóstico y Análisis de Datos",
+    description: "Evaluamos la infraestructura actual, calidad de datos y identificamos oportunidades de IA"
   }, {
     icon: <Brain className="h-10 w-10 text-gray-700" />,
-    title: t('technology.design.title'),
-    description: t('technology.design.description')
+    title: "Diseño de Solución Personalizada",
+    description: "Desarrollamos estrategias de IA específicas alineadas con objetivos empresariales"
   }, {
     icon: <Rocket className="h-10 w-10 text-gray-700" />,
-    title: t('technology.implementation.title'),
-    description: t('technology.implementation.description')
+    title: "Implementación y Adopción",
+    description: "Desplegamos la solución con capacitación completa y soporte continuo"
   }];
   const sprintPhases = [{
     name: "Diagnóstico",
@@ -156,10 +154,10 @@ const Features = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8" ref={featuresRef}> 
           <div className="text-center mb-10 max-w-3xl mx-auto feature-item">
             <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-              {t('features.title')}
+              Servicios de Consultoría IA
             </div>
             <p className="text-gray-600 mt-4">
-              {t('features.subtitle')}
+              Nuestra experiencia en inteligencia artificial transforma datos empresariales en ventajas competitivas, potenciando el crecimiento de PYMEs mediante soluciones tecnológicas estratégicas.
             </p>
           </div>
           

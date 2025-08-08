@@ -4,7 +4,6 @@ import { Layers, BarChart, AlertTriangle, Clock4, Rocket, Zap, Sparkles, ArrowRi
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
 import { ConsultationModal } from '@/components/ConsultationModal';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const AnimatedCounter = ({
   end,
@@ -55,7 +54,6 @@ const AnimatedCounter = ({
 
 const WhyWrlds = () => {
   const isMobile = useIsMobile();
-  const { t } = useLanguage();
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -89,10 +87,10 @@ const WhyWrlds = () => {
         margin: "-100px"
       }} variants={containerVariants}>
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            {t('why.title')}
+            ¿Por qué D&J Partners?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-lg max-w-3xl mx-auto">
-            {t('why.subtitle')}
+            En un entorno donde la tecnología puede generar más confusión que resultados, D&J Partners aporta visión, estructura y ejecución para transformar empresas con inteligencia artificial.
           </motion.p>
         </motion.div>
         
