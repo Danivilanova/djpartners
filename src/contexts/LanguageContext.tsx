@@ -23,7 +23,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('es');
+  const [language, setLanguage] = useState<Language>('ca');
   const [translations, setTranslations] = useState<Record<string, string>>({});
 
   const loadTranslations = async (lang: Language) => {
@@ -42,7 +42,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   useEffect(() => {
     // Load saved language or default to Spanish
-    const savedLanguage = localStorage.getItem('preferred-language') as Language || 'es';
+    const savedLanguage = localStorage.getItem('preferred-language') as Language || 'ca';
     setLanguage(savedLanguage);
     loadTranslations(savedLanguage);
   }, []);
