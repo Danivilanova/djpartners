@@ -95,6 +95,28 @@ export default {
   'footer.privacy': 'Política de Privacitat',
   'footer.terms': 'Termes de Servei',
   'footer.copyright': '© 2024 D&J Partners. Tots els drets reservats.',
+  'footer.description': 'Consultora especialitzada en transformació digital mitjançant IA, Business Intelligence i anàlisi predictiu per a organitzacions que busquen avantatge competitiu sostenible.',
+  'footer.location': 'Barcelona, Espanya',
+  'footer.availability': 'Consultoria disponible a nivell nacional',
+  'footer.stayInformed': 'Mantén-te Informat',
+  'footer.emailPlaceholder': 'El teu email',
+  'footer.subscribe': 'Subscriure\'s',
+  'footer.subscribing': 'Subscrivint...',
+  'footer.aboutUs': 'Sobre Nosaltres',
+  'footer.joinTeam': 'Uneix-te a l\'Equip',
+
+  // Forms
+  'form.name': 'Nom Complet',
+  'form.email': 'Email',
+  'form.phone': 'Telèfon',
+  'form.message': 'Missatge',
+  'form.send': 'Enviar',
+  'form.sending': 'Enviant...',
+  'form.required': 'Requerit',
+  'form.namePlaceholder': 'El teu nom complet',
+  'form.emailPlaceholder': 'el.teu.email@exemple.com',
+  'form.phonePlaceholder': 'El teu telèfon',
+  'form.messagePlaceholder': 'Descriu el teu projecte...',
 
   // SEO
   'seo.title': 'D&J Partners - Consultoria en Intel·ligència Artificial per a Empreses',

@@ -27,26 +27,26 @@ const Features = () => {
   const features = [
     {
       icon: <Brain className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Implementación de IA",
-      description: "Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.",
+      title: t('features.ai.title'),
+      description: t('features.ai.description'),
       image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
     },
     {
       icon: <BarChart3 className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "BI y Dashboards Personalizados",
-      description: "Transformamos datos complejos en insights visuales y accionables para líderes de negocio.",
+      title: t('features.bi.title'),
+      description: t('features.bi.description'),
       image: "/lovable-uploads/761e2d9d-3a1c-458b-9848-dd1d7b42d1b9.png"
     },
     {
       icon: <TrendingUp className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Consultoría de Analítica Predictiva",
-      description: "Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados.",
+      title: t('features.analytics.title'),
+      description: t('features.analytics.description'),
       image: "/lovable-uploads/43c1c6bf-965c-4e37-b52b-692561d0424d.png"
     },
     {
       icon: <Settings className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Integración con Sistemas Existentes",
-      description: "IA sin fricciones: conectamos nuestros modelos con tu infraestructura actual, sin interrupciones.",
+      title: t('features.integration.title'),
+      description: t('features.integration.description'),
       image: "/lovable-uploads/86035222-8ed6-4361-92c6-76550462d793.png"
     }
   ];
@@ -126,16 +126,16 @@ const Features = () => {
   }];
   const stepFlowItems = [{
     icon: <Database className="h-10 w-10 text-gray-700" />,
-    title: "Diagnóstico y Análisis de Datos",
-    description: "Evaluamos la infraestructura actual, calidad de datos y identificamos oportunidades de IA"
+    title: t('technology.diagnosis.title'),
+    description: t('technology.diagnosis.description')
   }, {
     icon: <Brain className="h-10 w-10 text-gray-700" />,
-    title: "Diseño de Solución Personalizada",
-    description: "Desarrollamos estrategias de IA específicas alineadas con objetivos empresariales"
+    title: t('technology.design.title'),
+    description: t('technology.design.description')
   }, {
     icon: <Rocket className="h-10 w-10 text-gray-700" />,
-    title: "Implementación y Adopción",
-    description: "Desplegamos la solución con capacitación completa y soporte continuo"
+    title: t('technology.implementation.title'),
+    description: t('technology.implementation.description')
   }];
   const sprintPhases = [{
     name: "Diagnóstico",
@@ -156,10 +156,10 @@ const Features = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8" ref={featuresRef}> 
           <div className="text-center mb-10 max-w-3xl mx-auto feature-item">
             <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-              Servicios de Consultoría IA
+              {t('features.title')}
             </div>
             <p className="text-gray-600 mt-4">
-              Nuestra experiencia en inteligencia artificial transforma datos empresariales en ventajas competitivas, potenciando el crecimiento de PYMEs mediante soluciones tecnológicas estratégicas.
+              {t('features.subtitle')}
             </p>
           </div>
           

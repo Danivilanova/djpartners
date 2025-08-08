@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,30 +78,30 @@ const Footer = () => {
               className="h-24 w-auto mb-6 brightness-0 invert" 
             />
             <p className="text-gray-300 mb-6">
-              Consultora especializada en transformación digital mediante IA, Business Intelligence y análisis predictivo para organizaciones que buscan ventaja competitiva sostenible.
+              {t('footer.description')}
             </p>
             <p className="text-gray-300 mb-6">
-              Barcelona, España<br />
-              Consultoría disponible a nivel nacional
+              {t('footer.location')}<br />
+              {t('footer.availability')}
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Empresa</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">{t('footer.company')}</h3>
             <ul className="space-y-3">
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link></li>
-              <li><Link to="/careers" className="text-gray-300 hover:text-white transition-colors">Únete al Equipo</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Política de Privacidad</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/careers" className="text-gray-300 hover:text-white transition-colors">{t('footer.joinTeam')}</Link></li>
+              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">{t('footer.privacy')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Mantente Informado</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">{t('footer.stayInformed')}</h3>
             <form className="space-y-4" onSubmit={handleSubscribe}>
               <div>
                 <input 
                   type="email" 
-                  placeholder="Tu email" 
+                  placeholder={t('footer.emailPlaceholder')} 
                   className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 text-white placeholder-gray-400"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -111,9 +113,9 @@ const Footer = () => {
                 className="w-full px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Suscribiendo..." : (
+                {isSubmitting ? t('footer.subscribing') : (
                   <>
-                    Suscribirse
+                    {t('footer.subscribe')}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </>
                 )}
@@ -124,10 +126,10 @@ const Footer = () => {
         
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} D&J Partners. Todos los derechos reservados.
+            {t('footer.copyright')}
           </p>
           <div className="flex space-x-6">
-            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Política de Privacidad</Link>
+            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">{t('footer.privacy')}</Link>
           </div>
         </div>
       </div>
