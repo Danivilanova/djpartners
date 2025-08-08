@@ -10,9 +10,9 @@ interface LanguageSelectorProps {
 const LanguageSelector = ({ className, onMobile = false }: LanguageSelectorProps) => {
   const { language, setLanguage } = useLanguage();
 
-  const languages: { code: Language; name: string; flag: string }[] = [
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'ca', name: 'Català', flag: '🇪🇸' }, // Using Spanish flag as Catalan shares the same country
+  const languages: { code: Language; name: string }[] = [
+    { code: 'es', name: 'Español' },
+    { code: 'ca', name: 'Català' },
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -31,7 +31,7 @@ const LanguageSelector = ({ className, onMobile = false }: LanguageSelectorProps
                 : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
             )}
           >
-            <span className="mr-2">{lang.flag}</span>
+            <span className="mr-2"></span>
             {lang.name}
           </button>
         ))}
@@ -44,7 +44,7 @@ const LanguageSelector = ({ className, onMobile = false }: LanguageSelectorProps
       <button className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors">
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">{currentLanguage?.name}</span>
-        <span className="sm:hidden">{currentLanguage?.flag}</span>
+        <span className="sm:hidden">{currentLanguage?.name}</span>
       </button>
       
       <div className="absolute right-0 top-full mt-1 w-32 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -60,7 +60,7 @@ const LanguageSelector = ({ className, onMobile = false }: LanguageSelectorProps
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
               )}
             >
-              <span className="mr-2">{lang.flag}</span>
+              <span className="mr-2"></span>
               {lang.name}
             </button>
           ))}
