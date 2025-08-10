@@ -16,76 +16,76 @@ const PrivacyPolicy = () => {
               Back to Home
             </Link>
             
-            <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold mb-8">Política de Privacidad</h1>
             
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">Last updated: April 11, 2025</p>
+              <p className="text-gray-600 mb-6">Última actualización: 11 de abril de 2025</p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introducción</h2>
               <p className="text-gray-600 mb-4">
-                At WRLDS Technologies ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                En D J Partners ("nosotros", "nuestro" o "nos"), respetamos su privacidad y nos comprometemos a proteger su información personal. Esta Política de Privacidad explica cómo recopilamos, utilizamos, divulgamos y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">2. Information We Collect</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">2. Información que Recopilamos</h2>
               <p className="text-gray-600 mb-4">
-                We may collect personal information that you voluntarily provide to us when you:
-              </p>
-              <ul className="list-disc pl-6 mb-4 text-gray-600">
-                <li>Contact us through our website</li>
-                <li>Subscribe to our newsletter</li>
-                <li>Register for our services</li>
-                <li>Participate in our surveys or promotions</li>
-              </ul>
-              <p className="text-gray-600 mb-4">
-                This information may include your name, email address, company name, phone number, and any other information you choose to provide.
-              </p>
-              
-              <h2 className="text-2xl font-semibold mt-8 mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-600 mb-4">
-                We may use the information we collect for various purposes, including to:
+                Podemos recopilar información personal que usted proporcione voluntariamente cuando:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-600">
-                <li>Provide, operate, and maintain our services</li>
-                <li>Improve, personalize, and expand our services</li>
-                <li>Understand and analyze how you use our services</li>
-                <li>Develop new products, services, features, and functionality</li>
-                <li>Communicate with you about our services, updates, and other information</li>
-                <li>Process transactions and send related information</li>
-                <li>Find and prevent fraud</li>
+                <li>Se pone en contacto con nosotros a través de nuestro sitio web</li>
+                <li>Se suscribe a nuestro boletín informativo</li>
+                <li>Se registra para nuestros servicios</li>
+                <li>Participa en nuestras encuestas o promociones</li>
+              </ul>
+              <p className="text-gray-600 mb-4">
+                Esta información puede incluir su nombre, dirección de correo electrónico, nombre de la empresa, número de teléfono y cualquier otra información que elija proporcionar.
+              </p>
+              
+              <h2 className="text-2xl font-semibold mt-8 mb-4">3. Cómo Utilizamos su Información</h2>
+              <p className="text-gray-600 mb-4">
+                Podemos utilizar la información que recopilamos para diversos propósitos, incluyendo:
+              </p>
+              <ul className="list-disc pl-6 mb-4 text-gray-600">
+                <li>Proporcionar, operar y mantener nuestros servicios</li>
+                <li>Mejorar, personalizar y expandir nuestros servicios</li>
+                <li>Entender y analizar cómo utiliza nuestros servicios</li>
+                <li>Desarrollar nuevos productos, servicios, características y funcionalidades</li>
+                <li>Comunicarnos con usted sobre nuestros servicios, actualizaciones y otra información</li>
+                <li>Procesar transacciones y enviar información relacionada</li>
+                <li>Detectar y prevenir fraudes</li>
               </ul>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">4. Cookies and Tracking Technologies</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">4. Cookies y Tecnologías de Seguimiento</h2>
               <p className="text-gray-600 mb-4">
-                We may use cookies and similar tracking technologies to track activity on our website and store certain information. Cookies are files with a small amount of data that may include an anonymous unique identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+                Podemos utilizar cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro sitio web y almacenar cierta información. Las cookies son archivos con una pequeña cantidad de datos que pueden incluir un identificador único anónimo. Puede configurar su navegador para rechazar todas las cookies o para indicar cuándo se está enviando una cookie.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">5. Third-Party Services</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">5. Servicios de Terceros</h2>
               <p className="text-gray-600 mb-4">
-                We may use third-party services that collect, monitor, and analyze data to improve our services. These third parties have their own privacy policies addressing how they use such information.
+                Podemos utilizar servicios de terceros que recopilan, monitorean y analizan datos para mejorar nuestros servicios. Estos terceros tienen sus propias políticas de privacidad que abordan cómo utilizan dicha información.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">6. Data Retention</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">6. Retención de Datos</h2>
               <p className="text-gray-600 mb-4">
-                We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy.
+                Conservaremos su información personal solo durante el tiempo que sea necesario para los propósitos establecidos en esta Política de Privacidad.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">7. Security</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">7. Seguridad</h2>
               <p className="text-gray-600 mb-4">
-                The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
+                La seguridad de sus datos es importante para nosotros, pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro. Aunque nos esforzamos por utilizar medios comercialmente aceptables para proteger su información personal, no podemos garantizar su seguridad absoluta.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">8. Your Rights</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">8. Sus Derechos</h2>
               <p className="text-gray-600 mb-4">
-                Depending on your location, you may have certain rights regarding your personal information, such as the right to access, correct, or delete your personal information.
+                Dependiendo de su ubicación, puede tener ciertos derechos con respecto a su información personal, como el derecho a acceder, corregir o eliminar su información personal.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">9. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">9. Cambios en esta Política de Privacidad</h2>
               <p className="text-gray-600 mb-4">
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our website prior to the change becoming effective.
+                Podemos actualizar nuestra Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página. Le informaremos por correo electrónico y/o mediante un aviso destacado en nuestro sitio web antes de que el cambio entre en vigor.
               </p>
               
-              <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contact Us</h2>
-              <p className="text-gray-600 mb-4">If you have any questions about this Privacy Policy, please contact us at hello@wrlds.com</p>
+              <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contáctenos</h2>
+              <p className="text-gray-600 mb-4">Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros en info@djpartners.com</p>
               
             </div>
           </div>
