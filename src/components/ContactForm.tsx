@@ -1,244 +1,169 @@
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Send, Mail, User, MessageSquare } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Send, Mail, User, MessageCircle, Phone } from 'lucide-react';
+import { toast } from "sonner";
 import { supabase } from '@/integrations/supabase/client';
-import emailjs from 'emailjs-com';
-
-// Updated schema with honeypot field validation
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-  honeypot: z.string().max(0, 'Bot detected'), // Honeypot field must be empty
-  timestamp: z.number() // To prevent automated quick submissions
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
-// EmailJS configuration - Updated with correct template ID
-const EMAILJS_SERVICE_ID = "service_i3h66xg";
-const EMAILJS_TEMPLATE_ID = "template_fgq53nh"; // Updated to the correct template ID
-const EMAILJS_PUBLIC_KEY = "wQmcZvoOqTAhGnRZ3";
 
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStartTime] = useState<number>(Date.now()); // Track when form was opened
-  
-  const { toast } = useToast();
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-      honeypot: '',
-      timestamp: formStartTime
-    }
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    description: ""
   });
 
-  const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     
+    // Validación básica
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast.error("Por favor completa los campos obligatorios");
+      return;
+    }
+
+    // Validación de email básica
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Por favor introduce un email válido");
+      return;
+    }
+
     try {
-      // Bot checks
-      // 1. Honeypot check - should be caught by zod, but double-check
-      if (data.honeypot) {
-        console.log('Bot detected via honeypot');
-        toast({
-          title: "Error",
-          description: "There was a problem with your submission. Please try again.",
-          variant: "destructive"
-        });
-        setIsSubmitting(false);
-        return;
-      }
-      
-      // 2. Time-based check - Submission should take at least 3 seconds (too fast is likely a bot)
-      const timeDiff = Date.now() - data.timestamp;
-      if (timeDiff < 3000) {
-        console.log(`Bot detected: Form submitted too quickly (${timeDiff}ms)`);
-        toast({
-          title: "Error",
-          description: "Please take a moment to review your message before submitting.",
-          variant: "destructive"
-        });
-        setIsSubmitting(false);
-        return;
-      }
-      
-      console.log('Form submitted:', data);
-      
-      // Save to Supabase first
-      console.log('Saving to Supabase...');
-      const { error: supabaseError } = await supabase
-        .from('contact_requests')
+      // Guardar en Supabase
+      const { error } = await supabase
+        .from('consultation_requests')
         .insert({
-          name: data.name,
-          email: data.email,
-          message: data.message
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          description: formData.description || null
         });
 
-      if (supabaseError) {
-        console.error('Supabase error:', supabaseError);
-        throw new Error('Failed to save contact request: ' + supabaseError.message);
+      if (error) {
+        throw error;
       }
 
-      console.log('Successfully saved to Supabase');
-
-      // If Supabase save is successful, try to send email
-      try {
-        // Remove honeypot and timestamp fields before sending email
-        const { honeypot, timestamp, ...emailData } = data;
-        
-        // Using parameters exactly as expected by EmailJS templates
-        const templateParams = {
-          from_name: emailData.name,
-          from_email: emailData.email,
-          message: emailData.message,
-          to_name: 'WRLDS Team',
-          reply_to: emailData.email
-        };
-        
-        console.log('Sending email with params:', templateParams);
-        
-        // Send email
-        const response = await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          templateParams,
-          EMAILJS_PUBLIC_KEY
-        );
-        
-        console.log('Email sent successfully:', response);
-      } catch (emailError) {
-        // Email failed but Supabase save was successful
-        console.warn('Email sending failed, but contact was saved:', emailError);
-      }
+      toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
       
-      // Show success message regardless of email status since Supabase save worked
-      toast({
-        title: "Message sent!",
-        description: "We've received your message and will get back to you soon.",
-        variant: "default"
-      });
-
-      form.reset({
-        name: '',
-        email: '',
-        message: '',
-        honeypot: '',
-        timestamp: Date.now()
+      // Resetear formulario
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        description: ""
       });
     } catch (error) {
-      console.error('Error sending email:', error);
-      
-      // More detailed error logging
-      if (error && typeof error === 'object' && 'text' in error) {
-        console.error('Error details:', (error as any).text);
-      }
-      
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again later.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
+      console.error('Error saving consultation request:', error);
+      toast.error("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.");
     }
   };
 
-  return <section id="contact" className="bg-gradient-to-b from-white to-black text-white relative py-[25px]">
+  return (
+    <section id="contact" className="bg-gradient-to-b from-white to-black text-white relative py-[25px]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block mb-3 px-3 py-1 bg-white text-black rounded-full text-sm font-medium">
-            Get In Touch
+            Solicita tu Consultoría Gratuita
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-            Contact Us Today
+            Contacta con Nosotros
           </h2>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Have questions about our AI-powered sensor solutions? Reach out to our team and let's discuss how we can help bring your ideas to life.
+            Cuéntanos sobre tu proyecto y te contactaremos para agendar una consultoría gratuita personalizada.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="bg-white rounded-xl shadow-xl p-8 border border-gray-700 text-black">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField control={form.control} name="name" render={({
-                field
-              }) => <FormItem>
-                      <FormLabel className="text-gray-700">Name</FormLabel>
-                      <div className="relative">
-                        <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <FormControl>
-                          <Input placeholder="Your name" className="pl-10" {...field} />
-                        </FormControl>
-                      </div>
-                      <FormMessage />
-                    </FormItem>} />
-                
-                <FormField control={form.control} name="email" render={({
-                field
-              }) => <FormItem>
-                      <FormLabel className="text-gray-700">Email</FormLabel>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <FormControl>
-                          <Input type="email" placeholder="your.email@example.com" className="pl-10" {...field} />
-                        </FormControl>
-                      </div>
-                      <FormMessage />
-                    </FormItem>} />
-                
-                <FormField control={form.control} name="message" render={({
-                field
-              }) => <FormItem>
-                      <FormLabel className="text-gray-700">Message</FormLabel>
-                      <div className="relative">
-                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                        <FormControl>
-                          <Textarea placeholder="Tell us about your project or inquiry..." className="min-h-[120px] pl-10 resize-none" {...field} />
-                        </FormControl>
-                      </div>
-                      <FormMessage />
-                    </FormItem>} />
-                
-                {/* Honeypot field - hidden from real users but bots will fill it */}
-                <FormField control={form.control} name="honeypot" render={({
-                field
-              }) => <FormItem className="hidden">
-                      <FormLabel>Leave this empty</FormLabel>
-                      <FormControl>
-                        <Input {...field} tabIndex={-1} />
-                      </FormControl>
-                    </FormItem>} />
-                
-                {/* Hidden timestamp field */}
-                <FormField control={form.control} name="timestamp" render={({
-                field
-              }) => <FormItem className="hidden">
-                      <FormControl>
-                        <Input type="hidden" {...field} />
-                      </FormControl>
-                    </FormItem>} />
-                
-                <button type="submit" disabled={isSubmitting} className="w-full bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-md transition-colors flex items-center justify-center disabled:opacity-70">
-                  {isSubmitting ? "Sending..." : <>
-                      Send Message
-                      <Send className="ml-2 h-4 w-4" />
-                    </>}
-                </button>
-              </form>
-            </Form>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <User className="w-4 h-4" />
+                  Nombre completo *
+                </Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Tu nombre completo"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                  className="w-full"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <Mail className="w-4 h-4" />
+                  Email corporativo *
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="tu@empresa.com"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  className="w-full"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <Phone className="w-4 h-4" />
+                  Teléfono *
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="+34 600 000 000"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  className="w-full"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="description" className="text-sm font-medium text-gray-700 flex items-center gap-1">
+                  <MessageCircle className="w-4 h-4" />
+                  Descripción del proyecto (opcional)
+                </Label>
+                <Textarea
+                  id="description"
+                  placeholder="Cuéntanos sobre tu empresa y qué tipo de solución de IA necesitas..."
+                  value={formData.description}
+                  onChange={(e) => handleInputChange("description", e.target.value)}
+                  className="w-full min-h-[100px] resize-none"
+                  rows={4}
+                />
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-xs text-gray-600">
+                  <strong>Compromiso de privacidad:</strong> Tus datos están protegidos y solo se utilizarán para contactarte sobre esta consultoría. No compartimos información con terceros.
+                </p>
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-gray-700 hover:bg-gray-800 text-white flex items-center justify-center gap-2"
+              >
+                <Send className="w-4 h-4" />
+                Solicitar Consultoría
+              </Button>
+            </form>
           </div>
           
           <div className="space-y-8">
@@ -248,14 +173,13 @@ const ContactForm = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-gray-600 mb-2">For general inquiries:</p>
-              <a href="mailto:info@wrlds.com" className="text-blue-500 hover:underline">hello@wrlds.com</a>
-              <p className="text-gray-600 mt-2 mb-2">
-            </p>
+              <a href="mailto:info@djpartners.com" className="text-blue-500 hover:underline">hello@djpartners.com</a>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default ContactForm;
