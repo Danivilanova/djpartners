@@ -27,7 +27,7 @@ const projects = [
     description: "Inspección automática con visión por IA al devolver equipos, modelo predictivo de merma/vida útil y tablero de KPIs (rotación, ROI por ítem, tasa de daños).",
     tags: ["Eventos", "Visión por IA", "BI", "Mantenimiento Predictivo"],
     imageUrl: "/lovable-uploads/e3deb949-a036-484a-87f5-3cd10156dd83.png",
-    link: "/projects/sport-retail"
+    link: "/projects/optimizacion-alquiler-equipos-eventos"
   },
   {
     id: 3,
