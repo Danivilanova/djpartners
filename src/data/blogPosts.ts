@@ -443,7 +443,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Abril 22, 2025',
     author: 'D&J Partners',
     category: 'Automatización',
-    imageUrl: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-9afc-6246-97c3-42e687764274/raw?se=2025-08-12T07%3A48%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=b692f702-66de-5582-beec-e60ec67840ea&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-11T18%3A45%3A42Z&ske=2025-08-12T18%3A45%3A42Z&sks=b&skv=2024-08-04&sig=b5SSJ342CCgVfp/nxRh%2BoulmR9AatpT9WTo9D8gPQvE%3D',
+    imageUrl: '/src/assets/blog-automation-intelligent.jpg',
     keywords: [
       'automatización inteligente',
       'RPA',
