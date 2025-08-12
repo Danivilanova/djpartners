@@ -57,6 +57,7 @@ const ContactForm = () => {
           description: "There was a problem with your submission. Please try again.",
           variant: "destructive"
         });
+        setIsSubmitting(false);
         return;
       }
       
@@ -76,6 +77,7 @@ const ContactForm = () => {
       console.log('Form submitted:', data);
       
       // Save to Supabase first
+      console.log('Saving to Supabase...');
       const { error: supabaseError } = await supabase
         .from('contact_requests')
         .insert({
@@ -85,36 +87,43 @@ const ContactForm = () => {
         });
 
       if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
         throw new Error('Failed to save contact request: ' + supabaseError.message);
       }
 
-      // Remove honeypot and timestamp fields before sending email
-      const { honeypot, timestamp, ...emailData } = data;
+      console.log('Successfully saved to Supabase');
+
+      // If Supabase save is successful, try to send email
+      try {
+        // Remove honeypot and timestamp fields before sending email
+        const { honeypot, timestamp, ...emailData } = data;
+        
+        // Using parameters exactly as expected by EmailJS templates
+        const templateParams = {
+          from_name: emailData.name,
+          from_email: emailData.email,
+          message: emailData.message,
+          to_name: 'WRLDS Team',
+          reply_to: emailData.email
+        };
+        
+        console.log('Sending email with params:', templateParams);
+        
+        // Send email
+        const response = await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        );
+        
+        console.log('Email sent successfully:', response);
+      } catch (emailError) {
+        // Email failed but Supabase save was successful
+        console.warn('Email sending failed, but contact was saved:', emailError);
+      }
       
-      // Using parameters exactly as expected by EmailJS templates
-      const templateParams = {
-        from_name: emailData.name,
-        from_email: emailData.email,
-        message: emailData.message,
-        to_name: 'WRLDS Team', // Adding recipient name parameter
-        reply_to: emailData.email // Keeping reply_to for compatibility
-      };
-      
-      console.log('Sending email with params:', templateParams);
-      console.log('Using service:', EMAILJS_SERVICE_ID);
-      console.log('Using template:', EMAILJS_TEMPLATE_ID);
-      console.log('Using public key:', EMAILJS_PUBLIC_KEY);
-      
-      // Send email directly without initializing, as it's not needed with the send method that includes the key
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY // Re-adding the public key parameter
-      );
-      
-      console.log('Email sent successfully:', response);
-      
+      // Show success message regardless of email status since Supabase save worked
       toast({
         title: "Message sent!",
         description: "We've received your message and will get back to you soon.",
