@@ -94,7 +94,7 @@ const PartnershipForm = () => {
                 Acuerdos de Partnership
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Colaboremos para crear soluciones innovadoras. Propón una alianza estratégica con WRLDS Technologies.
+                Colaboremos para crear soluciones innovadoras. Propón una alianza estratégica con D&J Partners.
               </p>
             </motion.div>
 

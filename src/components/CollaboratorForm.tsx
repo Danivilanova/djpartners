@@ -144,7 +144,7 @@ const CollaboratorForm = () => {
                   <Label htmlFor="mensaje">Propuesta de Colaboración *</Label>
                   <Textarea 
                     id="mensaje"
-                    placeholder="Cuéntanos sobre tu experiencia, especialidades técnicas y qué tipo de colaboración propones con WRLDS Technologies..."
+                    placeholder="Cuéntanos sobre tu experiencia, especialidades técnicas y qué tipo de colaboración propones con D&J Partners..."
                     rows={6}
                     value={formData.mensaje}
                     onChange={(e) => handleInputChange('mensaje', e.target.value)}
