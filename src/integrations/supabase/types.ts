@@ -17,38 +17,26 @@ export type Database = {
       collaborator_requests: {
         Row: {
           created_at: string
-          disponibilidad: string | null
           email: string
-          especialidad: string
-          experiencia: string | null
           id: string
           mensaje: string
           nombre: string
-          proyecto_tipo: string[] | null
           telefono: string | null
         }
         Insert: {
           created_at?: string
-          disponibilidad?: string | null
           email: string
-          especialidad: string
-          experiencia?: string | null
           id?: string
           mensaje: string
           nombre: string
-          proyecto_tipo?: string[] | null
           telefono?: string | null
         }
         Update: {
           created_at?: string
-          disponibilidad?: string | null
           email?: string
-          especialidad?: string
-          experiencia?: string | null
           id?: string
           mensaje?: string
           nombre?: string
-          proyecto_tipo?: string[] | null
           telefono?: string | null
         }
         Relationships: []
