@@ -157,11 +157,8 @@ export type Database = {
           empresa: string
           id: string
           propuesta_colaboracion: string
-          sector: string | null
-          servicios: string[] | null
-          tamano_empresa: string | null
           telefono: string | null
-          tipo_acuerdo: string | null
+          website: string | null
         }
         Insert: {
           contacto: string
@@ -170,11 +167,8 @@ export type Database = {
           empresa: string
           id?: string
           propuesta_colaboracion: string
-          sector?: string | null
-          servicios?: string[] | null
-          tamano_empresa?: string | null
           telefono?: string | null
-          tipo_acuerdo?: string | null
+          website?: string | null
         }
         Update: {
           contacto?: string
@@ -183,11 +177,8 @@ export type Database = {
           empresa?: string
           id?: string
           propuesta_colaboracion?: string
-          sector?: string | null
-          servicios?: string[] | null
-          tamano_empresa?: string | null
           telefono?: string | null
-          tipo_acuerdo?: string | null
+          website?: string | null
         }
         Relationships: []
       }
