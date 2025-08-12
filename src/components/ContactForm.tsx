@@ -16,6 +16,8 @@ const ContactForm = () => {
     description: ""
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -25,21 +27,30 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submission started:', formData);
     
-    // Validación básica
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast.error("Por favor completa los campos obligatorios");
-      return;
-    }
-
-    // Validación de email básica
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error("Por favor introduce un email válido");
-      return;
-    }
-
+    setIsSubmitting(true);
+    
     try {
+      // Validación básica
+      if (!formData.name || !formData.email || !formData.phone) {
+        console.error('Validation failed: missing required fields');
+        toast.error("Por favor completa los campos obligatorios");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validación de email básica
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        console.error('Validation failed: invalid email');
+        toast.error("Por favor introduce un email válido");
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log('Validation passed, attempting to save to Supabase...');
+
       // Guardar en Supabase
       const { error } = await supabase
         .from('consultation_requests')
@@ -51,9 +62,11 @@ const ContactForm = () => {
         });
 
       if (error) {
+        console.error('Supabase error:', error);
         throw error;
       }
 
+      console.log('Successfully saved to Supabase');
       toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
       
       // Resetear formulario
@@ -66,6 +79,8 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Error saving consultation request:', error);
       toast.error("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -158,10 +173,17 @@ const ContactForm = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gray-700 hover:bg-gray-800 text-white flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-gray-700 hover:bg-gray-800 text-white flex items-center justify-center gap-2 disabled:opacity-50"
               >
-                <Send className="w-4 h-4" />
-                Solicitar Consultoría
+                {isSubmitting ? (
+                  <>Enviando...</>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Solicitar Consultoría
+                  </>
+                )}
               </Button>
             </form>
           </div>
