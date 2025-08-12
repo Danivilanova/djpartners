@@ -15,7 +15,7 @@ const projects = [
     tags: ["Logística", "Ruteo IA", "Telemetría", "Eco-conducción"],
     imageUrl: "/lovable-uploads/20123606-2bd1-4d0d-9003-1782278345e5.png",
     isFeatured: true,
-    link: "/projects/firecat",
+    link: "/projects/optimizacion-logistica",
     details: `
       Un operador logístico urbano enfrentaba ineficiencias en rutas y alto consumo de combustible. D&J Partners desarrolló un sistema de ruteo inteligente con data lake que integra telemetría vehicular y datos climáticos para optimizar la última milla. La solución incluye eco-conducción, dashboards de rendimiento y alertas predictivas.
     `

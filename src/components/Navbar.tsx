@@ -91,7 +91,7 @@ const Navbar = () => {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
-                        <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                        <Link to="/projects/optimizacion-logistica" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
                           <div className="font-medium">Optimización Logística Urbana</div>
                           <p className="text-sm text-gray-500">Ruteo inteligente, data lake y eco-conducción</p>
                         </Link>
@@ -212,7 +212,7 @@ const Navbar = () => {
           </Link>
           
           {/* Simplified Customer Cases - no dropdown */}
-          <Link to="/projects/firecat" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-navbar-graphite-hover")} onClick={() => {
+          <Link to="/projects/optimizacion-logistica" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-navbar-graphite-hover")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
           }}>
