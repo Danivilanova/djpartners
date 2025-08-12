@@ -75,7 +75,7 @@ const About = () => {
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
-                      <span><strong>Impacto Medible:</strong> Nos enfocamos en generar ROI tangible y resultados empresariales demostrables.</span>
+                      <span><strong>Impacto Medible:</strong> Nos enfocamos en generar resultados tangibles y mejoras empresariales demostrables.</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-gray-700 mt-1 mr-3 flex-shrink-0" />
@@ -110,8 +110,9 @@ const About = () => {
                   </p>
                   <p className="text-gray-600">
                     Hemos ayudado a más de 50 empresas a transformar sus operaciones mediante IA, 
-                    generando un ROI promedio del 280% en el primer año. Nuestro enfoque combina rigor técnico 
-                    con comprensión profunda de los desafíos empresariales específicos de cada sector.
+                    generando mejoras significativas en eficiencia, productividad y competitividad. 
+                    Nuestro enfoque combina rigor técnico con comprensión profunda de los desafíos 
+                    empresariales específicos de cada sector.
                   </p>
                 </div>
               </motion.div>
