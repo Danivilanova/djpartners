@@ -10,6 +10,7 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Globe, Handshake, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { supabase } from '@/integrations/supabase/client';
 
 const PartnershipForm = () => {
   const [formData, setFormData] = useState({
@@ -27,12 +28,56 @@ const PartnershipForm = () => {
     mensaje: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Propuesta de partnership enviada",
-      description: "Hemos recibido tu propuesta de acuerdo de partnership. Nuestro equipo de desarrollo de negocio te contactará pronto.",
-    });
+    
+    try {
+      const { error } = await supabase
+        .from('partnership_requests')
+        .insert({
+          empresa: formData.empresa,
+          contacto: formData.contacto,
+          email: formData.email,
+          telefono: formData.telefono || null,
+          sector: formData.sector || null,
+          tamano_empresa: formData.empleados || null,
+          servicios: formData.servicios,
+          tipo_acuerdo: formData.tipoAcuerdo || null,
+          propuesta_colaboracion: formData.mensaje
+        });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Propuesta de partnership enviada",
+        description: "Hemos recibido tu propuesta de acuerdo de partnership. Nuestro equipo de desarrollo de negocio te contactará pronto.",
+      });
+
+      // Reset form
+      setFormData({
+        empresa: '',
+        contacto: '',
+        email: '',
+        telefono: '',
+        sector: '',
+        tipoSociedad: '',
+        pais: '',
+        empleados: '',
+        servicios: [],
+        tipoAcuerdo: '',
+        experiencia: '',
+        mensaje: ''
+      });
+    } catch (error) {
+      console.error('Error saving partnership request:', error);
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu propuesta. Por favor, inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: any) => {

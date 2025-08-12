@@ -14,7 +14,183 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      collaborator_requests: {
+        Row: {
+          created_at: string
+          disponibilidad: string | null
+          email: string
+          especialidad: string
+          experiencia: string | null
+          id: string
+          mensaje: string
+          nombre: string
+          proyecto_tipo: string[] | null
+          telefono: string | null
+        }
+        Insert: {
+          created_at?: string
+          disponibilidad?: string | null
+          email: string
+          especialidad: string
+          experiencia?: string | null
+          id?: string
+          mensaje: string
+          nombre: string
+          proyecto_tipo?: string[] | null
+          telefono?: string | null
+        }
+        Update: {
+          created_at?: string
+          disponibilidad?: string | null
+          email?: string
+          especialidad?: string
+          experiencia?: string | null
+          id?: string
+          mensaje?: string
+          nombre?: string
+          proyecto_tipo?: string[] | null
+          telefono?: string | null
+        }
+        Relationships: []
+      }
+      consultation_requests: {
+        Row: {
+          created_at: string
+          description: string | null
+          email: string
+          id: string
+          name: string
+          phone: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          email: string
+          id?: string
+          name: string
+          phone?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          email?: string
+          id?: string
+          name?: string
+          phone?: string | null
+        }
+        Relationships: []
+      }
+      contact_requests: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      internal_team_requests: {
+        Row: {
+          carta_motivacion: string | null
+          created_at: string
+          cv_file: string | null
+          disponibilidad: string | null
+          email: string
+          especialidad: string | null
+          experiencia: string | null
+          id: string
+          nombre: string
+          telefono: string | null
+          tipo_contrato: string | null
+          tipos_proyecto: string[] | null
+        }
+        Insert: {
+          carta_motivacion?: string | null
+          created_at?: string
+          cv_file?: string | null
+          disponibilidad?: string | null
+          email: string
+          especialidad?: string | null
+          experiencia?: string | null
+          id?: string
+          nombre: string
+          telefono?: string | null
+          tipo_contrato?: string | null
+          tipos_proyecto?: string[] | null
+        }
+        Update: {
+          carta_motivacion?: string | null
+          created_at?: string
+          cv_file?: string | null
+          disponibilidad?: string | null
+          email?: string
+          especialidad?: string | null
+          experiencia?: string | null
+          id?: string
+          nombre?: string
+          telefono?: string | null
+          tipo_contrato?: string | null
+          tipos_proyecto?: string[] | null
+        }
+        Relationships: []
+      }
+      partnership_requests: {
+        Row: {
+          contacto: string
+          created_at: string
+          email: string
+          empresa: string
+          id: string
+          propuesta_colaboracion: string
+          sector: string | null
+          servicios: string[] | null
+          tamano_empresa: string | null
+          telefono: string | null
+          tipo_acuerdo: string | null
+        }
+        Insert: {
+          contacto: string
+          created_at?: string
+          email: string
+          empresa: string
+          id?: string
+          propuesta_colaboracion: string
+          sector?: string | null
+          servicios?: string[] | null
+          tamano_empresa?: string | null
+          telefono?: string | null
+          tipo_acuerdo?: string | null
+        }
+        Update: {
+          contacto?: string
+          created_at?: string
+          email?: string
+          empresa?: string
+          id?: string
+          propuesta_colaboracion?: string
+          sector?: string | null
+          servicios?: string[] | null
+          tamano_empresa?: string | null
+          telefono?: string | null
+          tipo_acuerdo?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -9,6 +9,7 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { supabase } from '@/integrations/supabase/client';
 
 const CollaboratorForm = () => {
   const [formData, setFormData] = useState({
@@ -22,12 +23,51 @@ const CollaboratorForm = () => {
     mensaje: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Solicitud enviada",
-      description: "Hemos recibido tu solicitud para nuestra red de colaboradores. Te contactaremos pronto.",
-    });
+    
+    try {
+      const { error } = await supabase
+        .from('collaborator_requests')
+        .insert({
+          nombre: formData.nombre,
+          email: formData.email,
+          telefono: formData.telefono || null,
+          experiencia: formData.experiencia || null,
+          especialidad: formData.especialidad,
+          disponibilidad: formData.disponibilidad || null,
+          proyecto_tipo: formData.proyectoTipo,
+          mensaje: formData.mensaje
+        });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Solicitud enviada",
+        description: "Hemos recibido tu solicitud para nuestra red de colaboradores. Te contactaremos pronto.",
+      });
+
+      // Reset form
+      setFormData({
+        nombre: '',
+        email: '',
+        telefono: '',
+        experiencia: '',
+        especialidad: '',
+        disponibilidad: '',
+        proyectoTipo: [],
+        mensaje: ''
+      });
+    } catch (error) {
+      console.error('Error saving collaborator request:', error);
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: any) => {

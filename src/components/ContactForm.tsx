@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { supabase } from '@/integrations/supabase/client';
 import emailjs from 'emailjs-com';
 
 // Updated schema with honeypot field validation
@@ -74,7 +75,20 @@ const ContactForm = () => {
       
       console.log('Form submitted:', data);
       
-      // Remove honeypot and timestamp fields before sending
+      // Save to Supabase first
+      const { error: supabaseError } = await supabase
+        .from('contact_requests')
+        .insert({
+          name: data.name,
+          email: data.email,
+          message: data.message
+        });
+
+      if (supabaseError) {
+        throw new Error('Failed to save contact request: ' + supabaseError.message);
+      }
+
+      // Remove honeypot and timestamp fields before sending email
       const { honeypot, timestamp, ...emailData } = data;
       
       // Using parameters exactly as expected by EmailJS templates

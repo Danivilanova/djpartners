@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageSquare, Send, User, Mail, Phone, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ConsultationModalProps {
   children: React.ReactNode;
@@ -27,7 +28,7 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validación básica
@@ -43,19 +44,35 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
       return;
     }
 
-    // Simular envío del formulario
-    console.log("Datos de consultoría:", formData);
-    
-    toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
-    
-    // Resetear formulario y cerrar modal
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      description: ""
-    });
-    setIsOpen(false);
+    try {
+      // Guardar en Supabase
+      const { error } = await supabase
+        .from('consultation_requests')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          description: formData.description || null
+        });
+
+      if (error) {
+        throw error;
+      }
+
+      toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
+      
+      // Resetear formulario y cerrar modal
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        description: ""
+      });
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Error saving consultation request:', error);
+      toast.error("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.");
+    }
   };
 
   return (

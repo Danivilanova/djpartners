@@ -10,6 +10,7 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Briefcase, Upload, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { supabase } from '@/integrations/supabase/client';
 
 const InternalTeamForm = () => {
   const [formData, setFormData] = useState({
@@ -27,12 +28,55 @@ const InternalTeamForm = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Solicitud enviada",
-      description: "Hemos recibido tu solicitud para formar parte de nuestro equipo interno. Te contactaremos pronto.",
-    });
+    
+    try {
+      const { error } = await supabase
+        .from('internal_team_requests')
+        .insert({
+          nombre: formData.nombre,
+          email: formData.email,
+          telefono: formData.telefono || null,
+          experiencia: formData.experiencia || null,
+          tipo_contrato: formData.tipoContrato || null,
+          especialidad: formData.especialidad || null,
+          tipos_proyecto: formData.proyectoTipo,
+          disponibilidad: formData.disponibilidad || null,
+          cv_file: formData.cv ? (formData.cv as File).name : null,
+          carta_motivacion: formData.mensaje || null
+        });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Solicitud enviada",
+        description: "Hemos recibido tu solicitud para formar parte de nuestro equipo interno. Te contactaremos pronto.",
+      });
+
+      // Reset form
+      setFormData({
+        nombre: '',
+        email: '',
+        telefono: '',
+        experiencia: '',
+        tipoContrato: '',
+        especialidad: '',
+        disponibilidad: '',
+        proyectoTipo: [],
+        mensaje: '',
+        cv: null
+      });
+    } catch (error) {
+      console.error('Error saving internal team request:', error);
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: any) => {
