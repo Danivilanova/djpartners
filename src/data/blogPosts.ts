@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Junio 8, 2025',
     author: 'D&J Partners',
     category: 'Business Intelligence',
-    imageUrl: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-5f3c-620a-a6ef-6aea759c8f51/raw?se=2025-08-12T07%3A34%3A13Z&sp=r&sv=2024-08-04&sr=b&scid=dcd70848-f6d3-5707-a301-9bbc42e35a9f&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-12T05%3A54%3A24Z&ske=2025-08-13T05%3A54%3A24Z&sks=b&skv=2024-08-04&sig=1ZGPUq6sTd3iCSMeMUAqJbz7Aw43TFkqLzYqRSuH/8A%3D',
+    imageUrl: '/src/assets/blog-bi-dashboard.jpg',
     keywords: [
       'business intelligence',
       'BI para PYMEs',
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mayo 30, 2025',
     author: 'D&J Partners',
     category: 'Analítica Avanzada',
-    imageUrl: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-5394-6246-838c-97177309e98b/raw?se=2025-08-12T07%3A40%3A00Z&sp=r&sv=2024-08-04&sr=b&scid=57bd93b4-8b21-55bb-b059-c6eab761fa73&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-12T06%3A43%3A25Z&ske=2025-08-13T06%3A43%3A25Z&sks=b&skv=2024-08-04&sig=jc46btBN8uGZoeN1q93nL4RDLOenFqWtBxcnbBNCyFA%3D',
+    imageUrl: '/src/assets/blog-analytics-predictive.jpg',
     keywords: [
       'analítica predictiva',
       'machine learning',
