@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Junio 8, 2025',
     author: 'D&J Partners',
     category: 'Business Intelligence',
-    imageUrl: '/lovable-uploads/927dae7e-6aaf-4b76-add2-1287a1dd9dc0.png',
+    imageUrl: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-5f3c-620a-a6ef-6aea759c8f51/raw?se=2025-08-12T07%3A34%3A13Z&sp=r&sv=2024-08-04&sr=b&scid=dcd70848-f6d3-5707-a301-9bbc42e35a9f&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-12T05%3A54%3A24Z&ske=2025-08-13T05%3A54%3A24Z&sks=b&skv=2024-08-04&sig=1ZGPUq6sTd3iCSMeMUAqJbz7Aw43TFkqLzYqRSuH/8A%3D',
     keywords: [
       'business intelligence',
       'BI para PYMEs',
