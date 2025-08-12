@@ -94,46 +94,28 @@ export type Database = {
       }
       internal_team_requests: {
         Row: {
-          carta_motivacion: string | null
           created_at: string
-          cv_file: string | null
-          disponibilidad: string | null
           email: string
-          especialidad: string | null
-          experiencia: string | null
           id: string
+          mensaje: string
           nombre: string
           telefono: string | null
-          tipo_contrato: string | null
-          tipos_proyecto: string[] | null
         }
         Insert: {
-          carta_motivacion?: string | null
           created_at?: string
-          cv_file?: string | null
-          disponibilidad?: string | null
           email: string
-          especialidad?: string | null
-          experiencia?: string | null
           id?: string
+          mensaje?: string
           nombre: string
           telefono?: string | null
-          tipo_contrato?: string | null
-          tipos_proyecto?: string[] | null
         }
         Update: {
-          carta_motivacion?: string | null
           created_at?: string
-          cv_file?: string | null
-          disponibilidad?: string | null
           email?: string
-          especialidad?: string | null
-          experiencia?: string | null
           id?: string
+          mensaje?: string
           nombre?: string
           telefono?: string | null
-          tipo_contrato?: string | null
-          tipos_proyecto?: string[] | null
         }
         Relationships: []
       }
