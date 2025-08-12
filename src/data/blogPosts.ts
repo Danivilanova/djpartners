@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mayo 30, 2025',
     author: 'D&J Partners',
     category: 'Analítica Avanzada',
-    imageUrl: '/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png',
+    imageUrl: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-5394-6246-838c-97177309e98b/raw?se=2025-08-12T07%3A40%3A00Z&sp=r&sv=2024-08-04&sr=b&scid=57bd93b4-8b21-55bb-b059-c6eab761fa73&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-12T06%3A43%3A25Z&ske=2025-08-13T06%3A43%3A25Z&sks=b&skv=2024-08-04&sig=jc46btBN8uGZoeN1q93nL4RDLOenFqWtBxcnbBNCyFA%3D',
     keywords: [
       'analítica predictiva',
       'machine learning',
@@ -443,7 +443,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Abril 22, 2025',
     author: 'D&J Partners',
     category: 'Automatización',
-    imageUrl: '/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png',
+    imageUrl: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-9afc-6246-97c3-42e687764274/raw?se=2025-08-12T07%3A48%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=b692f702-66de-5582-beec-e60ec67840ea&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-11T18%3A45%3A42Z&ske=2025-08-12T18%3A45%3A42Z&sks=b&skv=2024-08-04&sig=b5SSJ342CCgVfp/nxRh%2BoulmR9AatpT9WTo9D8gPQvE%3D',
     keywords: [
       'automatización inteligente',
       'RPA',
