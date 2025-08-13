@@ -62,7 +62,12 @@ const ContactForm = () => {
         });
 
       if (error) {
-        console.error('Supabase error:', error);
+        console.error('Supabase error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
         throw error;
       }
 
