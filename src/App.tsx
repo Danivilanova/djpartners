@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -39,6 +39,7 @@ const App = () => {
             <Route path="/projects/optimizacion-logistica" element={<UrbanLogisticsProject />} />
             <Route path="/projects/optimizacion-alquiler-equipos-eventos" element={<SportRetailProject />} />
             <Route path="/projects/workwear" element={<WorkwearProject />} />
+            <Route path="/projects/hockey" element={<Navigate to="/projects/marketing-personalizado" replace />} />
             <Route path="/projects/marketing-personalizado" element={<HockeyProject />} />
             <Route path="/projects/clinicas-dentales" element={<DentalClinicsProject />} />
             <Route path="/tech-details" element={<TechDetails />} />
