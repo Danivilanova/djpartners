@@ -45,7 +45,7 @@ const projects = [
     description: "Segmentación RFM y campañas hiperpersonalizadas por WhatsApp Business. Dashboard de ventas por segmento y hora. Motor de recomendación en POS.",
     tags: ["Retail", "RFM", "WhatsApp Business", "Recomendaciones"],
     imageUrl: "/lovable-uploads/c8b53a41-35aa-4600-8c1f-8cc6a37ff1e5.png",
-    link: "/projects/hockey"
+    link: "/projects/marketing-personalizado"
   },
 ];
 
