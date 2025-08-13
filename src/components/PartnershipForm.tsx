@@ -203,8 +203,8 @@ const PartnershipForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres discutir tu propuesta?</strong> Contáctanos directamente en{' '}
-                <a href="mailto:partnerships@djpartners.com" className="text-primary hover:underline">
-                  partnerships@djpartners.com
+                <a href="mailto:info@djpartners.es" className="text-primary hover:underline">
+                  info@djpartners.es
                 </a>
               </p>
             </motion.div>

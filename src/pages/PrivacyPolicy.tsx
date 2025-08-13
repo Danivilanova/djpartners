@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
               </p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contáctenos</h2>
-              <p className="text-gray-600 mb-4">Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros en info@djpartners.com</p>
+              <p className="text-gray-600 mb-4">Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros en info@djpartners.es</p>
               
             </div>
           </div>

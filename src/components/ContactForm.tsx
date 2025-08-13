@@ -200,7 +200,7 @@ const ContactForm = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-gray-600 mb-2">For general inquiries:</p>
-              <a href="mailto:info@djpartners.com" className="text-blue-500 hover:underline">hello@djpartners.com</a>
+              <a href="mailto:info@djpartners.es" className="text-blue-500 hover:underline">info@djpartners.es</a>
             </div>
           </div>
         </div>

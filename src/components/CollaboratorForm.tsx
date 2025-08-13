@@ -173,8 +173,8 @@ const CollaboratorForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres conocer más sobre nuestros proyectos?</strong> Contáctanos en{' '}
-                <a href="mailto:colaboradores@djpartners.com" className="text-primary hover:underline">
-                  colaboradores@djpartners.com
+                <a href="mailto:info@djpartners.es" className="text-primary hover:underline">
+                  info@djpartners.es
                 </a>
               </p>
             </motion.div>

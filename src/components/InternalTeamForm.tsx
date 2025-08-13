@@ -173,8 +173,8 @@ const InternalTeamForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres conocer más sobre nuestro equipo?</strong> Contáctanos en{' '}
-                <a href="mailto:rrhh@djpartners.com" className="text-primary hover:underline">
-                  rrhh@djpartners.com
+                <a href="mailto:info@djpartners.es" className="text-primary hover:underline">
+                  info@djpartners.es
                 </a>
               </p>
             </motion.div>
