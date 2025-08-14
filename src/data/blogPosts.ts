@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Junio 8, 2025',
     author: 'D&J Partners',
     category: 'Business Intelligence',
-    imageUrl: '/src/assets/blog-bi-dashboard.jpg',
+    imageUrl: '/lovable-uploads/c22f7405-fa12-4177-a50b-8fe831e93e8b.png',
     keywords: [
       'business intelligence',
       'BI para PYMEs',
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mayo 30, 2025',
     author: 'D&J Partners',
     category: 'Analítica Avanzada',
-    imageUrl: '/src/assets/blog-analytics-predictive.jpg',
+    imageUrl: '/lovable-uploads/6d2f0374-664f-4c97-89ba-cf7d7d4fe4cd.png',
     keywords: [
       'analítica predictiva',
       'machine learning',
@@ -443,7 +443,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Abril 22, 2025',
     author: 'D&J Partners',
     category: 'Automatización',
-    imageUrl: '/src/assets/blog-automation-intelligent.jpg',
+    imageUrl: '/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png',
     keywords: [
       'automatización inteligente',
       'RPA',
