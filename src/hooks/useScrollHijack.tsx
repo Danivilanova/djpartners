@@ -89,7 +89,7 @@ export const useScrollHijack = (sectionRef: React.RefObject<HTMLElement>, itemCo
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
-  }, [handleScroll]);
+  }, [handleScroll, currentIndex, isHijacked, itemCount]);
 
   // Handle touch events for mobile
   useEffect(() => {

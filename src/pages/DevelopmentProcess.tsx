@@ -1,6 +1,6 @@
 import { ArrowLeft, CheckCircle, Clock, FileSearch, Settings, Cpu, Code, Truck, BarChart, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import PageLayout from '@/components/PageLayout';
 const DevelopmentProcess = () => {
@@ -14,7 +14,7 @@ const DevelopmentProcess = () => {
   }, []);
 
   // Process component logic
-  const processes = [{
+  const processes = useMemo(() => [{
     id: 1,
     title: "Análisis y Diagnóstico",
     description: "Comenzamos analizando tus procesos actuales y necesidades específicas para identificar oportunidades de optimización y reducción de costes.",
@@ -39,10 +39,10 @@ const DevelopmentProcess = () => {
     title: "Monitoreo y Mejora Continua",
     description: "Proporcionamos seguimiento continuo y ajustes estratégicos para mantener la ventaja competitiva y adaptarse a cambios del mercado.",
     steps: ["Monitoreo de KPIs en tiempo real", "Análisis de tendencias y predicciones", "Ajustes estratégicos periódicos", "Formación continua del equipo"]
-  }];
+  }], []);
   useEffect(() => {
     processSectionsRef.current = processes.map((_, i) => processSectionsRef.current[i] || null);
-  }, []);
+  }, [processes]);
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {

@@ -32,7 +32,7 @@ const Hero = () => {
       }
     }
   };
-  
+
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');
@@ -42,40 +42,40 @@ const Hero = () => {
       });
     }
   };
-  
+
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container bg-slate-800 relative overflow-hidden h-[90vh] sm:h-[80vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
-        <div className="absolute inset-0 bg-slate-800 w-full">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            preload="metadata"
-            className={`w-full h-full object-cover opacity-90 hero-video ${isMobile ? 'object-right' : 'object-center'}`}
-            poster="/src/assets/hero-consulting.jpg"
-          >
-            <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
-            {/* Fallback image if video fails to load */}
-            <img 
-              src="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png" 
-              alt="WRLDS Technologies Connected People" 
-              className={`w-full h-full object-cover opacity-80 ${isMobile ? 'object-right' : 'object-center'}`} 
-            />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/70 to-white"></div>
-        </div>
-        
-        <div className="banner-overlay bg-transparent pt-8 sm:pt-16 md:pt-32 pb-16 sm:pb-20 w-full h-full flex items-center">
-          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
-            <motion.div className="w-full max-w-4xl text-center" variants={itemVariants}>
-              <motion.h1 className="banner-title text-white" variants={itemVariants}>Transformamos empresas con Inteligencia Artificial aplicada al negocio.</motion.h1>
-              <motion.p className="banner-subtitle text-gray-300 mt-4 sm:mt-6" variants={itemVariants}>
-                Desplegamos soluciones de IA estratégicas que transforman PYMEs mediante analítica avanzada, BI personalizado y automatización inteligente.
-              </motion.p>
-              <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center" variants={itemVariants}>
-                {/* Styled as a button but using an anchor tag for project navigation */}
-                <button 
+    <div className="banner-container bg-slate-800 relative overflow-hidden h-[90vh] sm:h-[80vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
+      <div className="absolute inset-0 bg-slate-800 w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className={`w-full h-full object-cover opacity-90 hero-video ${isMobile ? 'object-right' : 'object-center'}`}
+          poster="/src/assets/hero-consulting.jpg"
+        >
+          <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
+          {/* Fallback image if video fails to load */}
+          <img
+            src="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png"
+            alt="WRLDS Technologies Connected People"
+            className={`w-full h-full object-cover opacity-80 ${isMobile ? 'object-right' : 'object-center'}`}
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 via-slate-800/70 to-white"></div>
+      </div>
+
+      <div className="banner-overlay bg-transparent pt-8 sm:pt-16 md:pt-32 pb-16 sm:pb-20 w-full h-full flex items-center">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
+          <motion.div className="w-full max-w-4xl text-center" variants={itemVariants}>
+            <motion.h1 className="banner-title text-white" variants={itemVariants}>Transformamos empresas con Inteligencia Artificial aplicada al negocio.</motion.h1>
+            <motion.p className="banner-subtitle text-gray-300 mt-4 sm:mt-6" variants={itemVariants}>
+              Ayudamos a PYMEs a crecer y competir mediante soluciones de IA que optimizan procesos, mejoran decisiones y automatizan tareas repetitivas.
+            </motion.p>
+            <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center" variants={itemVariants}>
+              {/* Styled as a button but using an anchor tag for project navigation */}
+              {/* <button 
                   className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
                   onClick={e => {
                     e.preventDefault();
@@ -89,53 +89,53 @@ const Hero = () => {
                 >
                   Ver Casos de Éxito
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </button> */}
+
+              {/* Modal de consultoría gratuita */}
+              <ConsultationModal>
+                <button
+                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:shadow-slate-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                >
+                  Solicita una Consultoría Gratuita
+                  <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                 </button>
-                
-                {/* Modal de consultoría gratuita */}
-                <ConsultationModal>
-                  <button 
-                    className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-slate-700 text-white rounded-md hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:shadow-slate-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                  >
-                    Solicita una Consultoría Gratuita
-                    <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                  </button>
-                </ConsultationModal>
-              </motion.div>
+              </ConsultationModal>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
-      
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
-        <motion.div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4" variants={containerVariants} initial="hidden" animate="visible" transition={{
+    </div>
+
+    <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
+      <motion.div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4" variants={containerVariants} initial="hidden" animate="visible" transition={{
         delay: 0.6
       }}>
-          <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Cpu className="w-5 h-5 md:w-6 md:h-6" />
-            </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Implementación de IA</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.</p>
-          </motion.div>
-          
-          <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Code className="w-5 h-5 md:w-6 md:h-6" />
-            </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">BI y Dashboards Personalizados</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Transformamos datos complejos en insights visuales y accionables para líderes de negocio.</p>
-          </motion.div>
-          
-          <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Layers className="w-5 h-5 md:w-6 md:h-6" />
-            </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Consultoría Predictiva</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Anticipamos comportamientos y tendencias mediante modelos predictivos avanzados para PYMEs.</p>
-          </motion.div>
+        <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
+            <Cpu className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
+          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Implementación de IA</h3>
+          <p className="text-gray-600 text-xs md:text-sm">Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.</p>
         </motion.div>
-      </div>
-    </motion.div>;
+
+        <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
+            <Code className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
+          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">BI y Dashboards Personalizados</h3>
+          <p className="text-gray-600 text-xs md:text-sm">Transformamos datos complejos en insights visuales y accionables para líderes de negocio.</p>
+        </motion.div>
+
+        <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
+            <Layers className="w-5 h-5 md:w-6 md:h-6" />
+          </div>
+          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Inteligencia de Negocio</h3>
+          <p className="text-gray-600 text-xs md:text-sm">Convertimos tus datos en decisiones inteligentes que impulsan el crecimiento y la rentabilidad de tu PYME.</p>
+        </motion.div>
+      </motion.div>
+    </div>
+  </motion.div>;
 };
 
 export default Hero;

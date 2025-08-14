@@ -36,12 +36,14 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* 
             <Route path="/projects/optimizacion-logistica" element={<UrbanLogisticsProject />} />
             <Route path="/projects/optimizacion-alquiler-equipos-eventos" element={<SportRetailProject />} />
             <Route path="/projects/workwear" element={<WorkwearProject />} />
             <Route path="/projects/hockey" element={<Navigate to="/projects/marketing-personalizado" replace />} />
             <Route path="/projects/marketing-personalizado" element={<HockeyProject />} />
             <Route path="/projects/clinicas-dentales" element={<DentalClinicsProject />} />
+            */}
             <Route path="/tech-details" element={<TechDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/development-process" element={<DevelopmentProcess />} />

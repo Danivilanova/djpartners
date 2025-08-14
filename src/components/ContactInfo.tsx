@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Mail, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from 'emailjs-com';
 
 const ContactInfo = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,39 +25,16 @@ const ContactInfo = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const serviceId = 'service_ht3opm9';
-      const templateId = 'template_5l8m6nc';
-      const publicKey = 'MDI5u0mTNM8yjgEjR';
-
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_name: 'D&J Partners',
-        },
-        publicKey
-      );
-
+    // Simulate form submission
+    setTimeout(() => {
       toast({
-        title: "Mensaje enviado",
-        description: "Nos pondremos en contacto contigo pronto.",
+        title: "Mensaje recibido",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
       });
 
       setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
-        variant: "destructive",
-      });
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -124,7 +100,7 @@ const ContactInfo = () => {
                 />
               </div>
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                 Mensaje *
@@ -162,8 +138,8 @@ const ContactInfo = () => {
 
           <div className="text-center mt-8">
             <p className="text-gray-600 mb-4">O escríbenos directamente a:</p>
-            <a 
-              href="mailto:info@djpartners.es" 
+            <a
+              href="mailto:info@djpartners.es"
               className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
             >
               <Mail className="w-5 h-5 mr-2" />
