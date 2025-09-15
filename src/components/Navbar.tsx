@@ -171,7 +171,7 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <button onClick={() => scrollToSection('contact')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-slate-200 text-slate-700 hover:bg-slate-300" : "bg-navbar-graphite-hover text-white hover:bg-white hover:text-navbar-graphite")}>
+                  <button onClick={() => scrollToSection('contact-info')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-slate-200 text-slate-700 hover:bg-slate-300" : "bg-navbar-graphite-hover text-white hover:bg-white hover:text-navbar-graphite")}>
                     Contacto
                   </button>
                 </NavigationMenuItem>
@@ -235,7 +235,7 @@ const Navbar = () => {
             Únete al Equipo
           </Link>
 
-          <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-slate-700 bg-slate-200 hover:bg-slate-300" : "text-white bg-navbar-graphite-hover hover:bg-white hover:text-navbar-graphite")}>
+          <button onClick={() => scrollToSection('contact-info')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-slate-700 bg-slate-200 hover:bg-slate-300" : "text-white bg-navbar-graphite-hover hover:bg-white hover:text-navbar-graphite")}>
             Contacto
           </button>
         </div>

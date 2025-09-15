@@ -14,9 +14,22 @@ type PageLayoutProps = {
 const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
   const location = useLocation();
 
-  // Effect to scroll to top when route changes
+  // Handle scrolling on navigation:
+  // - If the URL contains a hash (e.g., #contact-info), scroll to that element
+  // - Otherwise, scroll to the top on route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      // Defer to ensure the target element is rendered before scrolling
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
   }, [location]);
 
   return (
