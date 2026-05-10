@@ -6,7 +6,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Send, Mail, User, MessageCircle, Phone } from 'lucide-react';
 import { toast } from "sonner";
-import { supabase } from '@/integrations/supabase/client';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -27,62 +26,32 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submission started:', formData);
-    
     setIsSubmitting(true);
-    
+
     try {
-      // Validación básica
       if (!formData.name || !formData.email || !formData.phone) {
-        console.error('Validation failed: missing required fields');
         toast.error("Por favor completa los campos obligatorios");
-        setIsSubmitting(false);
         return;
       }
 
-      // Validación de email básica
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        console.error('Validation failed: invalid email');
         toast.error("Por favor introduce un email válido");
-        setIsSubmitting(false);
         return;
       }
 
-      console.log('Validation passed, attempting to save to Supabase...');
-
-      // Guardar en Supabase
-      const { error } = await supabase
-        .from('consultation_requests')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          description: formData.description || null
-        });
-
-      if (error) {
-        console.error('Supabase error details:', {
-          message: error.message,
-          details: error.details,
-          hint: error.hint,
-          code: error.code
-        });
-        throw error;
-      }
-
-      console.log('Successfully saved to Supabase');
-      toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
-      
-      // Resetear formulario
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        description: ""
+      const res = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
+
+      if (!res.ok) throw new Error('Error en el servidor');
+
+      toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
+      setFormData({ name: "", email: "", phone: "", description: "" });
     } catch (error) {
-      console.error('Error saving consultation request:', error);
+      console.error('Error sending consultation request:', error);
       toast.error("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.");
     } finally {
       setIsSubmitting(false);
@@ -198,8 +167,8 @@ const ContactForm = () => {
               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4">
                 <Mail className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-2">For general inquiries:</p>
+              <h3 className="text-xl font-semibold mb-2">Escríbenos</h3>
+              <p className="text-gray-600 mb-2">Para consultas generales:</p>
               <a href="mailto:info@djpartners.es" className="text-blue-500 hover:underline">info@djpartners.es</a>
             </div>
           </div>

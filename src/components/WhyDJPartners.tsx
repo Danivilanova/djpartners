@@ -79,7 +79,7 @@ const WhyDJPartners = () => {
       }
     }
   };
-  return <section id="why-wrlds" className="relative py-16 md:py-24 bg-white overflow-hidden">
+  return <section id="why-djpartners" className="relative py-16 md:py-24 bg-white overflow-hidden">
     <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{
         once: true,

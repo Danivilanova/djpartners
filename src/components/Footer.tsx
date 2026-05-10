@@ -1,5 +1,5 @@
 
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -15,25 +15,38 @@ const Footer = () => {
     if (!email) {
       toast({
         title: "Error",
-        description: "Please enter your email address.",
-        variant: "destructive"
+        description: "Por favor introduce tu email.",
+        variant: "destructive",
       });
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate subscription
-    setTimeout(() => {
-      toast({
-        title: "Success!",
-        description: "Thank you for subscribing to our newsletter.",
-        variant: "default"
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
 
+      if (!res.ok) throw new Error('Error en el servidor');
+
+      toast({
+        title: "¡Suscrito!",
+        description: "Gracias por suscribirte a nuestro newsletter.",
+      });
       setEmail("");
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      toast({
+        title: "Error",
+        description: "Hubo un problema al suscribirte. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

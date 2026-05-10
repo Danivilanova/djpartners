@@ -2,12 +2,18 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import SEO from '@/components/SEO';
 const PrivacyPolicy = () => {
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return <PageLayout>
+      <SEO
+        title="Política de Privacidad – D&J Partners"
+        description="Consulta la política de privacidad de D&J Partners: cómo recopilamos, usamos y protegemos tus datos personales conforme al RGPD."
+        keywords={['política de privacidad', 'protección de datos', 'RGPD', 'D&J Partners']}
+      />
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">

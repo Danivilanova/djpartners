@@ -7,7 +7,6 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { supabase } from '@/integrations/supabase/client';
 
 const CollaboratorForm = () => {
   const [formData, setFormData] = useState({
@@ -24,37 +23,25 @@ const CollaboratorForm = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase
-        .from('collaborator_requests')
-        .insert({
-          nombre: formData.nombre,
-          email: formData.email,
-          telefono: formData.telefono || null,
-          mensaje: formData.mensaje
-        });
+      const res = await fetch('/api/collaborator', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      if (error) {
-        throw error;
-      }
+      if (!res.ok) throw new Error('Error en el servidor');
 
       toast({
         title: "Solicitud enviada",
         description: "Hemos recibido tu solicitud para nuestra red de colaboradores. Te contactaremos pronto.",
       });
-
-      // Reset form
-      setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        mensaje: ''
-      });
+      setFormData({ nombre: '', email: '', telefono: '', mensaje: '' });
     } catch (error) {
-      console.error('Error saving collaborator request:', error);
+      console.error('Error sending collaborator request:', error);
       toast({
         title: "Error",
         description: "Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.",
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);

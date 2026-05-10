@@ -7,13 +7,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import UrbanLogisticsProject from "./pages/UrbanLogisticsProject";
-import SportRetailProject from "./pages/SportRetailProject";
-import WorkwearProject from "./pages/WorkwearProject";
-import HockeyProject from "./pages/HockeyProject";
-import PetProject from "./pages/PetProject";
-import DentalClinicsProject from "./pages/DentalClinicsProject";
-
 import TechDetails from "./pages/TechDetails";
 import DevelopmentProcess from "./pages/DevelopmentProcess";
 import About from "./pages/About";

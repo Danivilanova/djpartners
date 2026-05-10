@@ -142,6 +142,7 @@ const Features = () => {
           <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
             Servicios de Consultoría IA
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-2">Nuestros Servicios</h2>
           <p className="text-gray-600 mt-4">
             Nuestra experiencia en inteligencia artificial transforma datos empresariales en ventajas competitivas, potenciando el crecimiento de PYMEs mediante soluciones tecnológicas estratégicas.
           </p>

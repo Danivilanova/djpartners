@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -15,6 +16,11 @@ const About = () => {
   
   return (
     <PageLayout>
+      <SEO
+        title="Nosotros – D&J Partners"
+        description="Conoce al equipo de D&J Partners: expertos en inteligencia artificial y business intelligence dedicados a transformar PYMEs con tecnología de vanguardia."
+        keywords={['consultoría IA', 'equipo D&J Partners', 'expertos inteligencia artificial', 'transformación digital PYMEs']}
+      />
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">

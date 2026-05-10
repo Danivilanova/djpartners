@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageSquare, Send, User, Mail, Phone, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 
 interface ConsultationModalProps {
   children: React.ReactNode;
@@ -30,14 +29,12 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validación básica
+
     if (!formData.name || !formData.email || !formData.phone) {
       toast.error("Por favor completa los campos obligatorios");
       return;
     }
 
-    // Validación de email básica
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast.error("Por favor introduce un email válido");
@@ -45,32 +42,19 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
     }
 
     try {
-      // Guardar en Supabase
-      const { error } = await supabase
-        .from('consultation_requests')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          description: formData.description || null
-        });
+      const res = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      if (error) {
-        throw error;
-      }
+      if (!res.ok) throw new Error('Error en el servidor');
 
       toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
-      
-      // Resetear formulario y cerrar modal
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        description: ""
-      });
+      setFormData({ name: "", email: "", phone: "", description: "" });
       setIsOpen(false);
     } catch (error) {
-      console.error('Error saving consultation request:', error);
+      console.error('Error sending consultation request:', error);
       toast.error("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.");
     }
   };

@@ -1,4 +1,5 @@
 
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,16 @@ import { blogPosts } from '@/data/blogPosts';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const BlogPreview = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / 3;
+    setActiveIndex(Math.round(el.scrollLeft / cardWidth));
+  };
+
   // Get the 3 most recent blog posts
   const recentPosts = [...blogPosts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -36,7 +47,7 @@ const BlogPreview = () => {
         
         <div className="relative">
           <ScrollArea className="w-full">
-            <div className="flex gap-6 pb-4 md:hidden overflow-x-auto snap-x snap-mandatory pl-1">
+            <div ref={scrollRef} onScroll={handleScroll} className="flex gap-6 pb-4 md:hidden overflow-x-auto snap-x snap-mandatory pl-1">
               {recentPosts.map((post) => (
                 <div key={post.id} className="flex-none w-[85%] snap-center">
                   <BlogPostCard
@@ -69,10 +80,10 @@ const BlogPreview = () => {
           
           <div className="mt-4 flex justify-center md:hidden">
             <div className="flex gap-1">
-              {[0, 1, 2].map((i) => (
-                <div 
-                  key={i} 
-                  className={`h-1.5 rounded-full ${i === 0 ? 'w-6 bg-gray-800' : 'w-2 bg-gray-300'}`}
+              {recentPosts.map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-6 bg-gray-800' : 'w-2 bg-gray-300'}`}
                 />
               ))}
             </div>
