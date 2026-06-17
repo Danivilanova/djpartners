@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TechDetails from "./pages/TechDetails";
@@ -18,6 +18,11 @@ import InternalTeamForm from "./components/InternalTeamForm";
 import PartnershipForm from "./components/PartnershipForm";
 import BlogPostDetail from "./pages/BlogPostDetail";
 
+// Paid-traffic landing pages — lazy so they ship as their own light chunk,
+// independent of the marketing site bundle.
+const CuadroDeMando = lazy(() => import("./pages/lp/CuadroDeMando"));
+const AutomatizacionProcesos = lazy(() => import("./pages/lp/AutomatizacionProcesos"));
+
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
 
@@ -27,8 +32,12 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* Landing pages para campañas (sin navbar, noindex) */}
+            <Route path="/lp/cuadro-de-mando" element={<CuadroDeMando />} />
+            <Route path="/lp/automatizacion-procesos" element={<AutomatizacionProcesos />} />
             {/* 
             <Route path="/projects/optimizacion-logistica" element={<UrbanLogisticsProject />} />
             <Route path="/projects/optimizacion-alquiler-equipos-eventos" element={<SportRetailProject />} />
@@ -49,6 +58,7 @@ const App = () => {
             <Route path="/blog/:slug" element={<BlogPostDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

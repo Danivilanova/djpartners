@@ -1,0 +1,5 @@
+# SPA fallback for Cloudflare Pages: serve index.html for any client-side route
+# (so direct loads of /lp/cuadro-de-mando, /lp/automatizacion-procesos, /about, etc.
+# work when users land straight on the URL from a Google Ad). Pages Functions
+# (functions/api/*) and existing static files take precedence over this rule.
+/*    /index.html   200
