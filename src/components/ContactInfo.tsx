@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { trackFormSubmit } from '@/lib/analytics';
 
 const ContactInfo = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,6 +34,7 @@ const ContactInfo = () => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('contacto-home');
 
       toast({
         title: "Mensaje recibido",

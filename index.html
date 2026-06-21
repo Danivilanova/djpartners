@@ -12,15 +12,31 @@
       dataLayer.push(arguments);
     }
 
-    // Set default consent (no cookie banner, just allow all)
+    // Consent Mode v2 (RGPD): por defecto denegado hasta que el usuario acepte
+    // en el banner. Se concede sólo lo imprescindible (seguridad/funcionalidad).
     gtag('consent', 'default', {
-      analytics_storage: 'granted',
-      ad_storage: 'granted',
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
       functionality_storage: 'granted',
-      security_storage: 'granted'
+      security_storage: 'granted',
+      wait_for_update: 500
     });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+
+    // Reaplica la elección previa del usuario lo antes posible (antes de GTM).
+    try {
+      if (localStorage.getItem('djp_consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          analytics_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted'
+        });
+      }
+    } catch (e) {}
   </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

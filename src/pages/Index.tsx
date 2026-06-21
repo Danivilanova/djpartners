@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WhyDJPartners from '@/components/WhyDJPartners';
 import BlogPreview from '@/components/BlogPreview';
+import BookingSection from '@/components/BookingSection';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
 
@@ -30,6 +31,7 @@ const Index = () => {
       <WhyDJPartners />
       {/* <Projects /> */}
       <BlogPreview />
+      <BookingSection />
     </PageLayout>
   );
 };

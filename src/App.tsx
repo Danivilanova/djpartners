@@ -17,6 +17,7 @@ import CollaboratorForm from "./components/CollaboratorForm";
 import InternalTeamForm from "./components/InternalTeamForm";
 import PartnershipForm from "./components/PartnershipForm";
 import BlogPostDetail from "./pages/BlogPostDetail";
+import ConsentBanner from "./components/ConsentBanner";
 
 // Paid-traffic landing pages — lazy so they ship as their own light chunk,
 // independent of the marketing site bundle.
@@ -32,6 +33,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ConsentBanner />
           <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Index />} />
