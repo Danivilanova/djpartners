@@ -13,7 +13,7 @@ export async function sendEmail(
     },
     body: JSON.stringify({
       from: 'D&J Partners <noreply@djpartners.es>',
-      to: ['info@djpartners.es'],
+      to: ['jordi@djpartners.es'],
       ...opts,
     }),
   });
