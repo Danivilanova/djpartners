@@ -74,7 +74,7 @@ Porque desacopla marketing de desarrollo: añades/cambias píxeles (Ads, GA4, Me
 1. GTM ([tagmanager.google.com](https://tagmanager.google.com)) → contenedor **`GTM-THTTJSFD`**.
 2. **Administrar → Importar contenedor** → sube `docs/gtm-djpartners-import.json`.
 3. Espacio de trabajo: **Existing → Default Workspace**. Opción de importación: **Combinar → Cambiar el nombre de conflictos** (no pisa nada de lo que tengas).
-4. Confirmar. Esto te crea de golpe: el **Conversion Linker** de Ads, el **tag de conversión de Ads** (a medio configurar), los **triggers** `generate_lead` y `cta_click`, y las **variables** `DLV - value/currency/landing`.
+4. Confirmar. Esto te crea de golpe: el **Conversion Linker** de Ads, los **triggers** `CE - generate_lead`, `CE - form_submit` y `CE - cta_click`, y las **variables** `DLV - value/currency/landing/form`. (El tag de conversión de Ads lo creas tú en el paso **B4** — GTM no deja importarlo con el ID/Label de relleno.)
    - *Por qué un Conversion Linker:* guarda el identificador de clic de Google (GCLID) en una cookie propia para poder atribuir la conversión al anuncio correcto. Sin él, pierdes atribución.
 
 **B2. Conecta GA4 (tag de configuración)**
@@ -89,15 +89,15 @@ Porque desacopla marketing de desarrollo: añades/cambias píxeles (Ads, GA4, Me
    - *Configuration tag:* `GA4 - Config`. *Event name:* `generate_lead`.
    - *Activador:* el trigger `CE - generate_lead` (vino en el JSON).
    - Guarda como `GA4 - generate_lead`.
-2. Repite para los formularios: evento `form_submit`, trigger `CE - form_submit` (créalo: **Activador → Nuevo → Evento personalizado**, nombre del evento `form_submit`). Añade un parámetro de evento `form` = `{{DLV - form}}`.
-   - Para `{{DLV - form}}`: **Variables → Nueva → Variable de capa de datos**, nombre `form`. Llámala `DLV - form`.
+2. Repite para los formularios: evento `form_submit`, activador `CE - form_submit` (ya viene en el JSON). Añade un parámetro de evento `form` = `{{DLV - form}}` (la variable también viene en el JSON).
    - *Por qué el parámetro:* así en GA4 ves de **qué formulario** vino cada lead.
 
-**B4. Rellena el tag de conversión de Google Ads**
-1. Abre el tag **"Google Ads - Conversion Reserva diagnostico"** (del JSON).
-2. Sustituye `CONVERSION_ID` y `CONVERSION_LABEL` por los que obtendrás en la **Parte C**.
-   - (Si aún no los tienes, haz primero la Parte C y vuelve aquí.)
-3. Ya trae el valor (`{{DLV - value}}` = 1) y la moneda (`{{DLV - currency}}` = EUR). Activador: `CE - generate_lead`.
+**B4. Crea el tag de conversión de Google Ads** (necesitas antes el ID + Label de la **Parte C**)
+1. **Etiquetas → Nueva → Seguimiento de conversiones de Google Ads** (Google Ads Conversion Tracking).
+2. **ID de conversión:** los dígitos de tu `AW-XXXXXXXXX`. **Etiqueta de conversión:** la tuya.
+3. *(Opcional)* **Valor:** `{{DLV - value}}` · **Moneda:** `{{DLV - currency}}`.
+4. **Activador:** `CE - generate_lead`. Guarda como `Ads - Conversión reserva`.
+   - *Por qué a mano:* GTM valida este tag y no deja importarlo con valores de relleno; en la interfaz se configura en 4 campos y ya queda bien.
 
 **B5. Prueba en Vista previa (clave, no te lo saltes)**
 1. Pulsa **Vista previa**, escribe `https://djpartners.es/lp/cuadro-de-mando` y conéctalo.
