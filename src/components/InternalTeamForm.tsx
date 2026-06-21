@@ -7,6 +7,7 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { trackFormSubmit } from "@/lib/analytics";
 
 const InternalTeamForm = () => {
   const [formData, setFormData] = useState({
@@ -30,6 +31,7 @@ const InternalTeamForm = () => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('equipo-interno');
 
       toast({
         title: "Solicitud enviada",
@@ -160,8 +162,8 @@ const InternalTeamForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres conocer más sobre nuestro equipo?</strong> Contáctanos en{' '}
-                <a href="mailto:info@djpartners.es" className="text-primary hover:underline">
-                  info@djpartners.es
+                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">
+                  jordi@djpartners.es
                 </a>
               </p>
             </motion.div>

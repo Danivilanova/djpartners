@@ -78,7 +78,7 @@ const SEO: React.FC<SEOProps> = ({
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'info@djpartners.es'
+      email: 'jordi@djpartners.es'
     },
     sameAs: [
       'https://www.linkedin.com/company/wrlds-technologies',

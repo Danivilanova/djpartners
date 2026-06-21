@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageSquare, Send, User, Mail, Phone, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { trackFormSubmit } from "@/lib/analytics";
 
 interface ConsultationModalProps {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('consultoria');
 
       toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
       setFormData({ name: "", email: "", phone: "", description: "" });

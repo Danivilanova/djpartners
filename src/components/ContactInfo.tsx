@@ -153,11 +153,11 @@ const ContactInfo = () => {
           <div className="text-center mt-8">
             <p className="text-gray-600 mb-4">O escríbenos directamente a:</p>
             <a
-              href="mailto:info@djpartners.es"
+              href="mailto:jordi@djpartners.es"
               className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
             >
               <Mail className="w-5 h-5 mr-2" />
-              info@djpartners.es
+              jordi@djpartners.es
             </a>
           </div>
         </div>

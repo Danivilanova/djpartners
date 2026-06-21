@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ const Footer = () => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('newsletter');
 
       toast({
         title: "¡Suscrito!",

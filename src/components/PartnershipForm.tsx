@@ -7,6 +7,7 @@ import { toast } from '@/hooks/use-toast';
 import { ArrowLeft, Send, Handshake, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { trackFormSubmit } from "@/lib/analytics";
 
 const PartnershipForm = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +33,7 @@ const PartnershipForm = () => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('partnership');
 
       toast({
         title: "Propuesta de partnership enviada",
@@ -186,8 +188,8 @@ const PartnershipForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres discutir tu propuesta?</strong> Contáctanos directamente en{' '}
-                <a href="mailto:info@djpartners.es" className="text-primary hover:underline">
-                  info@djpartners.es
+                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">
+                  jordi@djpartners.es
                 </a>
               </p>
             </motion.div>

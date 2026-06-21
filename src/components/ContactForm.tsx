@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Send, Mail, User, MessageCircle, Phone } from 'lucide-react';
 import { toast } from "sonner";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -47,6 +48,7 @@ const ContactForm = () => {
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
+      trackFormSubmit('contacto');
 
       toast.success("¡Consultoría solicitada! Te contactaremos pronto.");
       setFormData({ name: "", email: "", phone: "", description: "" });
@@ -169,7 +171,7 @@ const ContactForm = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Escríbenos</h3>
               <p className="text-gray-600 mb-2">Para consultas generales:</p>
-              <a href="mailto:info@djpartners.es" className="text-blue-500 hover:underline">info@djpartners.es</a>
+              <a href="mailto:jordi@djpartners.es" className="text-blue-500 hover:underline">jordi@djpartners.es</a>
             </div>
           </div>
         </div>
