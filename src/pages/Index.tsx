@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WhyDJPartners from '@/components/WhyDJPartners';
 import BlogPreview from '@/components/BlogPreview';
-import BookingSection from '@/components/BookingSection';
+import ContactSection from '@/components/ContactSection';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
 
@@ -19,7 +19,7 @@ const Index = () => {
   }, []);
 
   return (
-    <PageLayout>
+    <PageLayout showContact={false}>
       <SEO
         title="D&J Partners - Consultoría en Inteligencia Artificial para Empresas"
         description="D&J Partners: Transformamos PYMEs con Inteligencia Artificial práctica. Sistemas inteligentes, automatización de procesos y herramientas de gestión que impulsan el crecimiento."
@@ -31,7 +31,7 @@ const Index = () => {
       <WhyDJPartners />
       {/* <Projects /> */}
       <BlogPreview />
-      <BookingSection />
+      <ContactSection />
     </PageLayout>
   );
 };
