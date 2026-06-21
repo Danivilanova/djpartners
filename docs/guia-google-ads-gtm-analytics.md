@@ -85,8 +85,12 @@ Porque desacopla marketing de desarrollo: añades/cambias píxeles (Ads, GA4, Me
    - *Por qué:* esto es lo que "enciende" GA4 en toda la web (páginas vistas, etc.).
 
 **B3. Manda las conversiones a GA4 (tags de evento)**
-1. **Nueva → Google Analytics: evento GA4**.
-   - *Configuration tag:* `GA4 - Config`. *Event name:* `generate_lead`.
+
+> Nota: Google **retiró el tag "Configuración de GA4"**. Ahora esa función la hace la **Etiqueta de Google (Google tag)** del paso B2. El tag de evento ya **no** pide un "configuration tag": pide el **ID de medición** (tu `G-XXXXXXXXXX`), que puedes elegir del desplegable o escribir (o usar una variable Constante).
+
+1. **Nueva → Google Analytics: evento de GA4**.
+   - *ID de medición:* tu `G-XXXXXXXXXX` (el mismo de la Etiqueta de Google).
+   - *Nombre del evento:* `generate_lead`.
    - *Activador:* el trigger `CE - generate_lead` (vino en el JSON).
    - Guarda como `GA4 - generate_lead`.
 2. Repite para los formularios: evento `form_submit`, activador `CE - form_submit` (ya viene en el JSON). Añade un parámetro de evento `form` = `{{DLV - form}}` (la variable también viene en el JSON).
