@@ -20,7 +20,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact-info" className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <div className="inline-block mb-3 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
             ¿Hablamos?
@@ -77,8 +77,8 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Panel: Escribir */}
-        <div className={tab === "mensaje" ? "block" : "hidden"}>
+        {/* Panel: Escribir (formulario más estrecho que el calendario) */}
+        <div className={tab === "mensaje" ? "block max-w-2xl mx-auto" : "hidden"}>
           <ContactFormBlock />
           <div className="text-center mt-6">
             <p className="text-gray-600 mb-2 text-sm">Escríbenos directamente a:</p>
