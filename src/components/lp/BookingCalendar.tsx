@@ -1,4 +1,5 @@
 import { lazy, Suspense, useMemo, useState } from "react";
+import { ClientOnly } from "vite-react-ssg";
 import { C, FONT, MONO } from "./tokens";
 import { useViewport } from "./useViewport";
 import LpLogo from "./LpLogo";
@@ -149,11 +150,17 @@ export default function BookingCalendar({
             minHeight: 600,
           }}
         >
-          <Suspense
+          <ClientOnly
             fallback={<div style={{ padding: 48, textAlign: "center", color: C.muted }}>Cargando calendario…</div>}
           >
-            <CalInlineEmbed calLink={calLink} landing={landing} />
-          </Suspense>
+            {() => (
+              <Suspense
+                fallback={<div style={{ padding: 48, textAlign: "center", color: C.muted }}>Cargando calendario…</div>}
+              >
+                <CalInlineEmbed calLink={calLink} landing={landing} />
+              </Suspense>
+            )}
+          </ClientOnly>
         </div>
       ) : (
         // Interactive placeholder shown until a Cal.com link is configured.

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { C, FONT } from "./tokens";
 import LpHeader from "./LpHeader";
 import LpFooter from "./LpFooter";
@@ -39,11 +39,11 @@ export default function LandingShell({
 
   return (
     <>
-      <Helmet htmlAttributes={{ lang: "es" }}>
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="noindex, follow" />
-      </Helmet>
+      </Head>
       <div
         style={{
           fontFamily: FONT,

@@ -1,11 +1,7 @@
+import { ViteReactSSG } from "vite-react-ssg";
+import { routes } from "./routes";
+import "./index.css";
 
-import { createRoot } from 'react-dom/client'
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App.tsx'
-import './index.css'
-
-createRoot(document.getElementById("root")!).render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
-);
+// vite-react-ssg gestiona el montaje en cliente y el prerender en build.
+// El <head> se recoge vía el componente <Head/> (usado en SEO.tsx / LandingShell).
+export const createRoot = ViteReactSSG({ routes });

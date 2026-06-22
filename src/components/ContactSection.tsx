@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from "react";
+import { ClientOnly } from "vite-react-ssg";
 import { Mail, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ContactFormBlock from "./ContactFormBlock";
@@ -68,9 +69,13 @@ const ContactSection = () => {
             style={{ minHeight: 560 }}
           >
             {calLink ? (
-              <Suspense fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
-                <CalInlineEmbed calLink={calLink} landing="home" />
-              </Suspense>
+              <ClientOnly fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
+                {() => (
+                  <Suspense fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
+                    <CalInlineEmbed calLink={calLink} landing="home" />
+                  </Suspense>
+                )}
+              </ClientOnly>
             ) : (
               <div className="p-12 text-center text-gray-600">El calendario estará disponible en breve.</div>
             )}

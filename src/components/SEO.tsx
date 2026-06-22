@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { useLocation } from 'react-router-dom';
 
 const SITE_URL = 'https://djpartners.es';
@@ -105,7 +105,7 @@ const SEO: React.FC<SEOProps> = ({
     : keywords.join(', ');
 
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={currentUrl} />
@@ -156,7 +156,7 @@ const SEO: React.FC<SEOProps> = ({
           {JSON.stringify(blogPostStructuredData)}
         </script>
       )}
-    </Helmet>
+    </Head>
   );
 };
 
