@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { ClientOnly } from "vite-react-ssg";
 import { Mail, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -18,9 +18,37 @@ const env = import.meta.env as Record<string, string | undefined>;
 const ContactSection = () => {
   const calLink = env.VITE_CALCOM_LINK;
   const [tab, setTab] = useState<"agenda" | "mensaje">("agenda");
+  // El embed de Cal.com (~1MB de iframe) sólo se monta cuando la sección se
+  // acerca al viewport, para no competir con la carga inicial de la página.
+  const sectionRef = useRef<HTMLElement>(null);
+  const [loadCal, setLoadCal] = useState(false);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || loadCal) return;
+    // Deep-link directo a la sección (CTA del hero, enlaces #contact…).
+    if (window.location.hash.startsWith("#contact")) {
+      setLoadCal(true);
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      setLoadCal(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setLoadCal(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "1200px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [loadCal]);
 
   return (
-    <section id="contact-info" className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
+    <section ref={sectionRef} id="contact-info" className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <div className="inline-block mb-3 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
@@ -41,7 +69,7 @@ const ContactSection = () => {
             onClick={() => setTab("agenda")}
             className={cn(
               "flex-1 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-1.5",
-              tab === "agenda" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
+              tab === "agenda" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-800"
             )}
           >
             <CalendarDays className="w-4 h-4" />
@@ -54,7 +82,7 @@ const ContactSection = () => {
             onClick={() => setTab("mensaje")}
             className={cn(
               "flex-1 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-1.5",
-              tab === "mensaje" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
+              tab === "mensaje" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-800"
             )}
           >
             <Mail className="w-4 h-4" />
@@ -70,11 +98,15 @@ const ContactSection = () => {
           >
             {calLink ? (
               <ClientOnly fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
-                {() => (
-                  <Suspense fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
-                    <CalInlineEmbed calLink={calLink} landing="home" />
-                  </Suspense>
-                )}
+                {() =>
+                  loadCal ? (
+                    <Suspense fallback={<div className="p-12 text-center text-gray-500">Cargando calendario…</div>}>
+                      <CalInlineEmbed calLink={calLink} landing="home" />
+                    </Suspense>
+                  ) : (
+                    <div className="p-12 text-center text-gray-500">Cargando calendario…</div>
+                  )
+                }
               </ClientOnly>
             ) : (
               <div className="p-12 text-center text-gray-600">El calendario estará disponible en breve.</div>

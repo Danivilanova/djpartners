@@ -2,6 +2,8 @@
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Initialize dataLayer and gtag function -->
   <script>
     // Initialize the dataLayer
@@ -38,15 +40,28 @@
       }
     } catch (e) {}
   </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-THTTJSFD');</script>
+  <!-- Google Tag Manager (diferido: primera interacción o 4s, lo que llegue antes,
+       para que sus ~500KB no compitan con el renderizado inicial) -->
+  <script>
+    (function () {
+      var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+      var timer = setTimeout(loadGTM, 4000);
+      events.forEach(function (e) { addEventListener(e, loadGTM, { passive: true, once: true }); });
+      var loaded = false;
+      function loadGTM() {
+        if (loaded) return;
+        loaded = true;
+        clearTimeout(timer);
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-THTTJSFD');
+      }
+    })();
+  </script>
   <!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" href="/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/uploads/0c8c6c9f-ee1f-4406-a3a8-a3c839652563.webp" type="image/png" />
   <title>D&J Partners</title>
   <!-- El SEO por página (title, description, canonical, OG, Twitter, JSON-LD) lo

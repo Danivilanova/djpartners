@@ -106,6 +106,9 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Head>
+      {/* Primero: el validador de charset exige verlo en los primeros 1024 bytes,
+          y vite-react-ssg inyecta las etiquetas de helmet antes que el template. */}
+      <meta charSet="UTF-8" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={currentUrl} />

@@ -96,15 +96,15 @@ const Features = () => {
   }, []);
 
   const aiCaseStudies = [{
-    image: "/lovable-uploads/c22f7405-fa12-4177-a50b-8fe831e93e8b.png",
+    image: "/lovable-uploads/c22f7405-fa12-4177-a50b-8fe831e93e8b.webp",
     title: "Automatización de Procesos",
     description: "Automatización inteligente para maximizar eficiencia operativa y reducir errores humanos en procesos críticos."
   }, {
-    image: "/lovable-uploads/2e021987-e90b-41ee-9aa9-381906bc434f.png",
+    image: "/lovable-uploads/2e021987-e90b-41ee-9aa9-381906bc434f.webp",
     title: "Desarrollo de Soluciones a Medida",
     description: "Plataformas empresariales con IA integrada, diseñadas a la medida de cada sector y modelo de negocio."
   }, {
-    image: "/lovable-uploads/4d58c28d-0aa9-4302-b617-6237d9d14220.png",
+    image: "/lovable-uploads/4d58c28d-0aa9-4302-b617-6237d9d14220.webp",
     title: "Machine Learning Predictivo",
     description: "Modelos de aprendizaje automático que identifican patrones y predicen tendencias para optimizar decisiones empresariales."
   }];
@@ -275,6 +275,14 @@ const Features = () => {
             {aiCaseStudies.map((study, index) => (
               <ConsultationModal key={index}>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      e.currentTarget.click();
+                    }
+                  }}
                   className="group relative bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -406,7 +414,7 @@ const Features = () => {
               <p className="text-gray-600 mb-4">Trabajamos de forma iterativa con nuestros clientes para adaptar las soluciones a sus necesidades específicas</p>
 
               <div className="relative mb-2">
-                <Progress value={progressValue} className="h-3 bg-gray-200" />
+                <Progress value={progressValue} aria-label="Progreso del proyecto de implementación" className="h-3 bg-gray-200" />
               </div>
 
               <div className={cn("grid gap-1 mt-4", isMobile ? "grid-cols-2 gap-y-2" : "grid-cols-4")}>

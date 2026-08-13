@@ -1,6 +1,6 @@
-import blogBiDashboard from '@/assets/blog-bi-dashboard.jpg';
-import blogAnalyticsPredictive from '@/assets/blog-analytics-predictive.jpg';
-import blogAutomationIntelligent from '@/assets/blog-automation-intelligent.jpg';
+import blogBiDashboard from '@/assets/blog-bi-dashboard.webp';
+import blogAnalyticsPredictive from '@/assets/blog-analytics-predictive.webp';
+import blogAutomationIntelligent from '@/assets/blog-automation-intelligent.webp';
 
 export interface BlogPost {
   id: string;
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Julio 15, 2025',
     author: 'D&J Partners',
     category: 'Transformación Digital',
-    imageUrl: '/lovable-uploads/078a129e-0f98-4d91-af61-873687db1a04.png',
+    imageUrl: '/lovable-uploads/078a129e-0f98-4d91-af61-873687db1a04.webp',
     keywords: [
       'inteligencia artificial',
       'PYMEs',
@@ -590,7 +590,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Marzo 15, 2025',
     author: 'D&J Partners',
     category: 'Estrategia Digital',
-    imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
+    imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.webp',
     keywords: [
       'transformación digital',
       'digitalización PYME',

@@ -33,7 +33,7 @@ const ConsentBanner = () => {
           Usamos cookies propias y de terceros para analizar el tráfico y medir nuestras campañas. Puedes aceptarlas o
           rechazarlas.{" "}
           <Link to="/privacy-policy" className="text-primary underline underline-offset-2 hover:text-primary/80">
-            Más información
+            Más información sobre cookies
           </Link>
           .
         </p>
