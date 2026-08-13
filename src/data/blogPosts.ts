@@ -1,3 +1,7 @@
+import blogBiDashboard from '@/assets/blog-bi-dashboard.jpg';
+import blogAnalyticsPredictive from '@/assets/blog-analytics-predictive.jpg';
+import blogAutomationIntelligent from '@/assets/blog-automation-intelligent.jpg';
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -172,7 +176,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Junio 8, 2025',
     author: 'D&J Partners',
     category: 'Business Intelligence',
-    imageUrl: '/src/assets/blog-bi-dashboard.jpg',
+    imageUrl: blogBiDashboard,
     keywords: [
       'business intelligence',
       'BI para PYMEs',
@@ -299,7 +303,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mayo 30, 2025',
     author: 'D&J Partners',
     category: 'Analítica Avanzada',
-    imageUrl: '/src/assets/blog-analytics-predictive.jpg',
+    imageUrl: blogAnalyticsPredictive,
     keywords: [
       'analítica predictiva',
       'machine learning',
@@ -443,7 +447,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Abril 22, 2025',
     author: 'D&J Partners',
     category: 'Automatización',
-    imageUrl: '/src/assets/blog-automation-intelligent.jpg',
+    imageUrl: blogAutomationIntelligent,
     keywords: [
       'automatización inteligente',
       'RPA',
