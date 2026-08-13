@@ -51,8 +51,10 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img
-                src="/uploads/ad367c9b-b41f-46b7-a483-c58506105dbe.webp"
+                src="/uploads/logo-nav.webp"
                 alt="D&J Partners Logo"
+                width="224"
+                height="224"
                 className={cn(
                   "h-16 w-auto transition-all duration-300",
                   isScrolled ? "" : "brightness-0 invert"
@@ -69,19 +71,15 @@ const Navbar = () => {
             <NavigationMenu className={cn(isScrolled ? "" : "text-white")}>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link to="/">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                      Inicio
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
+                    <Link to="/">Inicio</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/about">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                      Nosotros
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
+                    <Link to="/about">Nosotros</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* <NavigationMenuItem>
@@ -155,19 +153,15 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/blog">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                      Blog
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
+                    <Link to="/blog">Blog</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/careers">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
-                      Únete al Equipo
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-navbar-graphite-hover")}>
+                    <Link to="/careers">Únete al Equipo</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -181,7 +175,12 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className={cn("focus:outline-none", isScrolled ? "text-gray-700" : "text-white")}>
+            <button
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
+              className={cn("focus:outline-none", isScrolled ? "text-gray-700" : "text-white")}
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>

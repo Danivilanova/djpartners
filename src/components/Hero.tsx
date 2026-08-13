@@ -1,16 +1,30 @@
+import { useEffect, useRef, useState } from "react";
+import { Head } from "vite-react-ssg";
 import { Code, Cpu, Layers, MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
+const HERO_VIDEO_SRC = "/lovable-uploads/video_1751292840840_1751292842546.mp4";
+
 const Hero = () => {
   const isMobile = useIsMobile();
+  // The poster paints immediately; the video only starts downloading after
+  // hydration so it never competes with the LCP on slow connections.
+  const [videoSrc, setVideoSrc] = useState<string>();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    setVideoSrc(HERO_VIDEO_SRC);
+  }, []);
+  useEffect(() => {
+    // Setting src after mount doesn't always retrigger autoplay; nudge it.
+    if (videoSrc) videoRef.current?.play().catch(() => {});
+  }, [videoSrc]);
+  // Solo transform (sin opacity): el texto del hero es el LCP y un fade-in lo
+  // dejaría invisible en el HTML prerenderizado hasta que hidrata el JS.
   const containerVariants = {
-    hidden: {
-      opacity: 0
-    },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.15,
         delayChildren: 0.3,
@@ -20,12 +34,10 @@ const Hero = () => {
   };
   const itemVariants = {
     hidden: {
-      y: 20,
-      opacity: 0
+      y: 20
     },
     visible: {
       y: 0,
-      opacity: 1,
       transition: {
         duration: 0.6
       }
@@ -43,18 +55,23 @@ const Hero = () => {
   };
 
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
+    {/* El póster es el LCP de la home: precárgalo con prioridad alta. */}
+    <Head>
+      <link rel="preload" as="image" href="/hero-consulting.webp" fetchPriority="high" />
+    </Head>
     <div className="banner-container bg-slate-800 relative overflow-hidden h-[90vh] sm:h-[80vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
       <div className="absolute inset-0 bg-slate-800 w-full">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
+          src={videoSrc}
           className={`w-full h-full object-cover opacity-90 hero-video ${isMobile ? 'object-right' : 'object-center'}`}
-          poster="/hero-consulting.jpg"
+          poster="/hero-consulting.webp"
         >
-          <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
           {/* Fallback image if video fails to load */}
           <img
             src="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png"
@@ -112,7 +129,7 @@ const Hero = () => {
           <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
             <Cpu className="w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Implementación de IA</h3>
+          <h2 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Implementación de IA</h2>
           <p className="text-gray-600 text-xs md:text-sm">Desarrollo e integración estratégica de soluciones IA adaptadas a procesos empresariales críticos.</p>
         </motion.div>
 
@@ -120,7 +137,7 @@ const Hero = () => {
           <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
             <Code className="w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">BI y Dashboards Personalizados</h3>
+          <h2 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">BI y Dashboards Personalizados</h2>
           <p className="text-gray-600 text-xs md:text-sm">Transformamos datos complejos en insights visuales y accionables para líderes de negocio.</p>
         </motion.div>
 
@@ -128,7 +145,7 @@ const Hero = () => {
           <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
             <Layers className="w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Inteligencia de Negocio</h3>
+          <h2 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Inteligencia de Negocio</h2>
           <p className="text-gray-600 text-xs md:text-sm">Convertimos tus datos en decisiones inteligentes que impulsan el crecimiento y la rentabilidad de tu PYME.</p>
         </motion.div>
       </motion.div>

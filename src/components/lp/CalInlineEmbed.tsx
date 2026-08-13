@@ -14,7 +14,7 @@ export default function CalInlineEmbed({ calLink, landing }: { calLink: string; 
   useEffect(() => {
     let active = true;
     (async () => {
-      const cal = await getCalApi();
+      const cal = await getCalApi({ namespace: "djp" });
       if (!active) return;
       // Match the Tinta look: ink accent, light theme, month view.
       cal("ui", {
@@ -32,6 +32,7 @@ export default function CalInlineEmbed({ calLink, landing }: { calLink: string; 
 
   return (
     <Cal
+      namespace="djp"
       calLink={calLink}
       style={{ width: "100%", height: "100%", minHeight: 580, overflow: "scroll" }}
       config={{ layout: "month_view" }}

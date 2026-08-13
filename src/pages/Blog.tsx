@@ -19,7 +19,7 @@ const Blog = () => {
       <SEO 
         title="D&J Partners - Blog de Inteligencia Artificial y Consultoría Empresarial" 
         description="Mantente actualizado con las últimas tendencias en IA, Business Intelligence, analítica predictiva y transformación digital para PYMEs."
-        imageUrl={featuredPost?.imageUrl || "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png"}
+        imageUrl={featuredPost?.imageUrl || "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.webp"}
         keywords={['inteligencia artificial', 'business intelligence', 'analítica predictiva', 'consultoría IA', 'transformación digital', 'datos empresariales', 'machine learning', 'automatización']}
         type="website"
       />
@@ -52,7 +52,7 @@ const Blog = () => {
                   >
                     <div className="text-white text-center bg-black/30 backdrop-blur-sm p-4 rounded-lg">
                       <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium inline-block mb-4">Featured</span>
-                      <h3 className="text-2xl md:text-3xl font-bold">{featuredPost.title}</h3>
+                      <h2 className="text-2xl md:text-3xl font-bold">{featuredPost.title}</h2>
                     </div>
                   </div>
                   <CardContent className="p-8">
@@ -76,7 +76,7 @@ const Blog = () => {
               key={post.id}
               title={post.title}
               excerpt={post.excerpt}
-              imageUrl={post.imageUrl || '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png'}
+              imageUrl={post.imageUrl || '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.webp'}
               date={post.date}
               slug={post.slug}
               category={post.category}
@@ -89,7 +89,7 @@ const Blog = () => {
               key={`placeholder-${index}`}
               title="Próximo artículo de IA"
               excerpt="Mantente atento a más artículos sobre inteligencia artificial, business intelligence y transformación digital empresarial."
-              imageUrl={index % 2 === 0 ? "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png" : "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png"}
+              imageUrl={index % 2 === 0 ? "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.webp" : "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.webp"}
               date="Próximamente"
               slug="#"
               category="Próximo"

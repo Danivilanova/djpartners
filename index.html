@@ -2,6 +2,8 @@
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Initialize dataLayer and gtag function -->
   <script>
     // Initialize the dataLayer
@@ -38,15 +40,58 @@
       }
     } catch (e) {}
   </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-THTTJSFD');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager + HubSpot, diferidos (primera interacción o 4s) para no
+       competir con el renderizado inicial.
+       RGPD: GTM carga siempre porque Consent Mode v2 arranca con todo denegado
+       (sin cookies hasta que el usuario acepte). HubSpot no tiene un modo así,
+       de modo que SOLO se carga con consentimiento previo; cuando el usuario
+       acepta en el banner, éste llama a window.__djpLoadHubSpot() al momento. -->
+  <script>
+    (function () {
+      var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+      var timer = setTimeout(onReady, 4000);
+      events.forEach(function (e) { addEventListener(e, onReady, { passive: true, once: true }); });
+      var gtmLoaded = false;
+      var hsLoaded = false;
+
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-THTTJSFD');
+      }
+
+      function loadHubSpot() {
+        if (hsLoaded) return;
+        hsLoaded = true;
+        var hs = document.createElement('script');
+        hs.type = 'text/javascript';
+        hs.id = 'hs-script-loader';
+        hs.async = true;
+        hs.defer = true;
+        hs.src = 'https://js-eu1.hs-scripts.com/149093466.js';
+        document.head.appendChild(hs);
+      }
+
+      function hasConsent() {
+        try { return localStorage.getItem('djp_consent') === 'granted'; } catch (e) { return false; }
+      }
+
+      function onReady() {
+        clearTimeout(timer);
+        loadGTM();
+        if (hasConsent()) loadHubSpot();
+      }
+
+      // Llamado por el banner de cookies en cuanto el usuario acepta.
+      window.__djpLoadHubSpot = loadHubSpot;
+    })();
+  </script>
+  <!-- End Google Tag Manager + HubSpot -->
+  <link rel="preload" href="/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/uploads/0c8c6c9f-ee1f-4406-a3a8-a3c839652563.webp" type="image/png" />
   <title>D&J Partners</title>
   <!-- El SEO por página (title, description, canonical, OG, Twitter, JSON-LD) lo
