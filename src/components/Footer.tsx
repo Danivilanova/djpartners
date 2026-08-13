@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { trackFormSubmit } from "@/lib/analytics";
+import { resetConsent } from "@/lib/consent";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -117,6 +118,13 @@ const Footer = () => {
           </p>
           <div className="flex space-x-6">
             <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Política de Privacidad</Link>
+            <button
+              type="button"
+              onClick={resetConsent}
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Configurar cookies
+            </button>
           </div>
         </div>
       </div>
