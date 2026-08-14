@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isBlogPage = location.pathname === '/blog';
 
   useEffect(() => {
@@ -29,13 +30,19 @@ const Navbar = () => {
   };
 
   const scrollToSection = (id: string) => {
+    setIsMenuOpen(false);
+    // Las secciones (features, contact-info…) sólo existen en la home: desde
+    // otra página, navega a /#id y PageLayout hace el scroll al llegar.
+    if (location.pathname !== '/') {
+      navigate(`/#${id}`);
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth'
       });
     }
-    setIsMenuOpen(false);
   };
 
   return (
