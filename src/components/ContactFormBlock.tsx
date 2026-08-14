@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { trackFormSubmit } from '@/lib/analytics';
+import { getGclid } from '@/lib/gclid';
 
 /**
  * Formulario de contacto reutilizable (POST /api/contact). Lo usan tanto
@@ -31,7 +32,7 @@ const ContactFormBlock = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, gclid: getGclid() }),
       });
 
       if (!res.ok) throw new Error('Error en el servidor');
