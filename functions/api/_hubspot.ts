@@ -20,6 +20,8 @@ export interface LeadInput {
   gclid?: string;
   /** Origen del lead para el nombre del deal (p.ej. "home", "consultation"). */
   source: string;
+  /** Stage inicial del deal; por defecto "Leads". Cal usa "Meetingbook". */
+  dealstage?: string;
 }
 
 async function hs(token: string, path: string, method: string, body?: unknown) {
@@ -66,7 +68,7 @@ async function createDeal(token: string, contactId: string, lead: LeadInput): Pr
     properties: {
       dealname,
       pipeline: DEAL_PIPELINE,
-      dealstage: DEAL_STAGE,
+      dealstage: lead.dealstage ?? DEAL_STAGE,
       ...(lead.gclid ? { description: `gclid: ${lead.gclid}` } : {}),
     },
     associations: [
