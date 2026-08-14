@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getGclid } from "@/lib/gclid";
+import PrivacyNotice from "@/components/PrivacyNotice";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -165,6 +166,7 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
               Solicitar Consultoría
             </Button>
           </div>
+          <PrivacyNotice />
         </form>
       </DialogContent>
     </Dialog>
