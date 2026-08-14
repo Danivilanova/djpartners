@@ -3,6 +3,7 @@ import { Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { trackFormSubmit } from '@/lib/analytics';
 import { getGclid } from '@/lib/gclid';
+import PrivacyNotice from '@/components/PrivacyNotice';
 
 /**
  * Formulario de contacto reutilizable (POST /api/contact). Lo usan tanto
@@ -137,6 +138,7 @@ const ContactFormBlock = () => {
           </>
         )}
       </button>
+      <PrivacyNotice />
     </form>
   );
 };

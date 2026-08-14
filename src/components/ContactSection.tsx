@@ -3,6 +3,7 @@ import { ClientOnly } from "vite-react-ssg";
 import { Mail, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ContactFormBlock from "./ContactFormBlock";
+import PrivacyNotice from "./PrivacyNotice";
 
 // El embed real de Cal.com (mismo componente que las landings), en su propio
 // chunk y sólo si hay enlace configurado.
@@ -111,6 +112,9 @@ const ContactSection = () => {
             ) : (
               <div className="p-12 text-center text-gray-600">El calendario estará disponible en breve.</div>
             )}
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <PrivacyNotice />
           </div>
         </div>
 
