@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getGclid } from "@/lib/gclid";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,7 +47,7 @@ export const ConsultationModal = ({ children }: ConsultationModalProps) => {
       const res = await fetch('/api/consultation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, gclid: getGclid() }),
       });
 
       if (!res.ok) throw new Error('Error en el servidor');

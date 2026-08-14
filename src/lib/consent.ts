@@ -4,6 +4,8 @@
  * "granted" choice. This module is used by the React cookie banner to record and
  * apply the user's decision via `gtag('consent','update', …)`.
  */
+import { clearGclidCookie, storeGclidFromUrl } from "./gclid";
+
 export type ConsentState = "granted" | "denied";
 
 const KEY = "djp_consent";
@@ -36,8 +38,12 @@ export function applyConsent(state: ConsentState) {
   if (state === "granted") {
     // HubSpot sólo se carga tras consentimiento explícito (lo inyecta index.html).
     w.__djpLoadHubSpot?.();
+    // Captura el gclid ahora que hay consentimiento (la URL aún lo conserva
+    // si el usuario aceptó nada más aterrizar desde el anuncio).
+    storeGclidFromUrl();
   } else {
     clearHubSpotCookies();
+    clearGclidCookie();
   }
 }
 
@@ -71,5 +77,6 @@ export function resetConsent() {
     /* ignore */
   }
   clearHubSpotCookies();
+  clearGclidCookie();
   window.location.reload();
 }

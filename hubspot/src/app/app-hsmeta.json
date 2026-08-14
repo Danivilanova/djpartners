@@ -1,0 +1,25 @@
+{
+  "uid": "djp-leads-app",
+  "type": "app",
+  "config": {
+    "name": "DJP Leads",
+    "description": "Integración de leads de las landings (Google Ads) con contactos y deals del CRM.",
+    "distribution": "private",
+    "permittedUrls": {
+      "fetch": [],
+      "iframe": [],
+      "img": []
+    },
+    "auth": {
+      "type": "static",
+      "requiredScopes": [
+        "oauth",
+        "crm.objects.contacts.read",
+        "crm.objects.contacts.write",
+        "crm.objects.deals.read",
+        "crm.objects.deals.write",
+        "crm.schemas.contacts.write"
+      ]
+    }
+  }
+}

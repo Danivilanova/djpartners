@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { trackLead } from "./analytics";
+import { getGclid } from "@/lib/gclid";
 
 /**
  * Real Cal.com inline embed. Rendered by BookingCalendar only when a calLink is
@@ -30,12 +31,16 @@ export default function CalInlineEmbed({ calLink, landing }: { calLink: string; 
     };
   }, [landing]);
 
+  // El gclid (sólo disponible con consentimiento aceptado) viaja como metadata
+  // de la reserva y llega al webhook /api/cal-webhook para el deal en HubSpot.
+  const gclid = getGclid();
+
   return (
     <Cal
       namespace="djp"
       calLink={calLink}
       style={{ width: "100%", height: "100%", minHeight: 580, overflow: "scroll" }}
-      config={{ layout: "month_view" }}
+      config={{ layout: "month_view", ...(gclid ? { "metadata[gclid]": gclid } : {}) }}
     />
   );
 }

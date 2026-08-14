@@ -32,3 +32,6 @@ dist-ssr
 
 # vite-react-ssg build temp
 .vite-react-ssg-temp
+
+# HubSpot CLI (contiene personal access key)
+hubspot.config.yml
