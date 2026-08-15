@@ -51,7 +51,10 @@ const PrivacyPolicy = () => {
                 <li>
                   <strong>Identificadores publicitarios</strong>: si llegas desde un anuncio de Google Ads y aceptas las
                   cookies, guardamos el identificador de clic (<em>gclid</em>) durante 90 días para poder medir qué
-                  campañas generan clientes reales.
+                  campañas generan clientes reales. Con ese mismo consentimiento, al agendar una reunión enviamos a
+                  Google tu email (y teléfono, si lo facilitas) en forma seudonimizada (hasheado con SHA-256) para la
+                  medición de conversiones avanzadas; Google nunca recibe el dato en claro y solo puede cotejar el hash
+                  con sus propios usuarios para atribuir la conversión.
                 </li>
                 <li>
                   <strong>Datos de navegación</strong>: con tu consentimiento, datos de uso del sitio recogidos por las

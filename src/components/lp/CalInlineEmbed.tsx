@@ -1,7 +1,36 @@
 import { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { trackLead } from "./analytics";
+import { trackLead, type LeadContact } from "./analytics";
 import { getGclid } from "@/lib/gclid";
+
+/** Shape (partial, defensive) of the `bookingSuccessful` event detail. */
+interface BookingSuccessfulEvent {
+  detail?: {
+    data?: {
+      booking?: {
+        attendees?: Array<{ email?: string }>;
+        responses?: Record<string, { value?: unknown } | undefined>;
+      };
+    };
+  };
+}
+
+/**
+ * Extrae email/teléfono de la reserva para las conversiones avanzadas de
+ * Google Ads. Todo opcional: si Cal cambia el payload, la conversión se sigue
+ * registrando sin datos de usuario.
+ */
+function extractContact(e: unknown): LeadContact {
+  const booking = (e as BookingSuccessfulEvent)?.detail?.data?.booking;
+  const responses = booking?.responses ?? {};
+  const email =
+    booking?.attendees?.[0]?.email ??
+    (typeof responses.email?.value === "string" ? responses.email.value : undefined);
+  const rawPhone = responses.phone?.value;
+  // Google exige formato E.164 para el teléfono; sin prefijo (+34…) se omite.
+  const phone = typeof rawPhone === "string" && rawPhone.startsWith("+") ? rawPhone : undefined;
+  return { email, phone };
+}
 
 /**
  * Real Cal.com inline embed. Rendered by BookingCalendar only when a calLink is
@@ -24,7 +53,10 @@ export default function CalInlineEmbed({ calLink, landing }: { calLink: string; 
         hideEventTypeDetails: false,
         layout: "month_view",
       });
-      cal("on", { action: "bookingSuccessful", callback: () => trackLead(landing) });
+      cal("on", {
+        action: "bookingSuccessful",
+        callback: (e: unknown) => trackLead(landing, extractContact(e)),
+      });
     })();
     return () => {
       active = false;
