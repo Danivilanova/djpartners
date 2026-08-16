@@ -17,13 +17,17 @@ const GCLID_RE = /^[\w.-]{1,200}$/;
 /**
  * RGPD: el gclid es un identificador de medición publicitaria, así que la
  * cookie sólo se escribe/lee con consentimiento aceptado. applyConsent()
- * re-invoca la captura al aceptar (la URL aún conserva ?gclid si el usuario
- * no ha navegado) y borra la cookie al denegar o retirar el consentimiento.
+ * re-invoca la captura al aceptar y borra la cookie al denegar o retirar el
+ * consentimiento. La URL ya NO conserva ?gclid en ese momento: el router de
+ * vite-react-ssg elimina el query string al hidratar, así que index.html lo
+ * captura antes en `window.__djpGclid` (solo memoria, sin storage) y aquí se
+ * usa como fuente principal con location.search de respaldo.
  */
 export function storeGclidFromUrl(): void {
   try {
     if (getStoredConsent() !== 'granted') return;
-    const gclid = new URLSearchParams(window.location.search).get('gclid');
+    const w = window as Window & { __djpGclid?: string };
+    const gclid = w.__djpGclid ?? new URLSearchParams(window.location.search).get('gclid');
     if (!gclid || !GCLID_RE.test(gclid)) return;
     const maxAge = MAX_AGE_DAYS * 24 * 60 * 60;
     // Secure: el sitio es HTTPS, así que la cookie nunca debe viajar en claro.
