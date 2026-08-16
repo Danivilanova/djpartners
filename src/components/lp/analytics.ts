@@ -1,28 +1,19 @@
 /**
  * Lightweight conversion tracking for the ad landing pages. Pushes events to
- * `window.dataLayer` (so a GTM container can fire GA4 / Google Ads tags) and,
- * if a Google Ads send-to is configured, fires a direct gtag conversion too.
+ * `window.dataLayer`, donde el contenedor de GTM dispara las etiquetas de GA4 y
+ * Google Ads. La conversión se configura SIEMPRE en GTM (con el evento
+ * `generate_lead` como disparador), nunca con un gtag directo desde aquí: dos
+ * caminos para la misma conversión la contarían dos veces.
  *
  * Nothing here breaks if GTM/gtag isn't loaded yet — `index.html` already
- * defines `dataLayer` + `gtag` with consent granted, and every call is guarded.
- *
- * To wire Google Ads conversions directly (without GTM), create a conversion
- * action in Google Ads and set the env vars below to its `AW-XXXXXXXX/label`.
+ * defines `dataLayer` + `gtag` with consent denied by default, and every call is
+ * guarded.
  */
 
 import { getStoredConsent } from "@/lib/consent";
 
 type GtagWindow = Window & {
   dataLayer?: Record<string, unknown>[];
-  gtag?: (...args: unknown[]) => void;
-};
-
-const env = import.meta.env as Record<string, string | undefined>;
-
-/** Google Ads "send_to" per landing slug (optional — GTM can do this instead). */
-const CONVERSION_SEND_TO: Record<string, string | undefined> = {
-  "cuadro-de-mando": env.VITE_ADS_CONVERSION_CUADRO,
-  "automatizacion-procesos": env.VITE_ADS_CONVERSION_AUTO,
 };
 
 /** Contact details of the person who booked, for enhanced conversions. */
@@ -31,9 +22,25 @@ export interface LeadContact {
   phone?: string;
 }
 
-/** Fire when a diagnosis call is actually booked (the real conversion). */
-export function trackLead(landing: string, contact?: LeadContact) {
+/**
+ * uids de reservas ya enviadas. Cal.com emite dos eventos por reserva
+ * (`bookingSuccessfulV2` y el `bookingSuccessful` deprecado) y el embed puede
+ * remontarse al navegar por la SPA; sin este filtro la misma reserva se
+ * contaría varias veces como conversión.
+ */
+const pushedBookings = new Set<string>();
+
+/**
+ * Fire when a diagnosis call is actually booked (the real conversion).
+ * `uid` es el identificador de la reserva en Cal.com: si falta, se empuja igual
+ * (mejor una conversión sin deduplicar que perderla).
+ */
+export function trackLead(landing: string, contact?: LeadContact, uid?: string) {
   if (typeof window === "undefined") return;
+  if (uid) {
+    if (pushedBookings.has(uid)) return;
+    pushedBookings.add(uid);
+  }
   const w = window as GtagWindow;
   // GA4 / GTM: use this event as your conversion trigger.
   const payload: Record<string, unknown> = { event: "generate_lead", landing, value: 1, currency: "EUR" };
@@ -46,11 +53,6 @@ export function trackLead(landing: string, contact?: LeadContact) {
     if (contact?.phone) payload.lead_phone = contact.phone;
   }
   w.dataLayer?.push(payload);
-  // Direct Google Ads conversion (only if a send_to is configured for this landing).
-  const sendTo = CONVERSION_SEND_TO[landing];
-  if (sendTo && typeof w.gtag === "function") {
-    w.gtag("event", "conversion", { send_to: sendTo, value: 1.0, currency: "EUR" });
-  }
 }
 
 /** Micro-conversion: a CTA was clicked (useful for funnel analysis). */

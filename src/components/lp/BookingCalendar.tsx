@@ -1,5 +1,6 @@
 import { lazy, Suspense, useMemo, useState } from "react";
 import { ClientOnly } from "vite-react-ssg";
+import { Link } from "react-router-dom";
 import { C, FONT, MONO } from "./tokens";
 import { useViewport } from "./useViewport";
 import LpLogo from "./LpLogo";
@@ -140,6 +141,7 @@ export default function BookingCalendar({
 
       {calLink ? (
         // Real Cal.com inline embed — active once VITE_CALCOM_LINK is set.
+        <>
         <div
           style={{
             background: "#FFFFFF",
@@ -162,6 +164,25 @@ export default function BookingCalendar({
             )}
           </ClientOnly>
         </div>
+        {/* RGPD (AEPD): aviso de primera capa junto al único punto donde la
+            landing recoge datos personales — la reserva del diagnóstico. */}
+        <p
+          style={{
+            fontSize: 12,
+            lineHeight: 1.6,
+            color: C.muted,
+            margin: "14px 0 0",
+            maxWidth: 760,
+          }}
+        >
+          Responsable: Jordi Reina García (D&amp;J Partners). Finalidad: responder a tu solicitud y
+          gestión comercial. Derechos: jordi@djpartners.es. Más información en la{" "}
+          <Link to="/privacy-policy" style={{ color: C.inkSoft, textDecoration: "underline" }}>
+            política de privacidad
+          </Link>
+          .
+        </p>
+        </>
       ) : (
         // Interactive placeholder shown until a Cal.com link is configured.
         <div
