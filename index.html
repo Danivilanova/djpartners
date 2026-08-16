@@ -28,6 +28,15 @@
     gtag('set', 'url_passthrough', true);
     gtag('set', 'ads_data_redaction', true);
 
+    // Captura el gclid ANTES de que el router de la SPA normalice la URL (la
+    // hidratación de vite-react-ssg elimina el query string, así que en el
+    // momento de aceptar el banner ya no está en location.search). Solo queda
+    // en memoria: la cookie la escribe gclid.ts únicamente con consentimiento.
+    try {
+      var djpGclid = new URLSearchParams(location.search).get('gclid');
+      if (djpGclid) window.__djpGclid = djpGclid;
+    } catch (e) {}
+
     // Reaplica la elección previa del usuario lo antes posible (antes de GTM).
     try {
       if (localStorage.getItem('djp_consent') === 'granted') {
