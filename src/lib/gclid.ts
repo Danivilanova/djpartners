@@ -11,6 +11,8 @@ import { getStoredConsent } from './consent';
 
 const COOKIE = 'djp_gclid';
 const MAX_AGE_DAYS = 90;
+/** Formato real de un gclid; evita persistir basura inyectada por la URL. */
+const GCLID_RE = /^[\w.-]{1,200}$/;
 
 /**
  * RGPD: el gclid es un identificador de medición publicitaria, así que la
@@ -22,9 +24,10 @@ export function storeGclidFromUrl(): void {
   try {
     if (getStoredConsent() !== 'granted') return;
     const gclid = new URLSearchParams(window.location.search).get('gclid');
-    if (!gclid) return;
+    if (!gclid || !GCLID_RE.test(gclid)) return;
     const maxAge = MAX_AGE_DAYS * 24 * 60 * 60;
-    document.cookie = `${COOKIE}=${encodeURIComponent(gclid)}; max-age=${maxAge}; path=/; SameSite=Lax`;
+    // Secure: el sitio es HTTPS, así que la cookie nunca debe viajar en claro.
+    document.cookie = `${COOKIE}=${encodeURIComponent(gclid)}; max-age=${maxAge}; path=/; SameSite=Lax; Secure`;
   } catch {
     /* ignore */
   }

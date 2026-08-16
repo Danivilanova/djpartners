@@ -10,6 +10,14 @@ export type ConsentState = "granted" | "denied";
 
 const KEY = "djp_consent";
 
+/**
+ * Evento de window que se emite tras aplicar una decisión de consentimiento.
+ * Lo escuchan los componentes que dependen de datos que sólo existen con
+ * consentimiento aceptado (p. ej. el embed de Cal.com necesita el gclid, que se
+ * captura justo al aceptar, después de que el embed ya se haya montado).
+ */
+export const CONSENT_EVENT = "djp:consent";
+
 export function getStoredConsent(): ConsentState | null {
   try {
     const v = localStorage.getItem(KEY);
@@ -43,16 +51,15 @@ export function applyConsent(state: ConsentState) {
     storeGclidFromUrl();
   } else {
     clearHubSpotCookies();
+    clearGoogleCookies();
     clearGclidCookie();
   }
+  // Avisa a la UI ya montada (el embed de Cal.com) de que la decisión cambió.
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: state }));
 }
 
-/**
- * Expira las cookies first-party que deja HubSpot, para el caso de un usuario
- * que retira un consentimiento dado anteriormente.
- */
-function clearHubSpotCookies() {
-  const names = ["hubspotutk", "__hstc", "__hssc", "__hssrc", "messagesUtk"];
+/** Expira una lista de cookies en todos los dominios donde pudieron escribirse. */
+function expireCookies(names: string[]) {
   const host = window.location.hostname;
   const domains = ["", host, "." + host, "." + host.split(".").slice(-2).join(".")];
   for (const name of names) {
@@ -63,6 +70,29 @@ function clearHubSpotCookies() {
         (domain ? "; domain=" + domain : "");
     }
   }
+}
+
+/**
+ * Expira las cookies first-party que deja HubSpot, para el caso de un usuario
+ * que retira un consentimiento dado anteriormente.
+ */
+function clearHubSpotCookies() {
+  expireCookies(["hubspotutk", "__hstc", "__hssc", "__hssrc", "messagesUtk"]);
+}
+
+/**
+ * Expira las cookies de Google (GA4 y Google Ads). La política de privacidad
+ * promete que al retirar el consentimiento se eliminan, así que además de las
+ * de nombre fijo hay que recorrer document.cookie para las de sufijo variable
+ * (_ga_<ID de flujo>, _gcl_aw/_gcl_dc/_gcl_gs…).
+ */
+function clearGoogleCookies() {
+  const names = new Set(["_ga", "_gid", "_gat", "_gcl_au"]);
+  for (const pair of document.cookie.split(";")) {
+    const name = pair.split("=")[0].trim();
+    if (/^(_ga_|_gcl_|_gat_)/.test(name)) names.add(name);
+  }
+  expireCookies([...names]);
 }
 
 /**
@@ -77,6 +107,7 @@ export function resetConsent() {
     /* ignore */
   }
   clearHubSpotCookies();
+  clearGoogleCookies();
   clearGclidCookie();
   window.location.reload();
 }

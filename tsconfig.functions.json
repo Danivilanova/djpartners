@@ -1,0 +1,21 @@
+{
+  /* Cloudflare Pages Functions: runtime de Workers, no DOM ni Node.
+     Typecheck: pnpm exec tsc --noEmit -p tsconfig.functions.json */
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["@cloudflare/workers-types"],
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["functions"]
+}

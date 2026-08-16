@@ -63,8 +63,8 @@ GTM (`GTM-THTTJSFD`) ya está cargado en `index.html`. Solo falta crear los tags
 | Variable | Valor | Para qué |
 |---|---|---|
 | `VITE_CALCOM_LINK` | p. ej. `jordi-reina/diagnostico` | activa el embed real de Cal.com (si falta, sale el placeholder) |
-| `VITE_ADS_CONVERSION_CUADRO` | *(opcional)* `AW-XXXX/label` | conversión directa por gtag sin GTM (déjalo vacío si usas GTM) |
-| `VITE_ADS_CONVERSION_AUTO` | *(opcional)* `AW-XXXX/label` | idem para la otra landing |
+
+> La conversión de Google Ads se configura **siempre en GTM** con el evento `generate_lead` del dataLayer. El código ya no dispara ningún `gtag('event','conversion')` directo (dos caminos contarían la conversión dos veces).
 
 Vite inyecta estas variables **en el build**, así que tras añadirlas hay que **volver a desplegar**.
 
