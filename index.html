@@ -39,13 +39,20 @@
 
     // Reaplica la elección previa del usuario lo antes posible (antes de GTM).
     try {
-      if (localStorage.getItem('djp_consent') === 'granted') {
+      var djpConsent = localStorage.getItem('djp_consent');
+      if (djpConsent === 'granted') {
         gtag('consent', 'update', {
           ad_storage: 'granted',
           analytics_storage: 'granted',
           ad_user_data: 'granted',
           ad_personalization: 'granted'
         });
+      }
+      // El banner de cookies viene prerenderizado en el HTML para que se vea
+      // desde el primer pintado; a quien ya decidió se le oculta aquí, antes
+      // de pintar, y React lo desmonta al hidratar (ver ConsentBanner.tsx).
+      if (djpConsent === 'granted' || djpConsent === 'denied') {
+        document.documentElement.classList.add('djp-consent-set');
       }
     } catch (e) {}
   </script>
@@ -100,6 +107,7 @@
     })();
   </script>
   <!-- End Google Tag Manager + HubSpot -->
+  <style>html.djp-consent-set .djp-consent-banner { display: none; }</style>
   <link rel="preload" href="/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" href="/uploads/0c8c6c9f-ee1f-4406-a3a8-a3c839652563.webp" type="image/png" />
   <title>D&J Partners</title>

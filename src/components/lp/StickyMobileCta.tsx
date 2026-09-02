@@ -2,7 +2,11 @@ import { C } from "./tokens";
 import CtaButton from "./CtaButton";
 import { useViewport } from "./useViewport";
 
-/** Fixed bottom CTA bar shown only on phones (brief: "CTA sticky en móvil"). */
+/**
+ * Fixed bottom CTA bar shown only on phones (brief: "CTA sticky en móvil").
+ * Mientras el banner de cookies está visible se apoya encima de él
+ * (`--djp-consent-h`, publicada por ConsentBanner) en vez de quedar tapado.
+ */
 export default function StickyMobileCta({
   label = "Agendar diagnóstico gratuito",
 }: {
@@ -14,7 +18,8 @@ export default function StickyMobileCta({
     <div
       style={{
         position: "fixed",
-        bottom: 0,
+        bottom: "var(--djp-consent-h, 0px)",
+        transition: "bottom 150ms ease",
         left: 0,
         right: 0,
         background: "rgba(251,251,249,0.96)",
