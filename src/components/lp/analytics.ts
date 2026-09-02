@@ -11,6 +11,7 @@
  */
 
 import { getStoredConsent } from "@/lib/consent";
+import { captureEvent } from "@/lib/posthog";
 
 type GtagWindow = Window & {
   dataLayer?: Record<string, unknown>[];
@@ -53,6 +54,8 @@ export function trackLead(landing: string, contact?: LeadContact, uid?: string) 
     if (contact?.phone) payload.lead_phone = contact.phone;
   }
   w.dataLayer?.push(payload);
+  // PostHog recibe la conversión sin el contacto: no necesita datos personales.
+  captureEvent("generate_lead", { landing });
 }
 
 /** Micro-conversion: a CTA was clicked (useful for funnel analysis). */
@@ -60,4 +63,5 @@ export function trackCtaClick() {
   if (typeof window === "undefined") return;
   const landing = window.location.pathname.replace(/^\/lp\//, "");
   (window as GtagWindow).dataLayer?.push({ event: "cta_click", landing });
+  captureEvent("cta_click", { landing });
 }

@@ -57,8 +57,11 @@ const PrivacyPolicy = () => {
                   con sus propios usuarios para atribuir la conversión.
                 </li>
                 <li>
-                  <strong>Datos de navegación</strong>: con tu consentimiento, datos de uso del sitio recogidos por las
-                  herramientas de analítica y el chat descritas en las secciones 4 y 5.
+                  <strong>Datos de navegación</strong>: sin necesidad de consentimiento, una medición agregada y
+                  anónima del uso del sitio (páginas vistas, dónde se hace clic y hasta dónde se desplaza cada visita)
+                  que no utiliza cookies ni identificadores persistentes y descarta la dirección IP. Con tu
+                  consentimiento, además, los datos de uso recogidos por las herramientas de analítica, grabación de
+                  sesiones y el chat descritas en las secciones 4 y 5.
                 </li>
               </ul>
 
@@ -78,8 +81,13 @@ const PrivacyPolicy = () => {
                   revocable en cualquier momento.
                 </li>
                 <li>
-                  <strong>Analítica, medición de campañas y chat de asistencia</strong> — base legal: consentimiento
-                  expresado en el banner de cookies (art. 6.1.a RGPD).
+                  <strong>Medición agregada y anónima del uso del sitio</strong> (sin cookies ni identificadores, no
+                  permite reconocerte ni seguirte entre visitas) — base legal: interés legítimo en conocer y mejorar el
+                  funcionamiento de nuestra web (art. 6.1.f RGPD).
+                </li>
+                <li>
+                  <strong>Analítica, grabación de sesiones, medición de campañas y chat de asistencia</strong> — base
+                  legal: consentimiento expresado en el banner de cookies (art. 6.1.a RGPD).
                 </li>
               </ul>
 
@@ -93,6 +101,7 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-6 mb-4 text-gray-600">
                 <li><strong>Google</strong> (Google Analytics 4 y Google Ads): medición de tráfico y campañas.</li>
                 <li><strong>HubSpot</strong> (chat y CRM): cookies como <em>hubspotutk</em> o <em>__hstc</em>.</li>
+                <li><strong>PostHog</strong> (analítica y grabación de sesiones): cookie <em>ph_…_posthog</em> y almacenamiento local. Las grabaciones enmascaran todo lo que escribes en los formularios. Sin tu consentimiento PostHog funciona solo en memoria, sin dejar nada en tu dispositivo.</li>
                 <li><strong>Propias</strong>: tu elección de consentimiento y, si aceptas, el identificador de clic de Google Ads (<em>djp_gclid</em>, 90 días).</li>
               </ul>
               <p className="text-gray-600 mb-4">
@@ -112,6 +121,7 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-6 mb-4 text-gray-600">
                 <li><strong>HubSpot</strong> (CRM y chat): gestión de contactos y oportunidades. Cuenta alojada en centro de datos de la Unión Europea.</li>
                 <li><strong>Google</strong> (Analytics, Tag Manager y Ads): analítica y medición de campañas, solo con consentimiento.</li>
+                <li><strong>PostHog</strong> (analítica de producto, mapas de calor y grabación de sesiones): proyecto alojado en la Unión Europea (Fráncfort).</li>
                 <li><strong>Cal.com</strong>: agenda de reuniones.</li>
                 <li><strong>Resend</strong>: envío de los emails generados por los formularios.</li>
                 <li><strong>Cloudflare</strong>: alojamiento y entrega del sitio web.</li>

@@ -5,6 +5,7 @@
  * apply the user's decision via `gtag('consent','update', …)`.
  */
 import { clearGclidCookie, storeGclidFromUrl } from "./gclid";
+import { applyPostHogConsent, POSTHOG_STORAGE_KEY } from "./posthog";
 
 export type ConsentState = "granted" | "denied";
 
@@ -53,7 +54,10 @@ export function applyConsent(state: ConsentState) {
     clearHubSpotCookies();
     clearGoogleCookies();
     clearGclidCookie();
+    clearPostHogStorage();
   }
+  // PostHog cambia de modo en caliente (memoria ↔ cookies + grabación).
+  applyPostHogConsent(state);
   // Avisa a la UI ya montada (el embed de Cal.com) de que la decisión cambió.
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: state }));
 }
@@ -95,6 +99,16 @@ function clearGoogleCookies() {
   expireCookies([...names]);
 }
 
+/** Expira la cookie y borra la entrada de localStorage que PostHog escribe con consentimiento. */
+function clearPostHogStorage() {
+  expireCookies([POSTHOG_STORAGE_KEY]);
+  try {
+    localStorage.removeItem(POSTHOG_STORAGE_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 /**
  * Retirar/cambiar el consentimiento (RGPD art. 7.3: retirar debe ser tan fácil
  * como darlo): borra la elección guardada y recarga para que el banner vuelva a
@@ -109,5 +123,6 @@ export function resetConsent() {
   clearHubSpotCookies();
   clearGoogleCookies();
   clearGclidCookie();
+  clearPostHogStorage();
   window.location.reload();
 }

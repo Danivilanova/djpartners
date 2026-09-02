@@ -4,6 +4,8 @@
  * initializes `dataLayer` + Consent Mode before anything runs, so these calls
  * are always safe (and a no-op if, for any reason, dataLayer is missing).
  */
+import { captureEvent } from "./posthog";
+
 type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
 /**
@@ -14,4 +16,5 @@ type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 export function trackFormSubmit(form: string) {
   if (typeof window === "undefined") return;
   (window as DataLayerWindow).dataLayer?.push({ event: "form_submit", form });
+  captureEvent("form_submit", { form });
 }

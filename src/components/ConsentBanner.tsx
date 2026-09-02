@@ -30,8 +30,9 @@ const ConsentBanner = () => {
     >
       <div className="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-gray-600 leading-relaxed">
-          Usamos cookies propias y de terceros para analizar el tráfico, medir nuestras campañas y habilitar el chat de
-          asistencia. Puedes aceptarlas o rechazarlas.{" "}
+          Usamos cookies propias y de terceros para analizar cómo se usa la web (incluidas grabaciones de navegación
+          con los formularios enmascarados), medir nuestras campañas y habilitar el chat de asistencia. Puedes
+          aceptarlas o rechazarlas.{" "}
           <Link to="/privacy-policy" className="text-primary underline underline-offset-2 hover:text-primary/80">
             Más información sobre cookies
           </Link>

@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import ConsentBanner from "@/components/ConsentBanner";
 import { storeGclidFromUrl } from "@/lib/gclid";
+import { getStoredConsent } from "@/lib/consent";
+import { initPostHog } from "@/lib/posthog";
 
 /**
  * Layout raíz para vite-react-ssg: envuelve todas las rutas con los providers
@@ -19,6 +21,9 @@ export default function Layout() {
   // adjuntarlo a los formularios de lead (conversiones offline en HubSpot).
   useEffect(() => {
     storeGclidFromUrl();
+    // PostHog arranca en modo memoria (sin cookies) o completo según lo que el
+    // usuario ya decidiera en el banner; ver lib/posthog.ts.
+    initPostHog(getStoredConsent());
   }, []);
 
   return (
