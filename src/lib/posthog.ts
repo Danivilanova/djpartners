@@ -28,16 +28,24 @@ export const POSTHOG_STORAGE_KEY = `ph_${POSTHOG_KEY}_posthog`;
 
 let client: Promise<PostHog | null> | null = null;
 
+/**
+ * Modo en el que está el SDK ahora mismo. Sirve para distinguir, al rechazar,
+ * entre retirar un consentimiento dado antes (hay identificador persistido que
+ * descartar) y rechazar de entrada (el SDK ya estaba en memoria).
+ */
+let consented = false;
+
 export function initPostHog(consent: ConsentState | null): Promise<PostHog | null> {
   if (typeof window === "undefined") return Promise.resolve(null);
   if (client) return client;
-  const consented = consent === "granted";
+  const granted = consent === "granted";
+  consented = granted;
   client = import("posthog-js")
     .then(({ default: posthog }) => {
       posthog.init(POSTHOG_KEY, {
         api_host: API_HOST,
         ui_host: UI_HOST,
-        persistence: consented ? "localStorage+cookie" : "memory",
+        persistence: granted ? "localStorage+cookie" : "memory",
         secure_cookie: true,
         // Sin perfil de persona para visitantes anónimos: menos datos y más barato.
         person_profiles: "identified_only",
@@ -45,7 +53,7 @@ export function initPostHog(consent: ConsentState | null): Promise<PostHog | nul
         capture_pageleave: true,
         autocapture: true,
         enable_heatmaps: true,
-        disable_session_recording: !consented,
+        disable_session_recording: !granted,
         session_recording: { maskAllInputs: true },
         ip: false,
         disable_surveys: true,
@@ -61,21 +69,31 @@ export function initPostHog(consent: ConsentState | null): Promise<PostHog | nul
  * Cambia de modo en caliente cuando el usuario decide en el banner. Si el SDK
  * aún no se ha inicializado no hay nada que hacer: `initPostHog` leerá la
  * decisión ya guardada.
+ *
+ * Al rechazar sólo se hace `reset()` si venía de un consentimiento dado: es la
+ * única forma de descartar el identificador que quedó en cookie + localStorage.
+ * Si el SDK ya estaba en memoria (el visitante rechaza de entrada) un `reset()`
+ * generaría un `distinct_id` y un `$session_id` nuevos, partiendo la visita en
+ * dos sesiones en PostHog: la primera con el pageview y los clics, y otra vacía.
  */
 export function applyPostHogConsent(state: ConsentState) {
   if (!client) return;
+  const wasConsented = consented;
+  consented = state === "granted";
   void client.then((posthog) => {
     if (!posthog) return;
     if (state === "granted") {
       posthog.set_config({ persistence: "localStorage+cookie", disable_session_recording: false });
       posthog.startSessionRecording();
-    } else {
-      posthog.stopSessionRecording();
-      // reset() vacía la persistencia actual (cookie + localStorage) y genera
-      // un identificador nuevo antes de volver a memoria.
-      posthog.reset();
-      posthog.set_config({ persistence: "memory", disable_session_recording: true });
+      return;
     }
+    // stopSessionRecording() ya deja disable_session_recording en true.
+    posthog.stopSessionRecording();
+    if (!wasConsented) return;
+    // reset() vacía la persistencia actual (cookie + localStorage) y genera
+    // un identificador nuevo antes de volver a memoria.
+    posthog.reset();
+    posthog.set_config({ persistence: "memory", disable_session_recording: true });
   });
 }
 
