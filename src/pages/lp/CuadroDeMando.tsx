@@ -526,9 +526,9 @@ export default function CuadroDeMando() {
         </div>
         {/* Encuadre del precio: fuera del contenedor con scroll para que se lea entero en móvil. */}
         <p style={{ fontSize: 17, lineHeight: 1.6, color: C.inkSoft, maxWidth: 760, margin: "28px 0 0", textWrap: "pretty" }}>
-          Desde 1.200 €/mes, todo incluido: montaje, licencias, mantenimiento y mejoras cada mes. Como
-          referencia, un controller interno a media jornada cuesta más del doble y un director financiero
-          externo suele facturar entre 2.500 y 5.000 €/mes.
+          Para situar la cifra: un controller interno a media jornada cuesta más del doble, y un director
+          financiero externo suele facturar entre 2.500 y 5.000 €/mes. Aquí no hay licencias aparte ni horas
+          extra: la cuota lo cubre todo.
         </p>
         <p style={{ fontSize: 17, fontWeight: 500, margin: "36px 0 0", textAlign: "center", color: C.inkSoft, textWrap: "balance" }}>
           Si tu equipo dedica más de 10 horas al mes a montar informes,{" "}
