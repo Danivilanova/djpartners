@@ -4,6 +4,8 @@ import LandingShell from "@/components/lp/LandingShell";
 import IntegrationsBar from "@/components/lp/IntegrationsBar";
 import BookingCalendar from "@/components/lp/BookingCalendar";
 import CtaButton from "@/components/lp/CtaButton";
+import WhatsAppButton from "@/components/lp/WhatsAppButton";
+import { DEFAULT_WHATSAPP_MESSAGE } from "@/components/lp/whatsapp";
 
 const HERO_SUB =
   "Diseñamos, construimos y mantenemos tu cuadro de mando a medida: ventas, facturación, operaciones. Tú abres el panel cada mañana y decides. Nosotros nos ocupamos de todo lo demás.";
@@ -89,6 +91,7 @@ export default function CuadroDeMando() {
       title="Cuadro de mando a medida para PYMEs | D&J Partners"
       description={HERO_SUB}
       footerTagline="Consultoría en IA y datos para PYMEs"
+      stickyWhatsAppMessage={DEFAULT_WHATSAPP_MESSAGE}
     >
       {/* 01 — HERO */}
       <section
@@ -123,6 +126,8 @@ export default function CuadroDeMando() {
             <span style={{ fontSize: 13.5, color: C.muted }}>
               Sin compromiso. Te enseñamos un dashboard real en la llamada.
             </span>
+            {/* Acción secundaria: contactar sin comprometerse a una videollamada. */}
+            <WhatsAppButton label="O escríbenos por WhatsApp" />
           </div>
           <div
             style={{
@@ -539,6 +544,27 @@ export default function CuadroDeMando() {
         landing="cuadro-de-mando"
         calNote="Horario de Madrid (CET). Recibirás la confirmación y el enlace de videollamada al instante."
         footnote="Recibirás la confirmación y el enlace de videollamada al instante. La llamada es con uno de los dos socios fundadores, no con un comercial."
+        secondaryContact={
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+              border: `1px solid ${C.hair2}`,
+              borderRadius: 10,
+              background: C.surface,
+              padding: isMobile ? "18px 20px" : "20px 24px",
+            }}
+          >
+            <p style={{ fontSize: 15.5, lineHeight: 1.55, color: C.inkSoft, margin: 0, maxWidth: 560, textWrap: "pretty" }}>
+              <strong style={{ color: C.ink }}>¿Prefieres no reservar ahora?</strong> Escríbenos por WhatsApp y
+              te contestamos en horario de oficina.
+            </p>
+            <WhatsAppButton />
+          </div>
+        }
       />
     </LandingShell>
   );

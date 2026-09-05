@@ -19,6 +19,11 @@ interface BookingCalendarProps {
   calNote?: string;
   /** Microcopy under the whole card. */
   footnote: string;
+  /**
+   * Vía de contacto alternativa para quien no quiere reservar ahora mismo
+   * (hoy, el botón de WhatsApp). Opcional: cada landing decide si la ofrece.
+   */
+  secondaryContact?: React.ReactNode;
   /** Landing slug for conversion attribution (e.g. "cuadro-de-mando"). */
   landing: string;
   /** Cal.com link (e.g. "djpartners/diagnostico"). Defaults to VITE_CALCOM_LINK; when unset the interactive placeholder is shown. */
@@ -60,6 +65,7 @@ export default function BookingCalendar({
   sidebarNote,
   calNote = "Horario de Madrid (CET). Recibirás la confirmación y el enlace de videollamada al instante.",
   footnote,
+  secondaryContact,
   landing,
   calLink = env.VITE_CALCOM_LINK,
 }: BookingCalendarProps) {
@@ -304,6 +310,7 @@ export default function BookingCalendar({
         </div>
       </div>
       )}
+      {secondaryContact ? <div style={{ marginTop: 24 }}>{secondaryContact}</div> : null}
       <p style={{ textAlign: "center", fontSize: 13, color: C.muted, margin: "20px 0 0" }}>{footnote}</p>
     </section>
   );

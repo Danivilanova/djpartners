@@ -65,3 +65,15 @@ export function trackCtaClick() {
   (window as GtagWindow).dataLayer?.push({ event: "cta_click", landing });
   captureEvent("cta_click", { landing });
 }
+
+/**
+ * Micro-conversión: clic en el botón de WhatsApp, la segunda vía de contacto
+ * (de menor compromiso que reservar videollamada). No bloquea la navegación:
+ * el enlace se abre igual aunque GTM o PostHog no estén cargados.
+ */
+export function trackWhatsAppClick() {
+  if (typeof window === "undefined") return;
+  const landing = window.location.pathname.replace(/^\/lp\//, "");
+  (window as GtagWindow).dataLayer?.push({ event: "whatsapp_click", landing });
+  captureEvent("whatsapp_click", { landing });
+}

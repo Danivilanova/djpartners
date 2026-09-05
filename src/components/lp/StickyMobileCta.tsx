@@ -1,16 +1,23 @@
 import { C } from "./tokens";
 import CtaButton from "./CtaButton";
+import WhatsAppButton from "./WhatsAppButton";
 import { useViewport } from "./useViewport";
 
 /**
  * Fixed bottom CTA bar shown only on phones (brief: "CTA sticky en móvil").
  * Mientras el banner de cookies está visible se apoya encima de él
  * (`--djp-consent-h`, publicada por ConsentBanner) en vez de quedar tapado.
+ *
+ * Con `whatsappMessage` aparece además un botón cuadrado de WhatsApp a la
+ * derecha (segunda vía de contacto). Es opcional a propósito: cada landing
+ * decide si la ofrece y con qué mensaje precargado.
  */
 export default function StickyMobileCta({
   label = "Agendar diagnóstico gratuito",
+  whatsappMessage,
 }: {
   label?: string;
+  whatsappMessage?: string;
 }) {
   const { isMobile } = useViewport();
   if (!isMobile) return null;
@@ -28,9 +35,22 @@ export default function StickyMobileCta({
         borderTop: `1px solid ${C.hair}`,
         padding: "12px 16px",
         zIndex: 50,
+        display: "flex",
+        alignItems: "stretch",
+        gap: 10,
       }}
     >
-      <CtaButton variant="sticky">{label}</CtaButton>
+      {/* El botón principal se queda con casi todo el ancho. */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <CtaButton variant="sticky">{label}</CtaButton>
+      </div>
+      {whatsappMessage ? (
+        <WhatsAppButton
+          variant="compact"
+          message={whatsappMessage}
+          ariaLabel="Escríbenos por WhatsApp"
+        />
+      ) : null}
     </div>
   );
 }
