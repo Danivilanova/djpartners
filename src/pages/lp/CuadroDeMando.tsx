@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { C, MONO } from "@/components/lp/tokens";
 import { useViewport } from "@/components/lp/useViewport";
 import LandingShell from "@/components/lp/LandingShell";
@@ -6,6 +7,7 @@ import BookingCalendar from "@/components/lp/BookingCalendar";
 import CtaButton from "@/components/lp/CtaButton";
 import WhatsAppButton from "@/components/lp/WhatsAppButton";
 import { DEFAULT_WHATSAPP_MESSAGE } from "@/components/lp/whatsapp";
+import { DEFAULT_HEADLINE, headlineForSearch } from "@/components/lp/headlines";
 
 const HERO_SUB =
   "Diseñamos, construimos y mantenemos tu cuadro de mando a medida: ventas, facturación, operaciones. Tú abres el panel cada mañana y decides. Nosotros nos ocupamos de todo lo demás.";
@@ -86,6 +88,14 @@ const FAQ = [
 export default function CuadroDeMando() {
   const { isMobile, isStacked } = useViewport();
 
+  // El titular se adapta al grupo de anuncios (`?hsa_grp=…`). Arranca siempre
+  // con el por defecto —el mismo que hay en el HTML prerenderizado— y sólo
+  // cambia tras montar, para no romper la hidratación.
+  const [headline, setHeadline] = useState(DEFAULT_HEADLINE);
+  useEffect(() => {
+    setHeadline(headlineForSearch(window.location.search));
+  }, []);
+
   return (
     <LandingShell
       title="Cuadro de mando a medida para PYMEs | D&J Partners"
@@ -116,7 +126,7 @@ export default function CuadroDeMando() {
               textWrap: "balance",
             }}
           >
-            Todos tus KPIs en un solo panel. Actualizado solo, todos los días.
+            {headline}
           </h1>
           <p style={{ fontSize: isMobile ? 16.5 : 18, lineHeight: 1.55, color: C.inkSoft, margin: 0, textWrap: "pretty" }}>
             {HERO_SUB}
