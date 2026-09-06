@@ -10,6 +10,8 @@ interface LandingShellProps {
   description: string;
   footerTagline: string;
   stickyLabel?: string;
+  /** Si se pasa, la barra fija de móvil añade un botón de WhatsApp con este mensaje. */
+  stickyWhatsAppMessage?: string;
   children: React.ReactNode;
 }
 
@@ -24,6 +26,7 @@ export default function LandingShell({
   description,
   footerTagline,
   stickyLabel,
+  stickyWhatsAppMessage,
   children,
 }: LandingShellProps) {
   useEffect(() => {
@@ -56,7 +59,7 @@ export default function LandingShell({
         <LpHeader />
         {children}
         <LpFooter tagline={footerTagline} />
-        <StickyMobileCta label={stickyLabel} />
+        <StickyMobileCta label={stickyLabel} whatsappMessage={stickyWhatsAppMessage} />
       </div>
     </>
   );
