@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
                 El responsable del tratamiento de los datos personales recogidos a través de este sitio web es
                 <strong> Jordi Reina García</strong> (D&amp;J Partners), NIF 41666585S, con domicilio en
                 C/ Anselm Clavé 6, 17410 Sils (Girona), España. Email de contacto:{' '}
-                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">jordi@djpartners.es</a>.
+                <a href="mailto:jordi.reina@kratia.ai" className="text-primary hover:underline">jordi.reina@kratia.ai</a>.
               </p>
               <p className="text-gray-600 mb-4">
                 Esta política explica qué datos recogemos, con qué finalidades, con qué base legal y con qué
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
               <p className="text-gray-600 mb-4">
                 Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición,
                 limitación del tratamiento y portabilidad escribiendo a{' '}
-                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">jordi@djpartners.es</a>{' '}
+                <a href="mailto:jordi.reina@kratia.ai" className="text-primary hover:underline">jordi.reina@kratia.ai</a>{' '}
                 con el asunto «Protección de datos». Te responderemos en el plazo máximo de un mes. Si consideras que no
                 hemos atendido correctamente tus derechos, puedes reclamar ante la Agencia Española de Protección de
                 Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">aepd.es</a>).
@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contacto</h2>
               <p className="text-gray-600 mb-4">
                 Para cualquier duda sobre esta política o sobre el tratamiento de tus datos:{' '}
-                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">jordi@djpartners.es</a>.
+                <a href="mailto:jordi.reina@kratia.ai" className="text-primary hover:underline">jordi.reina@kratia.ai</a>.
               </p>
 
             </div>
