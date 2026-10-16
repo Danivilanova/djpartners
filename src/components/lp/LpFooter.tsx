@@ -14,7 +14,7 @@ const dot = <span style={{ color: "#C9C6BE" }}>·</span>;
 /** Footer with brand, tagline, contact email and the only legal links. */
 export default function LpFooter({
   tagline,
-  email = "jordi@djpartners.es",
+  email = "jordi.reina@kratia.ai",
   privacyHref = "/privacy-policy",
   cookiesHref = "/privacy-policy",
 }: LpFooterProps) {

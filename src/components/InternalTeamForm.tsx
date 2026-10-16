@@ -162,8 +162,8 @@ const InternalTeamForm = () => {
             >
               <p className="text-gray-600">
                 <strong>¿Quieres conocer más sobre nuestro equipo?</strong> Contáctanos en{' '}
-                <a href="mailto:jordi@djpartners.es" className="text-primary hover:underline">
-                  jordi@djpartners.es
+                <a href="mailto:jordi.reina@kratia.ai" className="text-primary hover:underline">
+                  jordi.reina@kratia.ai
                 </a>
               </p>
             </motion.div>

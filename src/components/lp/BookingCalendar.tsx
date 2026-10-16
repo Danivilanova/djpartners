@@ -182,7 +182,7 @@ export default function BookingCalendar({
           }}
         >
           Responsable: Jordi Reina García (D&amp;J Partners). Finalidad: responder a tu solicitud y
-          gestión comercial. Derechos: jordi@djpartners.es. Más información en la{" "}
+          gestión comercial. Derechos: jordi.reina@kratia.ai. Más información en la{" "}
           <Link to="/privacy-policy" style={{ color: C.inkSoft, textDecoration: "underline" }}>
             política de privacidad
           </Link>
